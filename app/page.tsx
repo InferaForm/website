@@ -49,8 +49,16 @@ export default function Page() {
         <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Logo className="h-10 w-10 text-white" />
-              <div className="text-gray-300">Intelligence, Shaped for You</div>
+            </div>
+            <div className="flex items-center gap-3 mb-6">
+            </div>
+            <div className="flex items-center gap-3 mb-6">
+            </div>
+            <div className="flex items-center gap-3 mb-6">
+            </div>
+            <div className="flex items-center gap-3 mb-6">
+            </div>
+            <div className="flex items-center gap-3 mb-6">
             </div>
             <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
               Crafting intelligent systems<br/>that scale with you.

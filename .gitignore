@@ -13,6 +13,8 @@ jest-test-results.json
 out/
 build/
 dist/
+.vercel
+create-react-app/
 
 # Logs
 logs/
@@ -97,3 +99,4 @@ playwright-report/
 
 # Turbo
 turbo/
+.vercel
