@@ -207,7 +207,7 @@ export default function Page() {
             </div>
             <button type="submit" className="btn btn-primary w-full">Book Discovery Call →</button>
             {status && <p className="text-center text-sm text-gray-300">{status}</p>}
-            <p className="text-xs text-gray-500 text-center">Or email us directly: <a className="underline" href="mailto:huzafa@inferaform.com">huzafa@inferaform.com</a></p>
+            <p className="text-xs text-gray-500 text-center">Or email us directly: <a className="underline" href="mailto:huzaifa@inferaform.com">huzafa@inferaform.com</a></p>
           </form>
 
           <div className="card p-6">

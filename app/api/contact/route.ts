@@ -10,7 +10,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Name and email are required.' }, { status: 400 })
     }
 
-    const to = process.env.CONTACT_TO || 'huzafa@inferaform.com'
+    const to = process.env.CONTACT_TO || 'huzaifa@inferaform.com'
 
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
