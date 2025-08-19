@@ -175,50 +175,11 @@ export default function Page() {
       {/* CONTACT */}
       <section id="contact" className="section">
         <SectionHeading label="Contact" title="Let’s shape your intelligent system" desc="Tell us about your workflows, tools, and goals." />
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-start">
-          <form onSubmit={submitForm} className="card p-6 space-y-4">
-            <div>
-              <label className="block text-sm mb-1 text-gray-300">Name</label>
-              <input name="name" required className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-brand-500" />
-            </div>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm mb-1 text-gray-300">Email</label>
-                <input type="email" name="email" required className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-brand-500" />
-              </div>
-              <div>
-                <label className="block text-sm mb-1 text-gray-300">Company</label>
-                <input name="company" className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-brand-500" />
-              </div>
-            </div>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm mb-1 text-gray-300">Preferred Date</label>
-                <input type="date" name="date" className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2" />
-              </div>
-              <div>
-                <label className="block text-sm mb-1 text-gray-300">Time</label>
-                <input type="time" name="time" className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2" />
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm mb-1 text-gray-300">What are you trying to achieve?</label>
-              <textarea name="goals" rows={5} className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-brand-500" placeholder="Workflows, tools, problems, KPIs..."></textarea>
-            </div>
-            <button type="submit" className="btn btn-primary w-full">Book Discovery Call →</button>
-            {status && <p className="text-center text-sm text-gray-300">{status}</p>}
-            {/* <p className="text-xs text-gray-500 text-center">Or email us directly: <a className="underline" href="mailto:huzaifa@inferaform.com">huzaifa@inferaform.com</a></p> */}
-          </form>
+        <div className="max-w-2xl mx-auto px-6 card p-6 text-center">
 
-          <div className="card p-6">
-            <h3 className="text-xl font-semibold">Why Inferaform</h3>
-            <ul className="mt-4 space-y-3 text-gray-300">
-              <li>• Practical innovation grounded in your reality.</li>
-              <li>• Elegant systems that stay maintainable.</li>
-              <li>• Transparent intelligence with clear guardrails.</li>
-              <li>• Real-world impact, measured and iterated.</li>
-            </ul>
-          </div>
+          <p className="text-lg text-gray-300">
+            Email us at <a className="underline" href="mailto:inferaform@gmail.com">inferaform@gmail.com</a>
+          </p>
         </div>
         <footer className="mt-20 py-10 text-center text-sm text-gray-500">
           © {new Date().getFullYear()} Inferaform. All rights reserved.
