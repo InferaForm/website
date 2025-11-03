@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
+// Force Node.js runtime for nodemailer support
+export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
+
 export async function POST(request: Request) {
   try {
     const data = await request.json()
