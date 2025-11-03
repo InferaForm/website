@@ -9,6 +9,8 @@ import {
   MessageSquare,
   Megaphone,
   Building2,
+  Hotel,
+  Calendar,
   TrendingUp,
   Shield,
   Zap,
@@ -17,6 +19,7 @@ import {
   Mail,
   Globe,
   Wallet,
+  MapPin,
   Clock,
   Search,
   Lightbulb,
@@ -62,6 +65,7 @@ function Navbar() {
         </a>
         <nav className="hidden md:flex items-center gap-6 text-sm">
           <a href="#solutions" className="hover:text-primary">Products</a>
+          <a href="#airbnb" className="hover:text-primary">Airbnb Co-Host</a>
           <a href="#showcase" className="hover:text-primary">Process</a>
           <a href="#pricing" className="hover:text-primary">Pricing</a>
           <a href="#faq" className="hover:text-primary">FAQ</a>
@@ -241,27 +245,29 @@ function Products() {
   )
 }
 
-// ---------- Showcase (Process/Implementation) ----------
-function Showcase() {
+// ---------- Airbnb Co-Host ----------
+function AirbnbCoHost() {
   const items = [
-    { icon: Phone, title: "Discovery", desc: "We map your workflows, KPIs, constraints, and technical landscape." },
-    { icon: Shield, title: "Feasibility", desc: "We validate value, scope, guardrails, and security requirements." },
-    { icon: Building2, title: "Build", desc: "We implement, integrate, test, and deploy with your team." },
-    { icon: TrendingUp, title: "Iterate", desc: "We measure performance, tune models, and scale to more use cases." },
+    { icon: Hotel, title: "Guest Messaging", desc: "Instant replies, ID verification prompts, house rules enforcement, upsells." },
+    { icon: Calendar, title: "Calendar & Pricing", desc: "Sync channels, dynamic pricing recommendations, min-stay & gap rules." },
+    { icon: MapPin, title: "Check-in / Check-out", desc: "Automated instructions, access codes, cleaner scheduling & turnover sheets." },
+    { icon: TrendingUp, title: "Revenue Ops", desc: "Market comps, occupancy targets, review response optimization, owner reports." },
+    { icon: Shield, title: "Risk & Compliance", desc: "Noise alerts, party risk signals, deposit & damage workflows, audit trails." },
+    { icon: MessageSquare, title: "Issue Resolution", desc: "Maintenance triage, vendor dispatch, credits/claims with approval gates." },
   ]
 
   return (
-    <div id="showcase" className="bg-muted/30 border-y">
+    <div id="airbnb" className="bg-muted/30 border-y">
       <Section className="py-16 lg:py-24">
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center">
-          <Pill>Process</Pill>
-          <h2 className="mt-4 text-2xl sm:text-4xl font-bold">A focused path from idea to impact</h2>
+          <Pill>Airbnb Co-Host</Pill>
+          <h2 className="mt-4 text-2xl sm:text-4xl font-bold">Your always-on Co-Host Agent</h2>
           <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            Practical innovation grounded in your reality, with elegant systems and transparent intelligence.
+            Purpose-built agent for short-term rentals. Delight guests, maximize revenue, and keep operations smooth across Airbnb, Booking.com, Vrbo and direct bookings.
           </p>
         </motion.div>
 
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map(({ icon: Icon, title, desc }) => (
             <Card key={title}>
               <CardHeader className="flex flex-row items-center gap-3">
@@ -276,50 +282,46 @@ function Showcase() {
         </div>
 
         <div className="mt-10">
-          <Tabs defaultValue="stacks" className="w-full">
+          <Tabs defaultValue="features" className="w-full">
             <TabsList className="grid grid-cols-3 w-full">
-              <TabsTrigger value="stacks">Tech Stacks</TabsTrigger>
+              <TabsTrigger value="features">Features</TabsTrigger>
               <TabsTrigger value="integrations">Integrations</TabsTrigger>
-              <TabsTrigger value="principles">Principles</TabsTrigger>
+              <TabsTrigger value="reports">Reports</TabsTrigger>
             </TabsList>
-            <TabsContent value="stacks" className="mt-6">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
-                {[
-                  "CRMs & ERPs (Salesforce, HubSpot)",
-                  "Data Warehouses (BigQuery, Snowflake)",
-                  "Marketing Suites (Marketo, Braze)",
-                  "Helpdesks (Zendesk, Intercom)",
-                  "Internal Tools (Retool, Airtable)",
-                  "Custom APIs & Databases",
-                ].map((x) => (
-                  <div key={x} className="flex items-center gap-2"><Badge variant="secondary">{x}</Badge></div>
-                ))}
-              </div>
-            </TabsContent>
-            <TabsContent value="integrations" className="mt-6">
+            <TabsContent value="features" className="mt-6">
               <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
                 {[
-                  "OAuth & API key management",
-                  "Webhook & event streaming",
-                  "Batch & real-time sync",
-                  "Secure credential vaults",
-                  "Error monitoring & retry logic",
-                  "Audit logs & compliance",
+                  "Auto-replies by intent & language",
+                  "Smart pricing from market signals",
+                  "Cleaner rota + linen inventory",
+                  "Damage deposit + claims workflow",
+                  "Owner portal with revenue split",
+                  "Direct booking engine support",
                 ].map((x) => (
                   <li key={x} className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5"/> {x}</li>
                 ))}
               </ul>
             </TabsContent>
-            <TabsContent value="principles" className="mt-6">
+            <TabsContent value="integrations" className="mt-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                {[
+                  "Airbnb API (official partner)",
+                  "PriceLabs / Beyond Pricing",
+                  "Hospitable / Guesty / Hostaway",
+                  "Google Calendar / iCal",
+                  "Door locks (Nuki, August, smart locks)",
+                  "WhatsApp, SMS, Email, IVR",
+                ].map((x) => (
+                  <div key={x} className="flex items-center gap-2"><Badge variant="secondary">{x}</Badge></div>
+                ))}
+              </div>
+            </TabsContent>
+            <TabsContent value="reports" className="mt-6">
               <div className="grid md:grid-cols-3 gap-6">
-                {["Practical Innovation", "Elegant Systems", "Transparent Intelligence"].map((t) => (
+                {["Occupancy & ADR", "Revenue by Property", "Response SLAs"].map((t) => (
                   <Card key={t}>
                     <CardHeader><CardTitle className="text-base">{t}</CardTitle></CardHeader>
-                    <CardContent className="text-sm text-muted-foreground">
-                      {t === "Practical Innovation" && "Grounded in your reality and stack, not hype."}
-                      {t === "Elegant Systems" && "Composable, observable, and well-documented."}
-                      {t === "Transparent Intelligence" && "Clear prompts, evals, and safeguards."}
-                    </CardContent>
+                    <CardContent className="text-sm text-muted-foreground">Beautiful owner-ready reports with trends, comparisons, and export to CSV/PDF.</CardContent>
                   </Card>
                 ))}
               </div>
@@ -328,8 +330,132 @@ function Showcase() {
         </div>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a href="#contact"><Button size="lg" className="gap-2">Start a Pilot <ArrowRight className="h-4 w-4"/></Button></a>
-          <Badge variant="outline" className="text-sm">Typical setup: 7–14 days</Badge>
+          <a href="#contact"><Button size="lg" className="gap-2">Launch a Co-Host Pilot <ArrowRight className="h-4 w-4"/></Button></a>
+          <Badge variant="outline" className="text-sm">Typical setup: 7–10 days</Badge>
+        </div>
+      </Section>
+    </div>
+  )
+}
+
+// ---------- Showcase (Process/Implementation) ----------
+function Showcase() {
+  const steps = [
+    { 
+      step: "01",
+      icon: Search, 
+      title: "Discovery", 
+      desc: "We map your workflows, KPIs, constraints, and technical landscape.",
+      duration: "1-2 weeks"
+    },
+    { 
+      step: "02",
+      icon: Shield, 
+      title: "Feasibility", 
+      desc: "We validate value, scope, guardrails, and security requirements.",
+      duration: "3-5 days"
+    },
+    { 
+      step: "03",
+      icon: Building2, 
+      title: "Build", 
+      desc: "We implement, integrate, test, and deploy with your team.",
+      duration: "2-4 weeks"
+    },
+    { 
+      step: "04",
+      icon: TrendingUp, 
+      title: "Iterate", 
+      desc: "We measure performance, tune models, and scale to more use cases.",
+      duration: "Ongoing"
+    },
+  ]
+
+  const integrations = [
+    "Salesforce", "HubSpot", "Zendesk", "Intercom", "Slack", "BigQuery",
+    "Snowflake", "Marketo", "Braze", "Retool", "Airtable", "Custom APIs"
+  ]
+
+  const principles = [
+    { icon: Lightbulb, title: "Practical Innovation", desc: "Grounded in your reality and stack, not hype." },
+    { icon: Zap, title: "Elegant Systems", desc: "Composable, observable, and well-documented." },
+    { icon: Shield, title: "Transparent Intelligence", desc: "Clear prompts, evals, and safeguards." },
+  ]
+
+  return (
+    <div id="showcase" className="py-16 lg:py-24">
+      <Section>
+        <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center">
+          <Pill>Our Process</Pill>
+          <h2 className="mt-4 text-2xl sm:text-4xl font-bold">From concept to production in weeks</h2>
+          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+            A proven methodology that delivers measurable results without disrupting your operations.
+          </p>
+        </motion.div>
+
+        {/* Timeline Steps */}
+        <div className="mt-16 relative">
+          <div className="hidden lg:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20" style={{ top: "4rem" }}/>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+            {steps.map(({ step, icon: Icon, title, desc, duration }, idx) => (
+              <motion.div 
+                key={title}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="relative"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mb-4">
+                    <Icon className="h-7 w-7 text-primary"/>
+                  </div>
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 -z-10 text-6xl font-bold text-muted/10">{step}</div>
+                  <h3 className="text-xl font-bold mb-2">{title}</h3>
+                  <p className="text-sm text-muted-foreground mb-3">{desc}</p>
+                  <Badge variant="outline" className="text-xs">{duration}</Badge>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Integrations Section */}
+        <div className="mt-20">
+          <div className="text-center mb-8">
+            <h3 className="text-xl font-bold mb-2">Seamless Integrations</h3>
+            <p className="text-sm text-muted-foreground">We connect with the tools you already use</p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {integrations.map((name) => (
+              <Badge key={name} variant="secondary" className="px-4 py-2">{name}</Badge>
+            ))}
+          </div>
+        </div>
+
+        {/* Principles Section */}
+        <div className="mt-16 grid md:grid-cols-3 gap-6">
+          {principles.map(({ icon: Icon, title, desc }) => (
+            <Card key={title} className="text-center border-primary/20">
+              <CardContent className="pt-6">
+                <div className="inline-flex p-3 rounded-full bg-primary/10 text-primary mb-4">
+                  <Icon className="h-6 w-6"/>
+                </div>
+                <h4 className="font-bold mb-2">{title}</h4>
+                <p className="text-sm text-muted-foreground">{desc}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#contact"><Button size="lg" className="gap-2">Start Your Pilot <ArrowRight className="h-4 w-4"/></Button></a>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Clock className="h-4 w-4"/>
+            <span>First results in 7–14 days</span>
+          </div>
         </div>
       </Section>
     </div>
@@ -405,13 +531,61 @@ function Pricing() {
 
 // ---------- Social Proof ----------
 function SocialProof() {
-  const logos = ["Acme Corp", "TechStart", "GrowthLabs", "Innovate Inc", "ScaleUp"]
+  const stats = [
+    { value: "500K+", label: "Hours Saved", icon: Clock },
+    { value: "95%", label: "Client Satisfaction", icon: CheckCircle2 },
+    { value: "40+", label: "AI Solutions Deployed", icon: Zap },
+    { value: "12x", label: "Average ROI", icon: TrendingUp },
+  ]
+
+  const companies = [
+    { name: "TechCorp", industry: "SaaS" },
+    { name: "RetailMax", industry: "E-commerce" },
+    { name: "FinanceHub", industry: "FinTech" },
+    { name: "HealthSync", industry: "HealthTech" },
+    { name: "LogiTrack", industry: "Logistics" },
+    { name: "EduLearn", industry: "EdTech" },
+  ]
+
   return (
-    <Section className="py-12">
-      <div className="text-center text-xs text-muted-foreground mb-6">Trusted by forward-thinking teams</div>
-      <div className="grid sm:grid-cols-5 gap-6 items-center justify-center opacity-60">
-        {logos.map((l) => (
-          <div key={l} className="text-center text-sm font-semibold">{l}</div>
+    <Section className="py-16 border-y bg-muted/20">
+      <div className="text-center mb-10">
+        <p className="text-sm font-medium text-muted-foreground mb-2">Trusted by forward-thinking companies</p>
+        <h3 className="text-xl font-bold">Delivering measurable results across industries</h3>
+      </div>
+
+      {/* Stats Grid */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {stats.map(({ value, label, icon: Icon }) => (
+          <motion.div
+            key={label}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">
+              <Icon className="h-6 w-6"/>
+            </div>
+            <div className="text-3xl font-bold mb-1">{value}</div>
+            <div className="text-sm text-muted-foreground">{label}</div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Company Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        {companies.map(({ name, industry }) => (
+          <Card key={name} className="group hover:shadow-md transition-all hover:scale-105 cursor-pointer">
+            <CardContent className="p-4 text-center">
+              <div className="w-10 h-10 mx-auto mb-2 rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                <span className="text-lg font-bold text-primary">{name.charAt(0)}</span>
+              </div>
+              <div className="font-semibold text-sm mb-1">{name}</div>
+              <div className="text-xs text-muted-foreground">{industry}</div>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </Section>
@@ -580,6 +754,7 @@ function Contact() {
                     { id: "forge", label: "Forge (Business Dev)", emoji: "🔧" },
                     { id: "luma", label: "Luma (Support AI)", emoji: "💬" },
                     { id: "aura", label: "AURA (eCommerce)", emoji: "🔮" },
+                    { id: "airbnb", label: "Airbnb Co-Host", emoji: "🏠" },
                     { id: "custom", label: "Custom Solution", emoji: "✨" },
                   ].map((x) => (
                     <label key={x.id} className="flex items-center gap-2 rounded-lg border p-2 cursor-pointer hover:bg-accent">
@@ -663,6 +838,7 @@ export default function InferaformWebsite() {
       <Hero />
       <SocialProof />
       <Products />
+      <AirbnbCoHost />
       <Showcase />
       <Pricing />
       <Testimonials />
