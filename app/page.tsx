@@ -680,6 +680,7 @@ function FAQ() {
 // ---------- Contact ----------
 function Contact() {
   const [submitting, setSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -697,13 +698,26 @@ function Contact() {
       const result = await res.json()
       
       if (res.ok) {
-        toast.success("Thanks! We'll reach out shortly.")
+        setSubmitted(true)
+        toast.success("🎉 Thank you! We'll contact you within 24 hours.", {
+          duration: 5000,
+        })
         form.reset()
+        // Reset submitted state after 5 seconds
+        setTimeout(() => setSubmitted(false), 5000)
       } else {
-        toast.error(result.error || "Something went wrong. Please try again.")
+        toast.error(result.error || "Something went wrong. Please try again.", {
+          duration: 6000,
+        })
+        if (result.details) {
+          console.error('Error details:', result.details)
+        }
       }
     } catch (error) {
-      toast.error("Network error. Please try again.")
+      console.error('Network error:', error)
+      toast.error("Network error. Please check your connection and try again.", {
+        duration: 6000,
+      })
     } finally {
       setSubmitting(false)
     }
@@ -725,12 +739,45 @@ function Contact() {
         </div>
 
         <Card>
-          <CardHeader>
-            <CardTitle>Book a demo</CardTitle>
-            <p className="text-sm text-muted-foreground">Share a few details and we'll get back within one business day.</p>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={onSubmit} className="space-y-4">
+          {submitted ? (
+            <>
+              <CardHeader>
+                <div className="flex flex-col items-center text-center py-4">
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", duration: 0.5 }}
+                    className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4"
+                  >
+                    <CheckCircle2 className="h-8 w-8 text-primary" />
+                  </motion.div>
+                  <CardTitle className="text-2xl mb-2">Thank you!</CardTitle>
+                  <p className="text-muted-foreground">Your message has been sent successfully.</p>
+                </div>
+              </CardHeader>
+              <CardContent className="text-center space-y-4">
+                <p className="text-sm">
+                  We've received your inquiry and our team will get back to you within 24 hours.
+                </p>
+                <div className="pt-4 pb-2">
+                  <Button 
+                    onClick={() => setSubmitted(false)} 
+                    variant="outline" 
+                    className="gap-2"
+                  >
+                    Send another message
+                  </Button>
+                </div>
+              </CardContent>
+            </>
+          ) : (
+            <>
+              <CardHeader>
+                <CardTitle>Book a demo</CardTitle>
+                <p className="text-sm text-muted-foreground">Share a few details and we'll get back within one business day.</p>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={onSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full name</Label>
@@ -777,8 +824,10 @@ function Contact() {
                   {submitting ? "Sending..." : "Send request"} <ArrowRight className="h-4 w-4"/>
                 </Button>
               </div>
-            </form>
-          </CardContent>
+                </form>
+              </CardContent>
+            </>
+          )}
         </Card>
       </div>
     </Section>

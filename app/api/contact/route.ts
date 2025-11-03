@@ -6,6 +6,8 @@ export async function POST(request: Request) {
     const data = await request.json()
     const { name, email, company, interests, message, nda } = data || {}
 
+    console.log('📧 Contact form submission received:', { name, email, company })
+
     // Validation
     if (!name || !email) {
       return NextResponse.json({ error: 'Name and email are required.' }, { status: 400 })
@@ -17,20 +19,46 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid email format.' }, { status: 400 })
     }
 
-    // Get recipient email from environment
-    const to = process.env.CONTACT_EMAIL_TO || process.env.CONTACT_TO || 'inferaform@gmail.com'
-    const fromEmail = process.env.CONTACT_EMAIL_FROM || 'no-reply@inferaform.com'
+    // Get recipient email - Updated to huzaifatofeeq@gmail.com
+    const to = 'huzaifatofeeq@gmail.com'
+    const fromEmail = process.env.SMTP_USER || 'huzaifa@inferaform.com'
 
-    // Create transporter
+    console.log('📬 SMTP Configuration:', {
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
+      user: process.env.SMTP_USER,
+      secure: process.env.SMTP_SECURE === 'ssl' || process.env.SMTP_PORT === '465',
+      to
+    })
+
+    // Create transporter with improved configuration
+    const smtpPort = Number(process.env.SMTP_PORT || 587)
+    const isSecure = process.env.SMTP_SECURE === 'ssl' || smtpPort === 465
+    
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT || 587),
-      secure: process.env.SMTP_PORT === '465', // Use secure for port 465
+      port: smtpPort,
+      secure: isSecure, // true for 465 (SSL), false for 587 (TLS)
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASSWORD || process.env.SMTP_PASS,
       },
+      tls: {
+        rejectUnauthorized: false,
+        minVersion: 'TLSv1.2'
+      },
+      debug: true, // Enable debug output
+      logger: true // Log to console
     })
+
+    // Verify connection
+    try {
+      await transporter.verify()
+      console.log('✅ SMTP connection verified')
+    } catch (verifyError: any) {
+      console.error('❌ SMTP verification failed:', verifyError.message)
+      throw new Error(`SMTP connection failed: ${verifyError.message}`)
+    }
 
     // Format interests array
     const interestsArray = Array.isArray(interests) 
@@ -114,21 +142,51 @@ Submitted: ${new Date().toISOString()}
 </html>
 `
 
-    // Send email
-    await transporter.sendMail({
-      from: `Inferaform Website <${fromEmail}>`,
+    // Send email with anti-spam headers
+    const mailOptions = {
+      from: `"Inferaform Website" <${fromEmail}>`,
       to,
       replyTo: email,
       subject,
       text,
       html,
+      headers: {
+        'X-Priority': '1',
+        'X-MSMail-Priority': 'High',
+        'Importance': 'high',
+        'X-Mailer': 'Inferaform Contact Form',
+        'X-Entity-Ref-ID': `contact-${Date.now()}`,
+        'List-Unsubscribe': `<mailto:${fromEmail}?subject=unsubscribe>`,
+      },
+      messageId: `<contact-${Date.now()}@inferaform.com>`,
+    }
+
+    console.log('📤 Sending email to:', to)
+    
+    const info = await transporter.sendMail(mailOptions)
+    
+    console.log('✅ Email sent successfully:', {
+      messageId: info.messageId,
+      response: info.response
     })
 
-    return NextResponse.json({ ok: true, message: 'Email sent successfully' })
+    return NextResponse.json({ 
+      ok: true, 
+      message: 'Thank you for contacting us! We will get back to you within 24 hours.' 
+    })
   } catch (err: any) {
-    console.error('Contact form error:', err)
+    console.error('❌ Contact form error:', err)
+    console.error('Error details:', {
+      message: err.message,
+      code: err.code,
+      command: err.command
+    })
+    
     return NextResponse.json(
-      { error: 'Failed to send message. Please try again or contact us directly at inferaform@gmail.com' }, 
+      { 
+        error: 'Failed to send message. Please try emailing us directly at huzaifatofeeq@gmail.com',
+        details: process.env.NODE_ENV === 'development' ? err.message : undefined
+      }, 
       { status: 500 }
     )
   }
