@@ -33,7 +33,7 @@ A professional, modern website built with Next.js 14, React, Framer Motion, and 
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
 - **Notifications**: Sonner
-- **Email**: Nodemailer
+- **Email**: Resend
 
 ## Getting Started
 
@@ -60,7 +60,7 @@ npm install
 cp .env.example .env.local
 ```
 
-4. Edit `.env.local` with your SMTP credentials (see Email Configuration below)
+4. Edit `.env.local` with your Resend credentials (see Email Configuration below)
 
 ### Development
 
@@ -83,29 +83,15 @@ npm start
 
 ## Email Configuration
 
-The contact form requires SMTP configuration. See `.env.example` for detailed setup instructions.
-
-### Quick Setup with Gmail
-
-1. Enable 2-Factor Authentication on your Google account
-2. Generate an App Password: https://myaccount.google.com/apppasswords
-3. Add to `.env.local`:
+The contact form uses [Resend](https://resend.com). See `.env.example` for setup details.
 
 ```env
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=your-email@gmail.com
-SMTP_PASSWORD=your-16-character-app-password
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+RESEND_FROM_EMAIL="Inferaform <hello@inferaform.com>"
 CONTACT_EMAIL_TO=inferaform@gmail.com
-CONTACT_EMAIL_FROM=no-reply@inferaform.com
 ```
 
-### Other SMTP Providers
-
-- **SendGrid**: Professional email delivery service
-- **Mailgun**: Developer-friendly email API
-- **AWS SES**: Scalable email service
-- See `.env.example` for provider-specific configuration
+`RESEND_FROM_EMAIL` must use a domain verified in Resend.
 
 ## Project Structure
 
@@ -184,10 +170,9 @@ The site can be deployed to any platform that supports Next.js:
 
 ### Contact Form Not Working
 
-1. Check SMTP credentials in `.env.local`
-2. For Gmail, ensure App Password is used (not regular password)
+1. Check `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `CONTACT_EMAIL_TO` in `.env.local`
+2. Confirm the from address domain is verified in Resend
 3. Check server logs: `npm run dev` will show errors
-4. Test with a different email provider
 
 ### Styling Issues
 
