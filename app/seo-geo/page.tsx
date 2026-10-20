@@ -7,6 +7,8 @@ import { Navbar } from "@/app/components/site/Navbar"
 import { Footer } from "@/app/components/site/Footer"
 import { Contact } from "@/app/components/site/Contact"
 import { FaqList } from "@/app/components/site/FaqList"
+import { JsonLd } from "@/app/components/site/JsonLd"
+import { service, faqPage, breadcrumbs } from "@/app/lib/structured-data"
 
 export const metadata: Metadata = {
   title: "Local SEO & GEO for Local Businesses | Inferaform",
@@ -69,6 +71,20 @@ const faq = [
 export default function SeoGeoPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <JsonLd
+        data={[
+          service({
+            name: "Local SEO and Generative Engine Optimization (GEO)",
+            description: "Rank on Google Maps and show up in ChatGPT, Gemini and Google AI Overviews.",
+            path: "/seo-geo",
+          }),
+          faqPage(faq),
+          breadcrumbs([
+            { name: "Home", path: "/" },
+            { name: "SEO & GEO", path: "/seo-geo" },
+          ]),
+        ]}
+      />
       <Navbar />
       <main>
         {/* Hero */}

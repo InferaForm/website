@@ -18,6 +18,9 @@ import {
   type LucideIcon,
 } from "lucide-react"
 
+// The live site redirects the bare domain to www, so www is the canonical origin
+export const SITE_URL = "https://www.inferaform.com"
+
 export type Industry = {
   slug: string
   name: string
@@ -67,8 +70,8 @@ export const industries: Industry[] = [
       after: { text: "White spots on your dishes? Your water might be the problem. We'll test it for free, in your home, this week.", headline: "Free in-home water test", overlay: "Hard water? Find out in 15 minutes.", cta: "Book free test" },
     },
     faq: [
-      { q: "Do you work with dealers of specific brands?", a: "Yes. We work with independent dealers of brands like Kinetico, RainSoft, EcoWater and Hague, as long as you control your own local marketing." },
-      { q: "Can you target well water homes?", a: "We target rural areas and use well water specific messaging and keywords, which tends to attract homeowners who need treatment most." },
+      { q: "Can you work with dealers of a specific brand?", a: "Yes. If you're an independent dealer for a brand like Kinetico, RainSoft, EcoWater or Hague and you control your own local marketing, we can work with you." },
+      { q: "Can you target well water homes?", a: "Yes. We'd target rural areas and use well water messaging and keywords to reach the homeowners most likely to need treatment." },
     ],
   },
   {
@@ -98,8 +101,8 @@ export const industries: Industry[] = [
       after: { text: "Last week's hail hit your neighborhood. Most roof damage isn't visible from the ground. We'll check yours for free and send you the photos.", headline: "Free storm damage inspection", overlay: "Hail damage hides. We'll find it.", cta: "Book inspection" },
     },
     faq: [
-      { q: "Can you launch campaigns right after a storm?", a: "Yes. We prepare storm campaigns in advance so they can go live in affected areas within hours." },
-      { q: "Do you handle residential or commercial roofing?", a: "Mostly residential, where ads and fast follow-up have the biggest impact. We can discuss commercial on a call." },
+      { q: "Can you launch campaigns right after a storm?", a: "Yes. We'd prepare storm campaigns in advance so they can go live in affected areas within hours." },
+      { q: "Do you handle residential or commercial roofing?", a: "Our focus is residential, where ads and fast follow-up make the biggest difference. We can discuss commercial on a call." },
     ],
   },
   {
@@ -129,7 +132,7 @@ export const industries: Industry[] = [
       after: { text: "Is your AC more than 12 years old? A new high-efficiency system can cut your energy bill, with monthly payments that fit your budget.", headline: "Free replacement estimate", overlay: "Old AC? Get a free estimate today.", cta: "Get estimate" },
     },
     faq: [
-      { q: "Can you help us get more replacement jobs, not just repairs?", a: "Yes. We run separate campaigns for replacements with financing offers and follow up over several weeks, since these decisions take longer." },
+      { q: "Can you help us get more replacement jobs, not just repairs?", a: "Yes. We'd run separate campaigns for replacements with financing offers and follow up over several weeks, since these decisions take longer." },
       { q: "What about after-hours leads?", a: "The AI follow-up answers 24/7 and can book or escalate emergencies to your on-call tech." },
     ],
   },
@@ -161,7 +164,7 @@ export const industries: Industry[] = [
     },
     faq: [
       { q: "How do you filter out low-budget leads?", a: "The form and AI follow-up ask about project scope, budget range and timeline, so you only meet people who are a fit." },
-      { q: "Can you use photos of our past projects?", a: "Yes. Your real project photos usually make the best-performing ads." },
+      { q: "Can you use photos of our past projects?", a: "Yes, and we'd recommend it. Real photos of your own work build more trust than stock images." },
     ],
   },
   {
@@ -191,8 +194,8 @@ export const industries: Industry[] = [
       after: { text: "A damp smell or a white chalky line on your basement wall is an early warning sign. Get a free inspection before it becomes a flood.", headline: "Free basement inspection", overlay: "That musty smell is a warning sign.", cta: "Book inspection" },
     },
     faq: [
-      { q: "Do you target specific seasons?", a: "Yes. We increase budget during rainy seasons and snowmelt, when demand peaks." },
-      { q: "Can you also promote foundation repair?", a: "Yes. We usually run separate campaigns for waterproofing and foundation repair, since people search for them differently." },
+      { q: "Do you target specific seasons?", a: "Yes. We'd increase budget during rainy seasons and snowmelt, when demand peaks." },
+      { q: "Can you also promote foundation repair?", a: "Yes. We'd run separate campaigns for waterproofing and foundation repair, since people search for them differently." },
     ],
   },
   {
@@ -222,7 +225,7 @@ export const industries: Industry[] = [
       after: { text: "New here? Meet with one of our nurse injectors for a free consultation and a treatment plan made for you. No pressure.", headline: "Free consultation for new clients", overlay: "Your first visit starts with a free consult.", cta: "Book consult" },
     },
     faq: [
-      { q: "Can you run ads that follow Meta's health policies?", a: "Yes. We write creative and landing pages that follow Meta's rules on health claims and before-and-after imagery." },
+      { q: "Can you run ads that follow Meta's health policies?", a: "Yes. We'd write creative and landing pages that follow Meta's rules on health claims and before-and-after imagery." },
       { q: "Do you work with medical practices too?", a: "We focus on med spas and aesthetic clinics. We can discuss other practices on a call." },
     ],
   },

@@ -35,6 +35,8 @@ import { FaqList } from "@/app/components/site/FaqList"
 import { industries } from "@/app/lib/site-data"
 import { AdMakeover, LeadLeak, RampChart } from "@/app/components/site/Visuals"
 import { Testimonials } from "@/app/components/site/Blocks"
+import { JsonLd } from "@/app/components/site/JsonLd"
+import { organization, faqPage } from "@/app/lib/structured-data"
 
 // ---------- Hero ----------
 const leadFlow = [
@@ -67,8 +69,8 @@ function Hero() {
           <div className="mt-8 flex max-w-xl items-start gap-3 rounded-2xl border border-primary/25 bg-primary/[0.06] p-4">
             <Gift className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary"/>
             <p className="text-sm text-foreground/80">
-              <span className="font-semibold text-foreground">Free ad audit + 3 custom ad creatives.</span>{" "}
-              We show you where leads are leaking and design three ads for your business. Yours to keep, no contract.
+              <span className="font-semibold text-foreground">Free ad audit.</span>{" "}
+              We show you where leads are leaking, no contract. Qualified businesses also get 3 custom ad creatives, yours to keep.
             </p>
           </div>
 
@@ -125,16 +127,6 @@ function Hero() {
                 </motion.li>
               ))}
             </ol>
-            <div className="mt-5 grid grid-cols-2 gap-3 border-t border-foreground/5 pt-5">
-              <div>
-                <p className="font-display text-2xl font-semibold">38s</p>
-                <p className="text-xs text-muted-foreground">to first reply</p>
-              </div>
-              <div>
-                <p className="font-display text-2xl font-semibold">5 min</p>
-                <p className="text-xs text-muted-foreground">click to booked</p>
-              </div>
-            </div>
           </div>
         </motion.div>
       </Section>
@@ -535,6 +527,7 @@ function FAQ() {
 export default function InferaformWebsite() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <JsonLd data={[organization, faqPage(qa)]} />
       <Navbar />
       <main>
         <Hero />

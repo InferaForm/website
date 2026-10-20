@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter, Bricolage_Grotesque } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from 'sonner'
+import { SITE_URL } from '@/app/lib/site-data'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const display = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-display' })
@@ -10,7 +11,8 @@ const display = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-disp
 export const metadata: Metadata = {
   title: 'Inferaform — Google & Meta Ads + AI Lead Follow-up',
   description: 'We run your Google and Meta ads and follow up with every lead in under 60 seconds, so more leads turn into booked appointments.',
-  metadataBase: new URL('https://inferaform.com'),
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: '/' },
   openGraph: {
     title: 'Inferaform',
     description: 'Ads that bring you leads. Automation that books them.',

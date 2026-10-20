@@ -11,6 +11,8 @@ import { FaqList } from "@/app/components/site/FaqList"
 import { AdFixes, ProcessSteps } from "@/app/components/site/Blocks"
 import { AdMakeover, RampChart } from "@/app/components/site/Visuals"
 import { industries, getIndustry } from "@/app/lib/site-data"
+import { JsonLd } from "@/app/components/site/JsonLd"
+import { industryService, faqPage, breadcrumbs } from "@/app/lib/structured-data"
 
 type Props = { params: { slug: string } }
 
@@ -37,6 +39,16 @@ export default function IndustryPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <JsonLd
+        data={[
+          industryService(industry),
+          faqPage(faq),
+          breadcrumbs([
+            { name: "Home", path: "/" },
+            { name: name, path: `/industries/${industry.slug}` },
+          ]),
+        ]}
+      />
       <Navbar />
       <main>
         {/* Hero */}

@@ -68,8 +68,8 @@ export function Contact({ defaultIndustry = "" }: { defaultIndustry?: string }) 
 
   const nextSteps = [
     "We look at your current ads, website and how fast leads get a reply.",
-    "On a 20-minute call we walk you through what we found and show you 3 ad creatives made for your business.",
-    "If it's a fit, we can have your campaigns live in about two weeks. If not, the audit and creatives are yours to keep.",
+    "On a 20-minute call we walk you through what we found. If you're a fit for our services, we'll also bring 3 ad creatives made for your business.",
+    "If you want to go ahead, your campaigns can be live in about two weeks. If not, the audit (and any creatives) are yours to keep.",
   ]
 
   return (
