@@ -687,7 +687,11 @@ function Contact() {
     setSubmitting(true)
     const form = e.currentTarget
     const formData = new FormData(form)
-    const data = Object.fromEntries(formData.entries())
+    const data = {
+      ...Object.fromEntries(formData.entries()),
+      // fromEntries keeps only the last checked box; collect them all
+      interests: formData.getAll('interests'),
+    }
     
     try {
       const res = await fetch('/api/contact', {

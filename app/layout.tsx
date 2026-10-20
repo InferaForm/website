@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Inferaform — Intelligence, Shaped for You',
   description: 'We craft intelligent, end-to-end AI systems that scale with your business.',
-  metadataBase: new URL('https://inferaform.example'),
+  metadataBase: new URL('https://inferaform.com'),
   openGraph: {
     title: 'Inferaform',
     description: 'Intelligence, Shaped for You.',
