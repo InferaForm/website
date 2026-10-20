@@ -16,7 +16,7 @@ function escapeHtml(value: string) {
 export async function POST(request: Request) {
   try {
     const data = await request.json()
-    const { name, email, company, interests, message, nda } = data || {}
+    const { name, email, company, phone, website, industry, budget, interests, message, nda } = data || {}
 
     if (!name || !email) {
       return NextResponse.json({ error: 'Name and email are required.' }, { status: 400 })
@@ -56,13 +56,20 @@ export async function POST(request: Request) {
     const safeCompany = company ? escapeHtml(String(company)) : ''
     const safeInterests = escapeHtml(interestsList)
     const safeMessage = message ? escapeHtml(String(message)) : ''
+    const details: [string, string][] = [
+      ['Phone', phone],
+      ['Website', website],
+      ['Industry', industry],
+      ['Monthly ad budget', budget],
+    ].map(([label, value]) => [label, value ? String(value) : 'Not provided'])
 
-    const subject = `New Demo Request — Inferaform: ${name} (${company || 'No company'})`
+    const subject = `New Audit Request — Inferaform: ${name} (${company || 'No company'})`
     const text = `New contact form submission:
 
 Name: ${name}
 Email: ${email}
 Company: ${company || 'Not provided'}
+${details.map(([label, value]) => `${label}: ${value}`).join('\n')}
 
 Interested In:
 ${interestsList}
@@ -95,7 +102,7 @@ Submitted: ${new Date().toISOString()}
 <body>
   <div class="container">
     <div class="header">
-      <h2 style="margin: 0;">New Demo Request</h2>
+      <h2 style="margin: 0;">New Audit Request</h2>
     </div>
     <div class="content">
       <div class="field">
@@ -110,6 +117,11 @@ Submitted: ${new Date().toISOString()}
         <div class="label">Company:</div>
         <div class="value">${safeCompany || '<em>Not provided</em>'}</div>
       </div>
+      ${details.map(([label, value]) => `
+      <div class="field">
+        <div class="label">${label}:</div>
+        <div class="value">${escapeHtml(value)}</div>
+      </div>`).join('')}
       <div class="field">
         <div class="label">Interested In:</div>
         <div class="value">${safeInterests}</div>

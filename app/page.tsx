@@ -3,40 +3,50 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
 import {
-  Bot,
   ArrowRight,
   MessageSquare,
   Megaphone,
-  Building2,
   Calendar,
   TrendingUp,
   Shield,
   Zap,
   CheckCircle2,
-  Sparkles,
+  Check,
   Mail,
   Globe,
   Clock,
   Search,
-  Lightbulb,
   Gift,
-  Target,
   Palette,
   Workflow,
   MousePointerClick,
   CalendarCheck,
-} from "lucide-react"
+  Users,
+  BarChart3,
+  Wrench,
+  Rocket,
+  Target,
+  Droplets,
+  Home,
+  Thermometer,
+  Hammer,
+  Waves,
+  Smile,
+  MapPin,
+  Bot,
+  FlaskConical,
+  Crosshair,
+  LayoutTemplate,
+  Gauge,
+  } from "lucide-react"
 
 import { Button } from "@/app/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/card"
 import { Badge } from "@/app/components/ui/badge"
 import { Input } from "@/app/components/ui/input"
 import { Textarea } from "@/app/components/ui/textarea"
-import { Separator } from "@/app/components/ui/separator"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/app/components/ui/accordion"
-import { Avatar, AvatarFallback } from "@/app/components/ui/avatar"
 import { Label } from "@/app/components/ui/label"
-import { Switch } from "@/app/components/ui/switch"
 import { toast } from "sonner"
 
 // ---------- Helpers ----------
@@ -73,6 +83,7 @@ function Navbar() {
         <nav className="hidden md:flex items-center gap-8 text-sm text-foreground/70">
           <a href="#services" className="transition-colors hover:text-foreground">Services</a>
           <a href="#how-it-works" className="transition-colors hover:text-foreground">How it works</a>
+          <a href="#industries" className="transition-colors hover:text-foreground">Industries</a>
           <a href="#pricing" className="transition-colors hover:text-foreground">Pricing</a>
           <a href="#faq" className="transition-colors hover:text-foreground">FAQ</a>
         </nav>
@@ -230,15 +241,17 @@ const services = [
       "Re-engage old leads you already paid for",
     ],
   },
-]
-
-const industries = [
-  "Water treatment",
-  "Roofing",
-  "HVAC",
-  "Remodeling",
-  "Basement waterproofing",
-  "Med spas",
+  {
+    icon: MapPin,
+    title: "SEO & GEO",
+    subtitle: "Get found on Google Maps and in AI answers",
+    features: [
+      "Google Business Profile optimization and review growth",
+      "Local service-area pages that rank",
+      "Show up in ChatGPT, Gemini and Google AI Overviews",
+      "Citations and listings kept consistent everywhere",
+    ],
+  },
 ]
 
 function Services() {
@@ -246,13 +259,13 @@ function Services() {
     <Section id="services" className="py-16 lg:py-24">
       <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center">
         <Pill>What we do</Pill>
-        <h2 className="mt-4 text-3xl sm:text-5xl font-bold">Ads, creative and follow-up under one roof</h2>
+        <h2 className="mt-4 text-3xl sm:text-5xl font-bold">Ads, SEO and follow-up under one roof</h2>
         <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
           Most agencies stop at the lead. We stay with it until it&apos;s a booked appointment, because that&apos;s what actually grows your business.
         </p>
       </motion.div>
 
-      <div className="mt-10 grid md:grid-cols-3 gap-6">
+      <div className="mt-10 grid md:grid-cols-2 gap-6">
         {services.map(({ icon: Icon, title, subtitle, features }, i) => (
           <Card key={title} className="group relative overflow-hidden hover:border-primary/40">
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
@@ -277,14 +290,6 @@ function Services() {
         ))}
       </div>
 
-      <div className="mt-10 text-center">
-        <p className="text-sm text-muted-foreground">Built for local businesses where one customer is worth $1,000+</p>
-        <div className="mt-3 flex flex-wrap justify-center gap-2">
-          {industries.map((x) => (
-            <Badge key={x} variant="secondary" className="text-sm">{x}</Badge>
-          ))}
-        </div>
-      </div>
     </Section>
   )
 }
@@ -347,123 +352,182 @@ function Pipeline() {
   )
 }
 
-// ---------- Showcase (Process/Implementation) ----------
-function Showcase() {
-  const steps = [
-    { 
-      step: "01",
-      icon: Search, 
-      title: "Discovery", 
-      desc: "We map your workflows, KPIs, constraints, and technical landscape.",
-      duration: "1-2 weeks"
-    },
-    { 
-      step: "02",
-      icon: Shield, 
-      title: "Feasibility", 
-      desc: "We validate value, scope, guardrails, and security requirements.",
-      duration: "3-5 days"
-    },
-    { 
-      step: "03",
-      icon: Building2, 
-      title: "Build", 
-      desc: "We implement, integrate, test, and deploy with your team.",
-      duration: "2-4 weeks"
-    },
-    { 
-      step: "04",
-      icon: TrendingUp, 
-      title: "Iterate", 
-      desc: "We measure performance, tune models, and scale to more use cases.",
-      duration: "Ongoing"
-    },
-  ]
+// ---------- Problem ----------
+const problems = [
+  {
+    icon: Clock,
+    title: "Leads go cold in minutes",
+    desc: "Someone fills in a form and contacts three companies. Whoever calls back first usually gets the appointment.",
+  },
+  {
+    icon: Users,
+    title: "Shared leads are a race to the bottom",
+    desc: "Lead marketplaces sell the same homeowner to several businesses. You pay full price to compete on speed and discounts.",
+  },
+  {
+    icon: BarChart3,
+    title: "Agencies report clicks, not jobs",
+    desc: "Impressions and click-through rates look nice in a report. What you need to know is how many appointments the ads booked.",
+  },
+]
 
-  const integrations = [
-    "Salesforce", "HubSpot", "Zendesk", "Intercom", "Slack", "BigQuery",
-    "Snowflake", "Marketo", "Braze", "Retool", "Airtable", "Custom APIs"
-  ]
-
-  const principles = [
-    { icon: Lightbulb, title: "Practical Innovation", desc: "Grounded in your reality and stack, not hype." },
-    { icon: Zap, title: "Elegant Systems", desc: "Composable, observable, and well-documented." },
-    { icon: Shield, title: "Transparent Intelligence", desc: "Clear prompts, evals, and safeguards." },
-  ]
-
+function Problem() {
   return (
-    <div id="showcase" className="py-16 lg:py-24">
-      <Section>
-        <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center">
-          <Pill>Our Process</Pill>
-          <h2 className="mt-4 text-3xl sm:text-5xl font-bold">From concept to production in weeks</h2>
-          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            A proven methodology that delivers measurable results without disrupting your operations.
-          </p>
-        </motion.div>
+    <Section className="py-16 lg:py-24">
+      <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="max-w-2xl">
+        <Pill>The problem</Pill>
+        <h2 className="mt-4 text-3xl sm:text-5xl font-bold">Most leads are lost after the click</h2>
+        <p className="mt-3 text-muted-foreground">
+          Running ads is the easy part. Turning a form fill into a booked appointment is where most local businesses lose money.
+        </p>
+      </motion.div>
+      <div className="mt-10 grid gap-6 md:grid-cols-3">
+        {problems.map(({ icon: Icon, title, desc }) => (
+          <div key={title} className="border-t border-foreground/10 pt-6">
+            <Icon className="h-6 w-6 text-primary"/>
+            <h3 className="mt-4 text-xl font-semibold">{title}</h3>
+            <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </Section>
+  )
+}
 
-        {/* Timeline Steps */}
-        <div className="mt-16 relative">
-          <div className="hidden lg:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20" style={{ top: "4rem" }}/>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-            {steps.map(({ step, icon: Icon, title, desc, duration }, idx) => (
-              <motion.div 
-                key={title}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="relative"
-              >
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative z-10 w-16 h-16 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mb-4">
-                    <Icon className="h-7 w-7 text-primary"/>
-                  </div>
-                  <div className="absolute top-2 left-1/2 -translate-x-1/2 -z-10 text-6xl font-bold text-muted/10">{step}</div>
-                  <h3 className="text-xl font-bold mb-2">{title}</h3>
-                  <p className="text-sm text-muted-foreground mb-3">{desc}</p>
-                  <Badge variant="outline" className="text-xs">{duration}</Badge>
-                </div>
-              </motion.div>
+// ---------- How we make ads better ----------
+const adImprovements = [
+  {
+    icon: Crosshair,
+    title: "A sharper offer",
+    before: "\u201cQuality service, call today\u201d",
+    after: "A specific, low-risk offer like a free in-home water test or a same-week roof inspection.",
+  },
+  {
+    icon: FlaskConical,
+    title: "Creative that's always tested",
+    before: "One ad running for months until it stops working",
+    after: "New hooks, images and videos every month. Winners get more budget, losers get switched off.",
+  },
+  {
+    icon: Target,
+    title: "Tighter targeting",
+    before: "Broad keywords and wasted spend on people who'll never buy",
+    after: "Service-area targeting, negative keywords and audiences built from your real customers.",
+  },
+  {
+    icon: LayoutTemplate,
+    title: "Landing pages built to convert",
+    before: "Sending paid clicks to your homepage",
+    after: "One page per offer, fast on mobile, with reviews, a short form and click-to-call.",
+  },
+  {
+    icon: Gauge,
+    title: "Tracking that counts jobs",
+    before: "Reports full of clicks and impressions",
+    after: "Conversion tracking tied to calls, forms and booked appointments, so Google and Meta optimize for real customers.",
+  },
+  {
+    icon: Zap,
+    title: "Follow-up in seconds",
+    before: "Leads wait hours for a callback",
+    after: "Every lead gets a text and call in under 60 seconds, with reminders until they book.",
+  },
+]
+
+function AdsBetter() {
+  return (
+    <Section id="results" className="py-16 lg:py-24">
+      <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center">
+        <Pill>How we get better results</Pill>
+        <h2 className="mt-4 text-3xl sm:text-5xl font-bold">What we change in your ads</h2>
+        <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+          Most underperforming ad accounts have the same handful of problems. Here&apos;s what we fix first.
+        </p>
+      </motion.div>
+
+      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {adImprovements.map(({ icon: Icon, title, before, after }) => (
+          <Card key={title} className="hover:border-primary/40">
+            <CardHeader className="pb-3">
+              <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary"><Icon className="h-5 w-5"/></div>
+              <CardTitle className="pt-3 text-xl">{title}</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm">
+              <div className="rounded-xl bg-foreground/[0.03] p-3">
+                <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">Typical</p>
+                <p className="mt-1 text-muted-foreground line-through decoration-foreground/20">{before}</p>
+              </div>
+              <div className="rounded-xl border border-primary/20 bg-primary/[0.06] p-3">
+                <p className="text-xs font-medium uppercase tracking-[0.14em] text-primary">With us</p>
+                <p className="mt-1">{after}</p>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  )
+}
+
+// ---------- SEO & GEO ----------
+const seoGeo = [
+  {
+    icon: MapPin,
+    title: "Local SEO",
+    points: [
+      "Google Business Profile fully optimized and posted to weekly",
+      "Review requests sent automatically after every job",
+      "Service and city pages for each area you cover",
+      "Consistent name, address and phone across directories",
+    ],
+  },
+  {
+    icon: Bot,
+    title: "GEO (Generative Engine Optimization)",
+    points: [
+      "Content structured so ChatGPT, Gemini and Perplexity can cite you",
+      "Clear answers to the questions customers ask AI assistants",
+      "Schema markup so search engines and AI understand your services",
+      "Mentions on the review sites and directories AI tools pull from",
+    ],
+  },
+]
+
+function SeoGeo() {
+  return (
+    <div id="seo" className="border-y border-foreground/5 bg-card/40">
+      <Section className="py-16 lg:py-24">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
+            <Pill>SEO &amp; GEO</Pill>
+            <h2 className="mt-4 text-3xl sm:text-5xl font-bold">Get found where people search now</h2>
+            <p className="mt-4 text-muted-foreground">
+              Your customers still search Google and Google Maps, but more of them now ask ChatGPT or see an AI Overview first. Ads bring leads today. SEO and GEO build a steady stream of free leads that keeps growing.
+            </p>
+            <div className="mt-6 rounded-2xl border border-foreground/10 bg-background/60 p-4 text-sm">
+              <p className="text-muted-foreground">Someone asks an AI assistant:</p>
+              <p className="mt-1 font-medium">&ldquo;Who&apos;s the best water softener company near Mesa, AZ?&rdquo;</p>
+              <p className="mt-3 text-muted-foreground">Our goal is for your business to be in the answer.</p>
+            </div>
+          </motion.div>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {seoGeo.map(({ icon: Icon, title, points }) => (
+              <Card key={title} className="bg-background/60">
+                <CardHeader className="pb-3">
+                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary"><Icon className="h-5 w-5"/></div>
+                  <CardTitle className="pt-3 text-xl">{title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 text-sm">
+                    {points.map((p) => (
+                      <li key={p} className="flex items-start gap-2">
+                        <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary"/> <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
             ))}
-          </div>
-        </div>
-
-        {/* Integrations Section */}
-        <div className="mt-20">
-          <div className="text-center mb-8">
-            <h3 className="text-xl font-bold mb-2">Seamless Integrations</h3>
-            <p className="text-sm text-muted-foreground">We connect with the tools you already use</p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            {integrations.map((name) => (
-              <Badge key={name} variant="secondary" className="px-4 py-2">{name}</Badge>
-            ))}
-          </div>
-        </div>
-
-        {/* Principles Section */}
-        <div className="mt-16 grid md:grid-cols-3 gap-6">
-          {principles.map(({ icon: Icon, title, desc }) => (
-            <Card key={title} className="text-center border-primary/20">
-              <CardContent className="pt-6">
-                <div className="inline-flex p-3 rounded-full bg-primary/10 text-primary mb-4">
-                  <Icon className="h-6 w-6"/>
-                </div>
-                <h4 className="font-bold mb-2">{title}</h4>
-                <p className="text-sm text-muted-foreground">{desc}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#contact"><Button size="lg" className="gap-2">Start Your Pilot <ArrowRight className="h-4 w-4"/></Button></a>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Clock className="h-4 w-4"/>
-            <span>First results in 7–14 days</span>
           </div>
         </div>
       </Section>
@@ -471,212 +535,300 @@ function Showcase() {
   )
 }
 
-// ---------- Pricing ----------
-function Pricing() {
-  const tiers = [
-    {
-      name: "Starter",
-      price: "$4,999",
-      period: "/mo",
-      for: "Solo founders & small teams",
-      features: ["1 AI solution deployment", "Up to 3 integrations", "Email + chat support", "Monthly reporting"],
-      cta: "Start",
-    },
-    {
-      name: "Growth",
-      price: "$12,999",
-      period: "/mo",
-      for: "Scaling businesses",
-      features: ["Up to 3 AI solutions", "Up to 10 integrations", "Priority support & SLA", "Weekly reporting", "Custom model tuning"],
-      cta: "Scale",
-      highlighted: true,
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      period: "",
-      for: "Multi‑brand & complex ops",
-      features: ["Unlimited solutions & workspaces", "SAML SSO, roles & audit log", "Dedicated CSM & SLA", "On‑prem / VPC options"],
-      cta: "Talk to sales",
-    },
-  ]
+// ---------- Industries ----------
+const industryCards = [
+  {
+    icon: Droplets,
+    name: "Water treatment",
+    pain: "Homeowners don't know they have a water problem until someone shows them.",
+    approach: "Free water test offers on Meta, plus Google ads for hard water, well water and softener searches.",
+  },
+  {
+    icon: Home,
+    name: "Roofing",
+    pain: "Demand spikes after storms, and the fastest company to respond wins the inspection.",
+    approach: "Storm-triggered campaigns, free inspection offers and instant follow-up so you're first to call.",
+  },
+  {
+    icon: Thermometer,
+    name: "HVAC",
+    pain: "Emergency calls are expensive on Google, and replacement jobs take longer to close.",
+    approach: "Local Services Ads for emergencies and Meta campaigns for system replacement and financing offers.",
+  },
+  {
+    icon: Hammer,
+    name: "Remodeling",
+    pain: "High-value projects with long decision cycles and lots of tire-kickers.",
+    approach: "Before-and-after creative, budget pre-qualification in the form, and nurture sequences until they're ready.",
+  },
+  {
+    icon: Waves,
+    name: "Basement waterproofing",
+    pain: "Customers search in a panic after a leak, then compare three quotes.",
+    approach: "Search ads for urgent problems, plus educational video that builds trust before the estimate.",
+  },
+  {
+    icon: Smile,
+    name: "Med spas",
+    pain: "Lots of interest in treatments, but many bookings never show up.",
+    approach: "Offer-led Meta campaigns within ad policy, instant booking by text and reminders that cut no-shows.",
+  },
+]
 
+function Industries() {
   return (
-    <Section id="pricing" className="py-16 lg:py-24">
+    <Section id="industries" className="py-16 lg:py-24">
       <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center">
-        <Pill>Pricing</Pill>
-        <h2 className="mt-4 text-3xl sm:text-5xl font-bold">Simple plans that grow with you</h2>
+        <Pill>Industries</Pill>
+        <h2 className="mt-4 text-3xl sm:text-5xl font-bold">Built for high-ticket local businesses</h2>
+        <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+          Every industry buys differently, so every playbook is different. Here&apos;s how we approach the ones we know best.
+        </p>
       </motion.div>
 
-      <div className="mt-10 grid md:grid-cols-3 gap-6">
-        {tiers.map((t) => (
-          <Card key={t.name} className={`${t.highlighted ? "border-primary shadow-lg" : ""}`}>
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle>{t.name}</CardTitle>
-                {t.highlighted && <Badge>Most Popular</Badge>}
-              </div>
-              <div className="mt-2 text-3xl font-bold">{t.price} <span className="text-base font-normal text-muted-foreground">{t.period}</span></div>
-              <p className="text-sm text-muted-foreground">{t.for}</p>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              {t.features.map((f) => (
-                <div key={f} className="flex items-start gap-2 text-sm">
-                  <CheckCircle2 className="h-4 w-4 text-primary mt-0.5"/> {f}
-                </div>
-              ))}
-              <a href="#contact"><Button className="w-full mt-2">{t.cta}</Button></a>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-      <div className="mt-8 text-center text-sm text-muted-foreground">
-        All plans include ongoing support, monitoring, and model improvements. Annual discounts available.
-      </div>
-    </Section>
-  )
-}
-
-// ---------- Social Proof ----------
-function SocialProof() {
-  const stats = [
-    { value: "500K+", label: "Hours Saved", icon: Clock },
-    { value: "95%", label: "Client Satisfaction", icon: CheckCircle2 },
-    { value: "40+", label: "AI Solutions Deployed", icon: Zap },
-    { value: "12x", label: "Average ROI", icon: TrendingUp },
-  ]
-
-  const companies = [
-    { name: "TechCorp", industry: "SaaS" },
-    { name: "RetailMax", industry: "E-commerce" },
-    { name: "FinanceHub", industry: "FinTech" },
-    { name: "HealthSync", industry: "HealthTech" },
-    { name: "LogiTrack", industry: "Logistics" },
-    { name: "EduLearn", industry: "EdTech" },
-  ]
-
-  return (
-    <Section className="py-16 border-y bg-muted/20">
-      <div className="text-center mb-10">
-        <p className="text-sm font-medium text-muted-foreground mb-2">Trusted by forward-thinking companies</p>
-        <h3 className="text-xl font-bold">Delivering measurable results across industries</h3>
-      </div>
-
-      {/* Stats Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        {stats.map(({ value, label, icon: Icon }) => (
-          <motion.div
-            key={label}
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">
-              <Icon className="h-6 w-6"/>
-            </div>
-            <div className="text-3xl font-bold mb-1">{value}</div>
-            <div className="text-sm text-muted-foreground">{label}</div>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Company Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-        {companies.map(({ name, industry }) => (
-          <Card key={name} className="group hover:shadow-md transition-all hover:scale-105 cursor-pointer">
-            <CardContent className="p-4 text-center">
-              <div className="w-10 h-10 mx-auto mb-2 rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                <span className="text-lg font-bold text-primary">{name.charAt(0)}</span>
-              </div>
-              <div className="font-semibold text-sm mb-1">{name}</div>
-              <div className="text-xs text-muted-foreground">{industry}</div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </Section>
-  )
-}
-
-// ---------- Testimonials ----------
-function Testimonials() {
-  const items = [
-    {
-      name: "Sarah K.",
-      role: "VP Operations, D2C Brand",
-      quote: "Inferaform built us a lead routing system that increased our sales team's conversion rate by 38% in the first month.",
-    },
-    {
-      name: "Marcus T.",
-      role: "CTO, SaaS Startup",
-      quote: "We shipped two AI copilots in under two weeks. The team's ability to integrate with our existing stack was impressive.",
-    },
-    {
-      name: "Lisa Chen",
-      role: "Head of Marketing, FinTech",
-      quote: "The personalization engine they built saves our team 40+ hours a week and boosted engagement by 25%.",
-    },
-  ]
-
-  return (
-    <Section className="py-16">
-      <div className="grid md:grid-cols-3 gap-6">
-        {items.map((t) => (
-          <Card key={t.name}>
-            <CardHeader>
+      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {industryCards.map(({ icon: Icon, name, pain, approach }) => (
+          <Card key={name} className="group hover:border-primary/40">
+            <CardHeader className="pb-3">
               <div className="flex items-center gap-3">
-                <Avatar><AvatarFallback>{t.name.split(" ")[0][0]}{t.name.split(" ")[1]?.[0] ?? ""}</AvatarFallback></Avatar>
-                <div>
-                  <CardTitle className="text-base">{t.name}</CardTitle>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
-                </div>
+                <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground"><Icon className="h-5 w-5"/></div>
+                <CardTitle className="text-xl">{name}</CardTitle>
               </div>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm">"{t.quote}"</p>
+            <CardContent className="space-y-3 text-sm">
+              <p><span className="font-medium text-foreground">The challenge: </span><span className="text-muted-foreground">{pain}</span></p>
+              <p><span className="font-medium text-primary">Our approach: </span><span className="text-muted-foreground">{approach}</span></p>
             </CardContent>
           </Card>
         ))}
+      </div>
+
+      <p className="mt-10 text-center text-sm text-muted-foreground">
+        Don&apos;t see your industry? If one customer is worth $1,000 or more to you, <a href="#contact" className="text-primary hover:underline">we should talk</a>.
+      </p>
+    </Section>
+  )
+}
+
+// ---------- Process ----------
+const processSteps = [
+  { icon: Search, when: "Day 1", title: "Free audit", desc: "We review your current ads, website and follow-up, and show you where leads are slipping through." },
+  { icon: Wrench, when: "Week 1", title: "Build", desc: "Tracking, landing page, first round of ad creative and your follow-up automation, all set up and tested." },
+  { icon: Rocket, when: "Week 2", title: "Launch", desc: "Campaigns go live on Google and Meta. Every lead gets an instant reply and lands in your pipeline." },
+  { icon: TrendingUp, when: "Ongoing", title: "Optimize", desc: "Weekly report on leads, cost per lead and booked appointments. New creative every month." },
+]
+
+function Process() {
+  return (
+    <Section id="process" className="py-16 lg:py-24">
+      <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center">
+        <Pill>Our process</Pill>
+        <h2 className="mt-4 text-3xl sm:text-5xl font-bold">Live in about two weeks</h2>
+        <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+          No long onboarding. You spend about an hour with us up front, then we handle the rest.
+        </p>
+      </motion.div>
+
+      <div className="relative mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="absolute left-0 right-0 top-6 hidden h-px bg-gradient-to-r from-transparent via-foreground/15 to-transparent lg:block" />
+        {processSteps.map(({ icon: Icon, when, title, desc }) => (
+          <div key={title} className="relative">
+            <div className="relative grid h-12 w-12 place-items-center rounded-full border border-foreground/10 bg-background text-primary">
+              <Icon className="h-5 w-5"/>
+            </div>
+            <p className="mt-5 text-xs font-medium uppercase tracking-[0.14em] text-primary">{when}</p>
+            <h3 className="mt-1 text-xl font-semibold">{title}</h3>
+            <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </Section>
+  )
+}
+
+// ---------- Pricing ----------
+const tiers = [
+  {
+    name: "Ads",
+    price: "$1,500",
+    period: "/mo",
+    for: "You already handle follow-up well and need more leads",
+    features: [
+      "Google Search or Meta campaigns",
+      "Conversion tracking setup",
+      "4 new ad creatives per month",
+      "Weekly performance report",
+    ],
+    cta: "Start with ads",
+  },
+  {
+    name: "Ads + Automation",
+    price: "$2,500",
+    period: "/mo",
+    for: "The full system: leads in, appointments out",
+    features: [
+      "Google and Meta campaigns",
+      "Landing page built and tested",
+      "8 new ad creatives per month",
+      "Instant AI text, call and email follow-up",
+      "CRM pipeline and appointment reminders",
+      "Weekly report on booked appointments",
+    ],
+    cta: "Get the full system",
+    highlighted: true,
+  },
+  {
+    name: "Pay per appointment",
+    price: "Custom",
+    period: "",
+    for: "Pay only for qualified appointments that get booked",
+    features: [
+      "Everything in Ads + Automation",
+      "Priced per booked appointment",
+      "Available in select niches",
+      "Based on your average job value",
+    ],
+    cta: "Ask about pricing",
+  },
+]
+
+function Pricing() {
+  return (
+    <div id="pricing" className="border-y border-foreground/5 bg-card/40">
+      <Section className="py-16 lg:py-24">
+        <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center">
+          <Pill>Pricing</Pill>
+          <h2 className="mt-4 text-3xl sm:text-5xl font-bold">Straightforward pricing</h2>
+          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+            Month-to-month. Ad spend is paid directly to Google and Meta from your own accounts, so you always see exactly where it goes.
+          </p>
+        </motion.div>
+
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          {tiers.map((t) => (
+            <Card
+              key={t.name}
+              className={`relative flex flex-col ${t.highlighted ? "border-primary/60 bg-gradient-to-b from-primary/[0.08] to-card shadow-glow" : ""}`}
+            >
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-xl">{t.name}</CardTitle>
+                  {t.highlighted && <Badge>Most popular</Badge>}
+                </div>
+                <div className="pt-4 font-display text-5xl font-semibold tracking-tight">
+                  {t.price}<span className="ml-1 text-base font-normal text-muted-foreground">{t.period}</span>
+                </div>
+                <p className="text-sm text-muted-foreground">{t.for}</p>
+              </CardHeader>
+              <CardContent className="flex flex-1 flex-col">
+                <ul className="flex-1 space-y-3">
+                  {t.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm">
+                      <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary"/> {f}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#contact" className="mt-8 block">
+                  <Button className="w-full" variant={t.highlighted ? "default" : "outline"}>{t.cta}</Button>
+                </a>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <p className="mt-8 text-center text-sm text-muted-foreground">
+          We recommend a starting ad budget of at least $1,500/month for most local markets.
+        </p>
+      </Section>
+    </div>
+  )
+}
+
+// ---------- Founding clients ----------
+function FoundingClients() {
+  const perks = [
+    "Reduced pricing for the first 3 months",
+    "Direct line to the people running your ads",
+    "Weekly strategy call",
+    "Only one business per service area",
+  ]
+
+  return (
+    <Section className="py-16 lg:py-24">
+      <div className="relative overflow-hidden rounded-3xl border border-primary/25 bg-gradient-to-br from-primary/[0.10] via-card to-card p-8 sm:p-12">
+        <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-primary/20 blur-3xl" />
+        <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <Pill>Founding client program</Pill>
+            <h2 className="mt-4 text-3xl sm:text-4xl font-bold">We&apos;re taking on a few founding clients</h2>
+            <p className="mt-3 text-muted-foreground">
+              We&apos;re building our first case studies in each industry we serve. Founding clients get better pricing and more of our attention, and in return we ask to share the results.
+            </p>
+          </div>
+          <div>
+            <ul className="space-y-3">
+              {perks.map((p) => (
+                <li key={p} className="flex items-start gap-3">
+                  <span className="mt-0.5 grid h-5 w-5 flex-shrink-0 place-items-center rounded-full bg-primary text-primary-foreground">
+                    <Check className="h-3 w-3" strokeWidth={3}/>
+                  </span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="#contact" className="mt-8 inline-block">
+              <Button size="lg" className="gap-2">Apply for a spot <ArrowRight className="h-4 w-4"/></Button>
+            </a>
+          </div>
+        </div>
       </div>
     </Section>
   )
 }
 
 // ---------- FAQ ----------
-function FAQ() {
-  const qa = [
-    {
-      q: "How fast can we start?",
-      a: "Discovery calls typically happen within a week. First value is usually delivered within 14 days of kickoff.",
-    },
-    {
-      q: "Do you replace our existing tools?",
-      a: "No—we integrate with your current stack (CRMs, helpdesks, data warehouses) and fill the gaps with AI-powered automation.",
-    },
-    {
-      q: "What about data privacy and security?",
-      a: "We follow SOC2-style controls, offer data retention policies, role-based access, and optional regional data residency.",
-    },
-    {
-      q: "Can humans supervise AI decisions?",
-      a: "Absolutely. Every system supports human-in-the-loop approvals, fallback routing, and escalation workflows.",
-    },
-  ]
+const qa = [
+  {
+    q: "How much should I spend on ads?",
+    a: "For most local service businesses we recommend starting with at least $1,500 a month in ad spend. In competitive markets or high-ticket services, more budget usually means more booked jobs. We'll give you a recommendation for your area during the free audit.",
+  },
+  {
+    q: "How quickly will I get leads?",
+    a: "Campaigns usually go live within about two weeks of kickoff, and leads typically start coming in soon after launch. The first 60 to 90 days are when we learn what works best in your market and bring the cost per appointment down.",
+  },
+  {
+    q: "Do I own my ad accounts?",
+    a: "Yes. Campaigns run in your own Google and Meta ad accounts, and you pay the platforms directly. If you ever leave, you keep the accounts, the data and the creative.",
+  },
+  {
+    q: "Is there a long-term contract?",
+    a: "No. We work month-to-month. We'd rather keep you because the results are good than because a contract says so.",
+  },
+  {
+    q: "Will the AI follow-up sound robotic?",
+    a: "The messages are written for your business and sound like a helpful person from your office. Your team can take over any conversation at any time, and anything the AI can't handle gets passed to you right away.",
+  },
+  {
+    q: "Which industries and areas do you work with?",
+    a: "Local businesses in the US and Canada where one customer is worth $1,000 or more, such as water treatment, roofing, HVAC, remodeling, basement waterproofing and med spas.",
+  },
+]
 
+function FAQ() {
   return (
     <Section id="faq" className="py-16 lg:py-24">
-      <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center">
-        <Pill>FAQ</Pill>
-        <h2 className="mt-4 text-3xl sm:text-5xl font-bold">Everything you need to know</h2>
-      </motion.div>
-      <div className="mt-8 max-w-3xl mx-auto">
-        <Accordion type="single" collapsible>
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+        <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
+          <Pill>FAQ</Pill>
+          <h2 className="mt-4 text-3xl sm:text-5xl font-bold">Questions, answered</h2>
+          <p className="mt-3 text-muted-foreground">
+            Something else on your mind? <a href="#contact" className="text-primary hover:underline">Ask us directly.</a>
+          </p>
+        </motion.div>
+        <Accordion type="single" collapsible className="border-t border-foreground/10">
           {qa.map((x, i) => (
-            <AccordionItem value={`item-${i}`} key={x.q}>
-              <AccordionTrigger className="text-left">{x.q}</AccordionTrigger>
+            <AccordionItem value={`item-${i}`} key={x.q} className="border-foreground/10">
+              <AccordionTrigger className="py-5 text-left text-base font-medium hover:no-underline">{x.q}</AccordionTrigger>
               <AccordionContent className="text-muted-foreground">{x.a}</AccordionContent>
             </AccordionItem>
           ))}
@@ -687,6 +839,12 @@ function FAQ() {
 }
 
 // ---------- Contact ----------
+const industryOptions = ["Water treatment", "Roofing", "HVAC", "Remodeling", "Basement waterproofing", "Med spa", "Other"]
+const budgetOptions = ["Under $1,500/mo", "$1,500 – $3,000/mo", "$3,000 – $10,000/mo", "$10,000+/mo", "Not running ads yet"]
+
+const selectClass =
+  "flex h-11 w-full rounded-xl border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+
 function Contact() {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
@@ -701,7 +859,7 @@ function Contact() {
       // fromEntries keeps only the last checked box; collect them all
       interests: formData.getAll('interests'),
     }
-    
+
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -709,15 +867,13 @@ function Contact() {
         body: JSON.stringify(data)
       })
       const result = await res.json()
-      
+
       if (res.ok) {
         setSubmitted(true)
-        toast.success("🎉 Thank you! We'll contact you within 24 hours.", {
+        toast.success("Thanks! We'll be in touch within one business day.", {
           duration: 5000,
         })
         form.reset()
-        // Reset submitted state after 5 seconds
-        setTimeout(() => setSubmitted(false), 5000)
       } else {
         toast.error(result.error || "Something went wrong. Please try again.", {
           duration: 6000,
@@ -736,107 +892,121 @@ function Contact() {
     }
   }
 
+  const nextSteps = [
+    "We look at your current ads, website and how fast leads get a reply.",
+    "On a 20-minute call we walk you through what we found and show you 3 ad creatives made for your business.",
+    "If it's a fit, we can have your campaigns live in about two weeks. If not, the audit and creatives are yours to keep.",
+  ]
+
   return (
     <Section id="contact" className="py-16 lg:py-24">
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid gap-12 lg:grid-cols-2">
         <div>
-          <Pill>Get in touch</Pill>
-          <h3 className="mt-4 text-2xl font-bold">Tell us about your workflows</h3>
-          <p className="mt-2 text-muted-foreground">We'll propose a pilot that delivers ROI in weeks, not months.</p>
+          <Pill>Free audit</Pill>
+          <h2 className="mt-4 text-3xl sm:text-5xl font-bold">Get your free ad audit</h2>
+          <p className="mt-3 text-muted-foreground">Tell us a bit about your business. It takes about a minute.</p>
 
-          <div className="mt-6 space-y-4 text-sm">
-            <div className="flex items-center gap-3"><Mail className="h-4 w-4"/> inferaform@gmail.com</div>
-            <div className="flex items-center gap-3"><Globe className="h-4 w-4"/> Worldwide / Remote</div>
-            <div className="flex items-center gap-3"><Clock className="h-4 w-4"/> Mon–Fri, 9am–6pm EST</div>
+          <h3 className="mt-10 text-sm font-medium uppercase tracking-[0.14em] text-foreground/70">What happens next</h3>
+          <ol className="mt-4 space-y-5">
+            {nextSteps.map((step, i) => (
+              <li key={step} className="flex gap-4">
+                <span className="grid h-8 w-8 flex-shrink-0 place-items-center rounded-full border border-foreground/10 font-display text-sm text-primary">{i + 1}</span>
+                <p className="pt-1 text-sm text-muted-foreground">{step}</p>
+              </li>
+            ))}
+          </ol>
+
+          <div className="mt-10 space-y-3 text-sm text-muted-foreground">
+            <a href="mailto:inferaform@gmail.com" className="flex items-center gap-3 hover:text-foreground"><Mail className="h-4 w-4 text-primary"/> inferaform@gmail.com</a>
+            <div className="flex items-center gap-3"><Globe className="h-4 w-4 text-primary"/> Serving the US and Canada</div>
           </div>
         </div>
 
-        <Card>
+        <Card className="p-2 sm:p-4">
           {submitted ? (
-            <>
-              <CardHeader>
-                <div className="flex flex-col items-center text-center py-4">
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ type: "spring", duration: 0.5 }}
-                    className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4"
-                  >
-                    <CheckCircle2 className="h-8 w-8 text-primary" />
-                  </motion.div>
-                  <CardTitle className="text-2xl mb-2">Thank you!</CardTitle>
-                  <p className="text-muted-foreground">Your message has been sent successfully.</p>
-                </div>
-              </CardHeader>
-              <CardContent className="text-center space-y-4">
-                <p className="text-sm">
-                  We've received your inquiry and our team will get back to you within 24 hours.
-                </p>
-                <div className="pt-4 pb-2">
-                  <Button 
-                    onClick={() => setSubmitted(false)} 
-                    variant="outline" 
-                    className="gap-2"
-                  >
-                    Send another message
-                  </Button>
-                </div>
-              </CardContent>
-            </>
+            <CardContent className="flex flex-col items-center py-16 text-center">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", duration: 0.5 }}
+                className="grid h-16 w-16 place-items-center rounded-full bg-primary text-primary-foreground"
+              >
+                <Check className="h-8 w-8" strokeWidth={3}/>
+              </motion.div>
+              <h3 className="mt-6 text-2xl font-semibold">Request received</h3>
+              <p className="mt-2 max-w-sm text-muted-foreground">
+                We&apos;ll start on your audit and reach out within one business day to set up a time to walk through it.
+              </p>
+              <Button onClick={() => setSubmitted(false)} variant="outline" className="mt-8">
+                Submit another request
+              </Button>
+            </CardContent>
           ) : (
-            <>
-              <CardHeader>
-                <CardTitle>Book a demo</CardTitle>
-                <p className="text-sm text-muted-foreground">Share a few details and we'll get back within one business day.</p>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={onSubmit} className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Full name</Label>
-                  <Input id="name" name="name" placeholder="Jane Doe" required/>
+            <CardContent className="pt-6">
+              <form onSubmit={onSubmit} className="space-y-5">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Your name</Label>
+                    <Input id="name" name="name" placeholder="Jane Doe" required className="h-11 rounded-xl"/>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="company">Business name</Label>
+                    <Input id="company" name="company" placeholder="Clear Water Co." required className="h-11 rounded-xl"/>
+                  </div>
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" name="email" type="email" placeholder="jane@company.com" required className="h-11 rounded-xl"/>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Phone</Label>
+                    <Input id="phone" name="phone" type="tel" placeholder="(555) 123-4567" className="h-11 rounded-xl"/>
+                  </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">Work email</Label>
-                  <Input id="email" name="email" type="email" placeholder="jane@company.com" required/>
+                  <Label htmlFor="website">Website</Label>
+                  <Input id="website" name="website" placeholder="yourbusiness.com" className="h-11 rounded-xl"/>
                 </div>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="company">Company</Label>
-                <Input id="company" name="company" placeholder="Acme Inc"/>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="interest">What are you interested in?</Label>
-                <div className="grid sm:grid-cols-2 gap-2 text-sm">
-                  {[
-                    { id: "ads", label: "Google & Meta Ads", emoji: "📣" },
-                    { id: "creative", label: "Ad Creative & Landing Pages", emoji: "🎨" },
-                    { id: "automation", label: "Lead Follow-up Automation", emoji: "⚡" },
-                    { id: "audit", label: "Free Ad Audit", emoji: "🔍" },
-                  ].map((x) => (
-                    <label key={x.id} className="flex items-center gap-2 rounded-lg border p-2 cursor-pointer hover:bg-accent">
-                      <input type="checkbox" name="interests" value={x.label} />
-                      <span>{x.emoji}</span>
-                      <span>{x.label}</span>
-                    </label>
-                  ))}
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="industry">Industry</Label>
+                    <select id="industry" name="industry" required defaultValue="" className={selectClass}>
+                      <option value="" disabled>Select one</option>
+                      {industryOptions.map((x) => <option key={x}>{x}</option>)}
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="budget">Monthly ad budget</Label>
+                    <select id="budget" name="budget" required defaultValue="" className={selectClass}>
+                      <option value="" disabled>Select one</option>
+                      {budgetOptions.map((x) => <option key={x}>{x}</option>)}
+                    </select>
+                  </div>
                 </div>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
-                <Textarea id="message" name="message" placeholder="Describe your use case, tools, and timeline" rows={5}/>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Switch id="nda" name="nda"/><Label htmlFor="nda">Request NDA</Label>
+                <div className="space-y-2">
+                  <Label>What are you interested in?</Label>
+                  <div className="flex flex-wrap gap-2">
+                    {["Google & Meta Ads", "Ad Creative & Landing Pages", "Lead Follow-up Automation", "SEO & GEO"].map((x) => (
+                      <label key={x} className="cursor-pointer">
+                        <input type="checkbox" name="interests" value={x} className="peer sr-only" />
+                        <span className="inline-flex items-center rounded-full border border-foreground/15 px-3.5 py-1.5 text-sm transition-colors hover:border-foreground/30 peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary peer-focus-visible:ring-2 peer-focus-visible:ring-ring">
+                          {x}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
                 </div>
-                <Button type="submit" className="gap-2" disabled={submitting}>
-                  {submitting ? "Sending..." : "Send request"} <ArrowRight className="h-4 w-4"/>
+                <div className="space-y-2">
+                  <Label htmlFor="message">Anything else? <span className="text-muted-foreground">(optional)</span></Label>
+                  <Textarea id="message" name="message" placeholder="Service area, what you've tried so far, goals for the next few months" rows={3} className="rounded-xl"/>
+                </div>
+                <Button type="submit" size="lg" className="w-full gap-2" disabled={submitting}>
+                  {submitting ? "Sending..." : "Get my free audit"} <ArrowRight className="h-4 w-4"/>
                 </Button>
-              </div>
-                </form>
-              </CardContent>
-            </>
+                <p className="text-center text-xs text-muted-foreground">No contract, no spam. We&apos;ll only use your details to prepare your audit.</p>
+              </form>
+            </CardContent>
           )}
         </Card>
       </div>
@@ -847,43 +1017,42 @@ function Contact() {
 // ---------- Footer ----------
 function Footer() {
   return (
-    <footer className="border-t">
-      <Section className="py-10">
-        <div className="grid sm:grid-cols-3 gap-6">
-          <div>
-            <div className="flex items-center gap-2 font-semibold"><Bot className="h-5 w-5"/> Inferaform</div>
-            <p className="mt-2 text-sm text-muted-foreground">Intelligence, shaped for you. AI systems that scale with your business.</p>
+    <footer className="border-t border-foreground/5">
+      <Section className="py-14">
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-sm">
+            <a href="#home" className="flex items-center gap-2.5">
+              <LogoMark />
+              <span className="font-display text-lg font-semibold tracking-tight">Inferaform</span>
+            </a>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Google and Meta ads plus AI lead follow-up for local businesses in the US and Canada.
+            </p>
           </div>
-          <div className="grid grid-cols-2 gap-6 text-sm">
+          <div className="grid grid-cols-2 gap-10 text-sm sm:gap-16">
             <div>
-              <div className="font-semibold mb-2">Company</div>
-              <ul className="space-y-2">
-                <li><a href="#services" className="hover:underline">Services</a></li>
-                <li><a href="#showcase" className="hover:underline">Process</a></li>
-                <li><a href="#pricing" className="hover:underline">Pricing</a></li>
-                <li><a href="#faq" className="hover:underline">FAQ</a></li>
+              <p className="font-medium">Company</p>
+              <ul className="mt-4 space-y-3 text-muted-foreground">
+                <li><a href="#services" className="hover:text-foreground">Services</a></li>
+                <li><a href="#how-it-works" className="hover:text-foreground">How it works</a></li>
+                <li><a href="#industries" className="hover:text-foreground">Industries</a></li>
+                <li><a href="#seo" className="hover:text-foreground">SEO &amp; GEO</a></li>
+                <li><a href="#pricing" className="hover:text-foreground">Pricing</a></li>
+                <li><a href="#faq" className="hover:text-foreground">FAQ</a></li>
               </ul>
             </div>
             <div>
-              <div className="font-semibold mb-2">Legal</div>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:underline">Privacy</a></li>
-                <li><a href="#" className="hover:underline">Terms</a></li>
-                <li><a href="#" className="hover:underline">Security</a></li>
+              <p className="font-medium">Get in touch</p>
+              <ul className="mt-4 space-y-3 text-muted-foreground">
+                <li><a href="#contact" className="hover:text-foreground">Free ad audit</a></li>
+                <li><a href="mailto:inferaform@gmail.com" className="hover:text-foreground">inferaform@gmail.com</a></li>
               </ul>
-            </div>
-          </div>
-          <div className="text-sm">
-            <div className="font-semibold">Stay Updated</div>
-            <p className="mt-2 text-muted-foreground">Get product updates and case studies.</p>
-            <div className="mt-3 flex gap-2">
-              <Input placeholder="huzaifa@inferaform.com" />
-              <Button>Join</Button>
             </div>
           </div>
         </div>
-        <Separator className="my-6"/>
-        <div className="text-xs text-muted-foreground">© {new Date().getFullYear()} Inferaform. All rights reserved.</div>
+        <div className="mt-14 border-t border-foreground/5 pt-6 text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Inferaform. All rights reserved.
+        </div>
       </Section>
     </footer>
   )
@@ -895,12 +1064,15 @@ export default function InferaformWebsite() {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <Hero />
-      <SocialProof />
+      <Problem />
       <Services />
       <Pipeline />
-      <Showcase />
+      <AdsBetter />
+      <SeoGeo />
+      <Industries />
+      <Process />
       <Pricing />
-      <Testimonials />
+      <FoundingClients />
       <FAQ />
       <Contact />
       <Footer />
