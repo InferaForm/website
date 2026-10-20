@@ -1,5 +1,5 @@
 import { Check, X } from "lucide-react"
-import { adImprovements, processSteps } from "@/app/lib/site-data"
+import { adImprovements, processSteps, testimonials } from "@/app/lib/site-data"
 import { Section, Pill, Reveal } from "./primitives"
 
 // Typical vs. our approach, as a compact comparison instead of a card grid
@@ -58,6 +58,34 @@ export function ProcessSteps() {
             <h3 className="mt-1 text-xl font-semibold">{title}</h3>
             <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
           </div>
+        ))}
+      </div>
+    </Section>
+  )
+}
+
+// Renders only once real client quotes are added to `testimonials` in site-data
+export function Testimonials() {
+  if (testimonials.length === 0) return null
+
+  return (
+    <Section id="testimonials" className="py-16 lg:py-24">
+      <Reveal className="text-center">
+        <Pill>Client results</Pill>
+        <h2 className="mt-4 text-3xl sm:text-5xl font-bold">What our clients say</h2>
+      </Reveal>
+      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {testimonials.map((t) => (
+          <figure key={t.name} className="flex flex-col rounded-2xl border bg-card p-6">
+            <blockquote className="flex-1 text-lg leading-relaxed">&ldquo;{t.quote}&rdquo;</blockquote>
+            <figcaption className="mt-6 flex items-center gap-3">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-primary/15 font-display font-semibold text-primary">{t.name.charAt(0)}</span>
+              <span>
+                <span className="block text-sm font-semibold">{t.name}</span>
+                <span className="block text-xs text-muted-foreground">{t.business} · {t.location}</span>
+              </span>
+            </figcaption>
+          </figure>
         ))}
       </div>
     </Section>

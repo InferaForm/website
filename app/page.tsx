@@ -33,6 +33,8 @@ import { Footer } from "@/app/components/site/Footer"
 import { Contact } from "@/app/components/site/Contact"
 import { FaqList } from "@/app/components/site/FaqList"
 import { industries } from "@/app/lib/site-data"
+import { AdMakeover, LeadLeak, RampChart } from "@/app/components/site/Visuals"
+import { Testimonials } from "@/app/components/site/Blocks"
 
 // ---------- Hero ----------
 const leadFlow = [
@@ -326,6 +328,8 @@ function Pipeline() {
           ))}
         </ol>
 
+        <LeadLeak />
+
         <div className="mt-10 flex justify-center">
           <a href="#contact"><Button size="lg" className="gap-2">Get your free audit <ArrowRight className="h-4 w-4"/></Button></a>
         </div>
@@ -536,7 +540,10 @@ export default function InferaformWebsite() {
         <Hero />
         <Problem />
         <Services />
+        <AdMakeover example={industries[0].adExample} />
         <Pipeline />
+        <RampChart />
+        <Testimonials />
         <IndustriesTeaser />
         <Pricing />
         <FAQ />

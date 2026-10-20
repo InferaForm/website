@@ -30,6 +30,13 @@ export type Industry = {
   offers: string[]
   channels: { name: string; why: string }[]
   faq: { q: string; a: string }[]
+  adExample: AdExample
+}
+
+export type AdExample = {
+  business: string
+  before: { text: string; image: string; cta: string }
+  after: { text: string; headline: string; overlay: string; cta: string }
 }
 
 export const industries: Industry[] = [
@@ -54,6 +61,11 @@ export const industries: Industry[] = [
       { name: "Google Search", why: "Catches people already searching for water softeners, filtration or well water treatment." },
       { name: "AI follow-up", why: "Asks whether they're on city water or a well and books the test while they're still interested." },
     ],
+    adExample: {
+      business: "Clear Water Co.",
+      before: { text: "Quality water treatment solutions since 1998. Call us today for all your water needs!", image: "Photo of a water softener", cta: "Learn more" },
+      after: { text: "White spots on your dishes? Your water might be the problem. We'll test it for free, in your home, this week.", headline: "Free in-home water test", overlay: "Hard water? Find out in 15 minutes.", cta: "Book free test" },
+    },
     faq: [
       { q: "Do you work with dealers of specific brands?", a: "Yes. We work with independent dealers of brands like Kinetico, RainSoft, EcoWater and Hague, as long as you control your own local marketing." },
       { q: "Can you target well water homes?", a: "We target rural areas and use well water specific messaging and keywords, which tends to attract homeowners who need treatment most." },
@@ -80,6 +92,11 @@ export const industries: Industry[] = [
       { name: "Meta ads", why: "Reaches homeowners in hail and wind-affected zip codes right after a storm." },
       { name: "AI follow-up", why: "Calls and texts within seconds so you book the inspection before competitors do." },
     ],
+    adExample: {
+      business: "Summit Roofing",
+      before: { text: "Trusted local roofer. Residential and commercial. Licensed and insured. Call now!", image: "Photo of a roof", cta: "Learn more" },
+      after: { text: "Last week's hail hit your neighborhood. Most roof damage isn't visible from the ground. We'll check yours for free and send you the photos.", headline: "Free storm damage inspection", overlay: "Hail damage hides. We'll find it.", cta: "Book inspection" },
+    },
     faq: [
       { q: "Can you launch campaigns right after a storm?", a: "Yes. We prepare storm campaigns in advance so they can go live in affected areas within hours." },
       { q: "Do you handle residential or commercial roofing?", a: "Mostly residential, where ads and fast follow-up have the biggest impact. We can discuss commercial on a call." },
@@ -106,6 +123,11 @@ export const industries: Industry[] = [
       { name: "Meta ads", why: "Promotes replacement and financing offers to homeowners with older systems." },
       { name: "AI follow-up", why: "Answers after-hours leads instantly and books them into your dispatch schedule." },
     ],
+    adExample: {
+      business: "Comfort Air",
+      before: { text: "Heating and cooling services. Fast and reliable. Call for a quote!", image: "Photo of an AC unit", cta: "Learn more" },
+      after: { text: "Is your AC more than 12 years old? A new high-efficiency system can cut your energy bill, with monthly payments that fit your budget.", headline: "Free replacement estimate", overlay: "Old AC? Get a free estimate today.", cta: "Get estimate" },
+    },
     faq: [
       { q: "Can you help us get more replacement jobs, not just repairs?", a: "Yes. We run separate campaigns for replacements with financing offers and follow up over several weeks, since these decisions take longer." },
       { q: "What about after-hours leads?", a: "The AI follow-up answers 24/7 and can book or escalate emergencies to your on-call tech." },
@@ -132,6 +154,11 @@ export const industries: Industry[] = [
       { name: "Google Search", why: "Captures high-intent searches like kitchen remodel near me." },
       { name: "AI follow-up", why: "Asks about budget and timeline, then nurtures leads who aren't ready yet." },
     ],
+    adExample: {
+      business: "Craft Home Remodeling",
+      before: { text: "Kitchens, bathrooms, basements and more. Quality craftsmanship. Contact us!", image: "Photo of a kitchen", cta: "Learn more" },
+      after: { text: "We turned this dated 1990s kitchen into the room the whole family uses. See how, and get a free design consultation for yours.", headline: "Free design consultation", overlay: "From dated to dream kitchen in 6 weeks.", cta: "Book consultation" },
+    },
     faq: [
       { q: "How do you filter out low-budget leads?", a: "The form and AI follow-up ask about project scope, budget range and timeline, so you only meet people who are a fit." },
       { q: "Can you use photos of our past projects?", a: "Yes. Your real project photos usually make the best-performing ads." },
@@ -158,6 +185,11 @@ export const industries: Industry[] = [
       { name: "Meta ads", why: "Short educational videos build trust with homeowners before they need you." },
       { name: "AI follow-up", why: "Responds instantly when someone has water in their basement and books the inspection." },
     ],
+    adExample: {
+      business: "DryBase Solutions",
+      before: { text: "Basement waterproofing experts. Free estimates. Call us today!", image: "Photo of a basement", cta: "Learn more" },
+      after: { text: "A damp smell or a white chalky line on your basement wall is an early warning sign. Get a free inspection before it becomes a flood.", headline: "Free basement inspection", overlay: "That musty smell is a warning sign.", cta: "Book inspection" },
+    },
     faq: [
       { q: "Do you target specific seasons?", a: "Yes. We increase budget during rainy seasons and snowmelt, when demand peaks." },
       { q: "Can you also promote foundation repair?", a: "Yes. We usually run separate campaigns for waterproofing and foundation repair, since people search for them differently." },
@@ -184,6 +216,11 @@ export const industries: Industry[] = [
       { name: "Google Search", why: "Captures searches for specific treatments in your area." },
       { name: "AI follow-up", why: "Books consultations by text and sends reminders that reduce no-shows." },
     ],
+    adExample: {
+      business: "Glow Aesthetics",
+      before: { text: "Botox, fillers, facials and more. Book your appointment today!", image: "Photo of the spa", cta: "Book now" },
+      after: { text: "New here? Meet with one of our nurse injectors for a free consultation and a treatment plan made for you. No pressure.", headline: "Free consultation for new clients", overlay: "Your first visit starts with a free consult.", cta: "Book consult" },
+    },
     faq: [
       { q: "Can you run ads that follow Meta's health policies?", a: "Yes. We write creative and landing pages that follow Meta's rules on health claims and before-and-after imagery." },
       { q: "Do you work with medical practices too?", a: "We focus on med spas and aesthetic clinics. We can discuss other practices on a call." },
@@ -238,3 +275,6 @@ export const processSteps = [
   { icon: Rocket, when: "Week 2", title: "Launch", desc: "Campaigns go live on Google and Meta. Every lead gets an instant reply and lands in your pipeline." },
   { icon: TrendingUp, when: "Ongoing", title: "Optimize", desc: "Weekly report on leads, cost per lead and booked appointments. New creative every month." },
 ]
+
+// Real client quotes only. The testimonials section stays hidden while this is empty.
+export const testimonials: { quote: string; name: string; business: string; location: string }[] = []

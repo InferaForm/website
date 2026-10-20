@@ -2,7 +2,6 @@
 
 import React from "react"
 import { motion } from "framer-motion"
-import { Zap } from "lucide-react"
 
 export const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -19,10 +18,17 @@ export const Pill = ({ children }: React.PropsWithChildren) => (
   </div>
 )
 
+// Funnel mark: leads narrowing down to a booked appointment. Matches app/icon.svg.
 export const LogoMark = () => (
-  <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
-    <Zap className="h-4 w-4" strokeWidth={2.5} />
-  </span>
+  <svg viewBox="0 0 100 100" className="h-8 w-8" aria-hidden="true">
+    <rect width="100" height="100" rx="24" fill="hsl(var(--primary))" />
+    <g fill="hsl(var(--primary-foreground))">
+      <rect x="22" y="22" width="56" height="11" rx="5.5" />
+      <rect x="30" y="39" width="40" height="11" rx="5.5" />
+      <rect x="38" y="56" width="24" height="11" rx="5.5" />
+      <circle cx="50" cy="78" r="6.5" />
+    </g>
+  </svg>
 )
 
 // Fades content in when it scrolls into view

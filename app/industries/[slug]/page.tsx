@@ -9,6 +9,7 @@ import { Footer } from "@/app/components/site/Footer"
 import { Contact } from "@/app/components/site/Contact"
 import { FaqList } from "@/app/components/site/FaqList"
 import { AdFixes, ProcessSteps } from "@/app/components/site/Blocks"
+import { AdMakeover, RampChart } from "@/app/components/site/Visuals"
 import { industries, getIndustry } from "@/app/lib/site-data"
 
 type Props = { params: { slug: string } }
@@ -31,7 +32,7 @@ export default function IndustryPage({ params }: Props) {
   const industry = getIndustry(params.slug)
   if (!industry) notFound()
 
-  const { name, icon: Icon, headline, intro, pain, approach, offers, channels, faq } = industry
+  const { name, icon: Icon, headline, intro, pain, approach, offers, channels, faq, adExample } = industry
   const others = industries.filter((i) => i.slug !== industry.slug)
 
   return (
@@ -106,7 +107,13 @@ export default function IndustryPage({ params }: Props) {
         </Section>
 
         <div className="border-y border-foreground/5 bg-card/40">
-          <AdFixes />
+          <AdMakeover example={adExample} title={`A better ad for ${name.toLowerCase()}`} />
+        </div>
+
+        <AdFixes />
+
+        <div className="border-y border-foreground/5 bg-card/40">
+          <RampChart />
         </div>
 
         <ProcessSteps />
