@@ -4,6 +4,11 @@ import { Resend } from 'resend'
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
+// Env values pasted from .env files often keep their surrounding quotes or whitespace
+function cleanEnv(value: string | undefined) {
+  return value?.trim().replace(/^(['"])(.*)\1$/, '$2').trim() || undefined
+}
+
 function escapeHtml(value: string) {
   return value
     .replace(/&/g, '&amp;')
@@ -27,14 +32,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid email format.' }, { status: 400 })
     }
 
-    const apiKey = process.env.RESEND_API_KEY
+    const apiKey = cleanEnv(process.env.RESEND_API_KEY)
     if (!apiKey) {
       console.error('Missing RESEND_API_KEY')
       return NextResponse.json({ error: 'Email service is not configured.' }, { status: 500 })
     }
 
-    const to = process.env.CONTACT_EMAIL_TO
-    const fromEmail = process.env.RESEND_FROM_EMAIL || process.env.CONTACT_EMAIL_FROM
+    const to = cleanEnv(process.env.CONTACT_EMAIL_TO)
+    const fromEmail = cleanEnv(process.env.RESEND_FROM_EMAIL) || cleanEnv(process.env.CONTACT_EMAIL_FROM)
 
     if (!to || !fromEmail) {
       console.error('Missing CONTACT_EMAIL_TO or RESEND_FROM_EMAIL')
