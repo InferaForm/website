@@ -5,11 +5,9 @@ import { motion } from "framer-motion"
 import {
   Bot,
   ArrowRight,
-  Phone,
   MessageSquare,
   Megaphone,
   Building2,
-  Hotel,
   Calendar,
   TrendingUp,
   Shield,
@@ -18,11 +16,15 @@ import {
   Sparkles,
   Mail,
   Globe,
-  Wallet,
-  MapPin,
   Clock,
   Search,
   Lightbulb,
+  Gift,
+  Target,
+  Palette,
+  Workflow,
+  MousePointerClick,
+  CalendarCheck,
 } from "lucide-react"
 
 import { Button } from "@/app/components/ui/button"
@@ -32,7 +34,6 @@ import { Input } from "@/app/components/ui/input"
 import { Textarea } from "@/app/components/ui/textarea"
 import { Separator } from "@/app/components/ui/separator"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/app/components/ui/accordion"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/components/ui/tabs"
 import { Avatar, AvatarFallback } from "@/app/components/ui/avatar"
 import { Label } from "@/app/components/ui/label"
 import { Switch } from "@/app/components/ui/switch"
@@ -49,34 +50,38 @@ const Section = ({ id, className = "", children }: React.PropsWithChildren<{ id?
 )
 
 const Pill = ({ children }: React.PropsWithChildren) => (
-  <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-3 py-1 text-sm">
-    <Sparkles className="h-4 w-4" /> {children}
+  <div className="inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-foreground/[0.03] px-3 py-1 text-xs font-medium uppercase tracking-[0.14em] text-foreground/70">
+    <span className="h-1.5 w-1.5 rounded-full bg-primary" /> {children}
   </div>
+)
+
+const LogoMark = () => (
+  <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
+    <Zap className="h-4 w-4" strokeWidth={2.5} />
+  </span>
 )
 
 // ---------- Navbar ----------
 function Navbar() {
   return (
-    <header className="sticky top-0 z-40 backdrop-blur bg-background/70 border-b">
-      <Section className="flex items-center justify-between py-4">
-        <a href="#home" className="flex items-center gap-2">
-          <Bot className="h-6 w-6" />
-          <span className="font-bold text-lg">Inferaform</span>
+    <header className="sticky top-0 z-40 border-b border-foreground/5 bg-background/70 backdrop-blur-xl">
+      <Section className="flex items-center justify-between py-3.5">
+        <a href="#home" className="flex items-center gap-2.5">
+          <LogoMark />
+          <span className="font-display text-lg font-semibold tracking-tight">Inferaform</span>
         </a>
-        <nav className="hidden md:flex items-center gap-6 text-sm">
-          <a href="#solutions" className="hover:text-primary">Products</a>
-          <a href="#airbnb" className="hover:text-primary">Airbnb Co-Host</a>
-          <a href="#showcase" className="hover:text-primary">Process</a>
-          <a href="#pricing" className="hover:text-primary">Pricing</a>
-          <a href="#faq" className="hover:text-primary">FAQ</a>
-          <a href="#contact" className="hover:text-primary">Contact</a>
+        <nav className="hidden md:flex items-center gap-8 text-sm text-foreground/70">
+          <a href="#services" className="transition-colors hover:text-foreground">Services</a>
+          <a href="#how-it-works" className="transition-colors hover:text-foreground">How it works</a>
+          <a href="#pricing" className="transition-colors hover:text-foreground">Pricing</a>
+          <a href="#faq" className="transition-colors hover:text-foreground">FAQ</a>
         </nav>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <a href="#contact" className="hidden sm:block">
-            <Button variant="ghost">Book a demo</Button>
+            <Button variant="ghost">Book a call</Button>
           </a>
           <a href="#contact">
-            <Button className="gap-2">Get Started <ArrowRight className="h-4 w-4"/></Button>
+            <Button className="gap-2">Free audit <ArrowRight className="h-4 w-4"/></Button>
           </a>
         </div>
       </Section>
@@ -85,34 +90,104 @@ function Navbar() {
 }
 
 // ---------- Hero ----------
+const leadFlow = [
+  { icon: Megaphone, label: "New lead from Facebook ad", detail: "Whole-home water softener · Mesa, AZ", time: "2:14 PM" },
+  { icon: MessageSquare, label: "AI texted back", detail: "\u201cHi Dana, thanks for reaching out! Is your home on city water or a well?\u201d", time: "2:14 PM" },
+  { icon: CalendarCheck, label: "Appointment booked", detail: "Free in-home water test · Thu 10:00 AM", time: "2:19 PM" },
+]
+
 function Hero() {
   return (
     <div id="home" className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/5 via-transparent to-transparent"/>
-      <Section className="py-20 lg:py-28">
-        <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center max-w-3xl mx-auto">
-          <Pill>Build and deploy production AI systems</Pill>
-          <h1 className="mt-6 text-3xl sm:text-5xl font-bold tracking-tight">
-            Crafting intelligent systems that <span className="text-primary">scale with you</span>
+      <div className="grid-bg absolute inset-0 -z-10" />
+      <div className="absolute left-1/2 top-[-12rem] -z-10 h-[32rem] w-[56rem] -translate-x-1/2 rounded-full bg-primary/15 blur-[120px]" />
+      <Section className="grid items-center gap-14 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
+        <motion.div variants={fadeUp} initial="hidden" animate="show">
+          <Pill>Google &amp; Meta ads + AI follow-up</Pill>
+          <h1 className="mt-6 text-4xl font-bold leading-[1.05] sm:text-6xl">
+            Ads that bring you leads.{" "}
+            <span className="text-primary">Automation that books them.</span>
           </h1>
-          <p className="mt-4 text-muted-foreground text-lg">
-            We design and implement AI-powered workflows that automate work, surface insights, and move KPIs—without breaking your stack.
+          <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+            We run your Google and Meta ads, then our AI follows up with every new lead in under 60 seconds by text, call and email, so more of them end up as appointments on your calendar.
           </p>
-          <div className="mt-8 flex items-center justify-center gap-3">
-            <a href="#solutions"><Button size="lg" className="gap-2">Explore Products <ArrowRight className="h-4 w-4"/></Button></a>
-            <a href="#contact"><Button size="lg" variant="outline">Talk to an expert</Button></a>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#contact"><Button size="lg" className="w-full gap-2 sm:w-auto">Claim your free audit <ArrowRight className="h-4 w-4"/></Button></a>
+            <a href="#how-it-works"><Button size="lg" variant="outline" className="w-full sm:w-auto">See how it works</Button></a>
           </div>
-          <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 text-sm">
+
+          <div className="mt-8 flex max-w-xl items-start gap-3 rounded-2xl border border-primary/25 bg-primary/[0.06] p-4">
+            <Gift className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary"/>
+            <p className="text-sm text-foreground/80">
+              <span className="font-semibold text-foreground">Free ad audit + 3 custom ad creatives.</span>{" "}
+              We show you where leads are leaking and design three ads for your business. Yours to keep, no contract.
+            </p>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">
             {[
-              { icon: Clock, label: "14 Days to Value" },
-              { icon: Shield, label: "SOC2 Practices" },
-              { icon: Zap, label: "Fast Integration" },
-              { icon: Wallet, label: "90-Day ROI" },
+              { icon: Clock, label: "Under 60s lead response" },
+              { icon: Shield, label: "You own your ad accounts" },
+              { icon: Calendar, label: "Month-to-month" },
             ].map(({ icon: Icon, label }) => (
-              <div key={label} className="flex items-center justify-center gap-2 text-muted-foreground">
-                <Icon className="h-4 w-4"/> <span>{label}</span>
+              <div key={label} className="flex items-center gap-2">
+                <Icon className="h-4 w-4 text-primary"/> <span>{label}</span>
               </div>
             ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="relative"
+        >
+          <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-primary/20 via-transparent to-transparent blur-2xl" />
+          <div className="rounded-3xl border border-foreground/10 bg-card/80 p-5 backdrop-blur sm:p-6">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium">Lead activity</span>
+              <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                </span>
+                Example flow
+              </span>
+            </div>
+            <ol className="mt-5 space-y-3">
+              {leadFlow.map(({ icon: Icon, label, detail, time }, i) => (
+                <motion.li
+                  key={label}
+                  initial={{ opacity: 0, x: 16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.4 + i * 0.25 }}
+                  className="flex gap-3 rounded-2xl border border-foreground/5 bg-background/60 p-4"
+                >
+                  <div className={`grid h-9 w-9 flex-shrink-0 place-items-center rounded-xl ${i === leadFlow.length - 1 ? "bg-primary text-primary-foreground" : "bg-foreground/5 text-foreground/80"}`}>
+                    <Icon className="h-4 w-4"/>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <p className="text-sm font-semibold">{label}</p>
+                      <span className="text-xs text-muted-foreground">{time}</span>
+                    </div>
+                    <p className="mt-0.5 text-sm text-muted-foreground">{detail}</p>
+                  </div>
+                </motion.li>
+              ))}
+            </ol>
+            <div className="mt-5 grid grid-cols-2 gap-3 border-t border-foreground/5 pt-5">
+              <div>
+                <p className="font-display text-2xl font-semibold">38s</p>
+                <p className="text-xs text-muted-foreground">to first reply</p>
+              </div>
+              <div>
+                <p className="font-display text-2xl font-semibold">5 min</p>
+                <p className="text-xs text-muted-foreground">click to booked</p>
+              </div>
+            </div>
           </div>
         </motion.div>
       </Section>
@@ -120,109 +195,76 @@ function Hero() {
   )
 }
 
-// ---------- Products ----------
-const products = [
+// ---------- Services ----------
+const services = [
   {
-    id: "riley",
-    emoji: "⭐",
-    icon: Phone,
-    title: "Riley",
-    subtitle: "Your Smart Voice Assistant",
-    tagline: "For Calls, Scheduling & Notes",
+    icon: Megaphone,
+    title: "Paid Ads",
+    subtitle: "Google Search, Local Services Ads & Meta",
     features: [
-      "AI-powered call handling",
-      "Smart scheduling assistant",
-      "Automatic note-taking",
-      "Voice-to-text transcription",
+      "Campaigns built around booked jobs, not clicks",
+      "Local targeting by service area",
+      "Conversion tracking set up properly",
+      "Weekly optimization and budget pacing",
     ],
   },
   {
-    id: "orbit",
-    emoji: "🔶",
-    icon: MessageSquare,
-    title: "Orbit",
-    subtitle: "Your AI Meeting Assistant",
-    tagline: "Meeting & Action Tracking",
+    icon: Palette,
+    title: "Creative & Landing Pages",
+    subtitle: "Ads people stop scrolling for",
     features: [
-      "Meeting summaries & insights",
-      "Action item extraction",
-      "Follow-up reminders",
-      "Integration with calendars",
+      "Static, video and UGC-style ad creative",
+      "Fresh creative tested every month",
+      "Fast, mobile-first landing pages",
+      "Offers written for your market",
     ],
   },
   {
-    id: "forge",
-    emoji: "🔧",
-    icon: Building2,
-    title: "Forge",
-    subtitle: "Your AI Business Engine",
-    tagline: "Business Development Automation",
+    icon: Workflow,
+    title: "Lead Automation",
+    subtitle: "Every lead contacted in under 60 seconds",
     features: [
-      "Lead generation & qualification",
-      "Outreach automation",
-      "Pipeline management",
-      "Revenue forecasting",
-    ],
-  },
-  {
-    id: "luma",
-    emoji: "💬",
-    icon: MessageSquare,
-    title: "Luma",
-    subtitle: "Your AI Support Agent",
-    tagline: "Customer Support Automation",
-    features: [
-      "24/7 customer support",
-      "Multi-channel responses",
-      "Ticket triage & routing",
-      "Knowledge base integration",
-    ],
-  },
-  {
-    id: "aura",
-    emoji: "🔮",
-    icon: TrendingUp,
-    title: "AURA",
-    subtitle: "The AI Growth Engine",
-    tagline: "For eCommerce Success",
-    features: [
-      "Personalized recommendations",
-      "Cart abandonment recovery",
-      "Dynamic pricing optimization",
-      "Customer lifetime value tracking",
+      "Instant text, call and email follow-up",
+      "AI receptionist that qualifies and books",
+      "CRM pipeline with reminders and no-show recovery",
+      "Re-engage old leads you already paid for",
     ],
   },
 ]
 
-function Products() {
+const industries = [
+  "Water treatment",
+  "Roofing",
+  "HVAC",
+  "Remodeling",
+  "Basement waterproofing",
+  "Med spas",
+]
+
+function Services() {
   return (
-    <Section id="solutions" className="py-16 lg:py-24">
+    <Section id="services" className="py-16 lg:py-24">
       <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center">
-        <Pill>Our AI Products</Pill>
-        <h2 className="mt-4 text-2xl sm:text-4xl font-bold">Intelligent agents for every workflow</h2>
+        <Pill>What we do</Pill>
+        <h2 className="mt-4 text-3xl sm:text-5xl font-bold">Ads, creative and follow-up under one roof</h2>
         <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-          Purpose-built AI assistants that integrate seamlessly with your operations and deliver immediate value.
+          Most agencies stop at the lead. We stay with it until it&apos;s a booked appointment, because that&apos;s what actually grows your business.
         </p>
       </motion.div>
 
-      <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map(({ id, emoji, icon: Icon, title, subtitle, tagline, features }) => (
-          <Card key={id} className="group hover:shadow-xl transition-shadow relative overflow-hidden">
-            <div className="absolute top-4 right-4 text-4xl opacity-20">{emoji}</div>
+      <div className="mt-10 grid md:grid-cols-3 gap-6">
+        {services.map(({ icon: Icon, title, subtitle, features }, i) => (
+          <Card key={title} className="group relative overflow-hidden hover:border-primary/40">
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             <CardHeader>
-              <div className="flex items-start gap-3">
-                <div className="p-2 rounded-xl bg-primary/10 text-primary flex-shrink-0">
+              <div className="flex items-center justify-between">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                   <Icon className="h-5 w-5"/>
                 </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-2xl">{emoji}</span>
-                    <CardTitle className="text-xl">{title}</CardTitle>
-                  </div>
-                  <p className="text-sm font-medium text-foreground mt-1">{subtitle}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{tagline}</p>
-                </div>
+                <span className="font-display text-sm text-muted-foreground">0{i + 1}</span>
               </div>
+              <CardTitle className="pt-4 text-2xl">{title}</CardTitle>
+              <p className="text-sm text-muted-foreground">{subtitle}</p>
             </CardHeader>
             <CardContent className="space-y-3">
               {features.map((f) => (
@@ -230,108 +272,75 @@ function Products() {
                   <CheckCircle2 className="h-4 w-4 mt-0.5 text-primary flex-shrink-0"/> <span>{f}</span>
                 </div>
               ))}
-              <div className="pt-2">
-                <a href="#contact">
-                  <Button variant="outline" className="w-full group-hover:translate-x-0.5 transition-transform">
-                    Learn more about {title}
-                  </Button>
-                </a>
-              </div>
             </CardContent>
           </Card>
         ))}
+      </div>
+
+      <div className="mt-10 text-center">
+        <p className="text-sm text-muted-foreground">Built for local businesses where one customer is worth $1,000+</p>
+        <div className="mt-3 flex flex-wrap justify-center gap-2">
+          {industries.map((x) => (
+            <Badge key={x} variant="secondary" className="text-sm">{x}</Badge>
+          ))}
+        </div>
       </div>
     </Section>
   )
 }
 
-// ---------- Airbnb Co-Host ----------
-function AirbnbCoHost() {
-  const items = [
-    { icon: Hotel, title: "Guest Messaging", desc: "Instant replies, ID verification prompts, house rules enforcement, upsells." },
-    { icon: Calendar, title: "Calendar & Pricing", desc: "Sync channels, dynamic pricing recommendations, min-stay & gap rules." },
-    { icon: MapPin, title: "Check-in / Check-out", desc: "Automated instructions, access codes, cleaner scheduling & turnover sheets." },
-    { icon: TrendingUp, title: "Revenue Ops", desc: "Market comps, occupancy targets, review response optimization, owner reports." },
-    { icon: Shield, title: "Risk & Compliance", desc: "Noise alerts, party risk signals, deposit & damage workflows, audit trails." },
-    { icon: MessageSquare, title: "Issue Resolution", desc: "Maintenance triage, vendor dispatch, credits/claims with approval gates." },
-  ]
+// ---------- Pipeline (Ads + Automation) ----------
+const pipeline = [
+  { icon: Megaphone, title: "Ad", desc: "Someone in your area sees your ad on Google or Facebook." },
+  { icon: MousePointerClick, title: "Landing page", desc: "They land on a page built for one offer and fill in a short form." },
+  { icon: Zap, title: "Instant follow-up", desc: "Within 60 seconds they get a text and a call, day or night." },
+  { icon: CalendarCheck, title: "Booked", desc: "The AI answers questions, qualifies them and books the appointment." },
+  { icon: TrendingUp, title: "Optimize", desc: "We see which ads produce booked jobs and put the budget there." },
+]
 
+function Pipeline() {
   return (
-    <div id="airbnb" className="bg-muted/30 border-y">
+    <div id="how-it-works" className="border-y border-foreground/5 bg-card/40">
       <Section className="py-16 lg:py-24">
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center">
-          <Pill>Airbnb Co-Host</Pill>
-          <h2 className="mt-4 text-2xl sm:text-4xl font-bold">Your always-on Co-Host Agent</h2>
+          <Pill>How it works</Pill>
+          <h2 className="mt-4 text-3xl sm:text-5xl font-bold">From ad click to booked appointment</h2>
           <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            Purpose-built agent for short-term rentals. Delight guests, maximize revenue, and keep operations smooth across Airbnb, Booking.com, Vrbo and direct bookings.
+            Leads go cold fast. Answering in the first few minutes is often the difference between winning the job and losing it to whoever called back first.
           </p>
         </motion.div>
 
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {items.map(({ icon: Icon, title, desc }) => (
-            <Card key={title}>
-              <CardHeader className="flex flex-row items-center gap-3">
-                <div className="p-2 rounded-xl bg-primary/10 text-primary"><Icon className="h-5 w-5"/></div>
-                <CardTitle className="text-lg">{title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">{desc}</p>
-              </CardContent>
-            </Card>
+        <ol className="mt-12 grid gap-4 lg:grid-cols-5">
+          {pipeline.map(({ icon: Icon, title, desc }, i) => (
+            <motion.li
+              key={title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="relative"
+            >
+              <Card className="h-full bg-background/60 hover:border-primary/40">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center justify-between">
+                    <div className={`grid h-10 w-10 place-items-center rounded-xl ${i === pipeline.length - 2 ? "bg-primary text-primary-foreground" : "bg-primary/10 text-primary"}`}><Icon className="h-5 w-5"/></div>
+                    <span className="font-display text-sm text-muted-foreground">0{i + 1}</span>
+                  </div>
+                  <CardTitle className="text-lg pt-2">{title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">{desc}</p>
+                </CardContent>
+              </Card>
+              {i < pipeline.length - 1 && (
+                <ArrowRight className="hidden lg:block absolute top-1/2 -right-3.5 z-10 h-5 w-5 -translate-y-1/2 text-primary"/>
+              )}
+            </motion.li>
           ))}
-        </div>
+        </ol>
 
-        <div className="mt-10">
-          <Tabs defaultValue="features" className="w-full">
-            <TabsList className="grid grid-cols-3 w-full">
-              <TabsTrigger value="features">Features</TabsTrigger>
-              <TabsTrigger value="integrations">Integrations</TabsTrigger>
-              <TabsTrigger value="reports">Reports</TabsTrigger>
-            </TabsList>
-            <TabsContent value="features" className="mt-6">
-              <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
-                {[
-                  "Auto-replies by intent & language",
-                  "Smart pricing from market signals",
-                  "Cleaner rota + linen inventory",
-                  "Damage deposit + claims workflow",
-                  "Owner portal with revenue split",
-                  "Direct booking engine support",
-                ].map((x) => (
-                  <li key={x} className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5"/> {x}</li>
-                ))}
-              </ul>
-            </TabsContent>
-            <TabsContent value="integrations" className="mt-6">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
-                {[
-                  "Airbnb API (official partner)",
-                  "PriceLabs / Beyond Pricing",
-                  "Hospitable / Guesty / Hostaway",
-                  "Google Calendar / iCal",
-                  "Door locks (Nuki, August, smart locks)",
-                  "WhatsApp, SMS, Email, IVR",
-                ].map((x) => (
-                  <div key={x} className="flex items-center gap-2"><Badge variant="secondary">{x}</Badge></div>
-                ))}
-              </div>
-            </TabsContent>
-            <TabsContent value="reports" className="mt-6">
-              <div className="grid md:grid-cols-3 gap-6">
-                {["Occupancy & ADR", "Revenue by Property", "Response SLAs"].map((t) => (
-                  <Card key={t}>
-                    <CardHeader><CardTitle className="text-base">{t}</CardTitle></CardHeader>
-                    <CardContent className="text-sm text-muted-foreground">Beautiful owner-ready reports with trends, comparisons, and export to CSV/PDF.</CardContent>
-                  </Card>
-                ))}
-              </div>
-            </TabsContent>
-          </Tabs>
-        </div>
-
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a href="#contact"><Button size="lg" className="gap-2">Launch a Co-Host Pilot <ArrowRight className="h-4 w-4"/></Button></a>
-          <Badge variant="outline" className="text-sm">Typical setup: 7–10 days</Badge>
+        <div className="mt-10 flex justify-center">
+          <a href="#contact"><Button size="lg" className="gap-2">Get your free audit <ArrowRight className="h-4 w-4"/></Button></a>
         </div>
       </Section>
     </div>
@@ -387,7 +396,7 @@ function Showcase() {
       <Section>
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center">
           <Pill>Our Process</Pill>
-          <h2 className="mt-4 text-2xl sm:text-4xl font-bold">From concept to production in weeks</h2>
+          <h2 className="mt-4 text-3xl sm:text-5xl font-bold">From concept to production in weeks</h2>
           <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
             A proven methodology that delivers measurable results without disrupting your operations.
           </p>
@@ -496,7 +505,7 @@ function Pricing() {
     <Section id="pricing" className="py-16 lg:py-24">
       <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center">
         <Pill>Pricing</Pill>
-        <h2 className="mt-4 text-2xl sm:text-4xl font-bold">Simple plans that grow with you</h2>
+        <h2 className="mt-4 text-3xl sm:text-5xl font-bold">Simple plans that grow with you</h2>
       </motion.div>
 
       <div className="mt-10 grid md:grid-cols-3 gap-6">
@@ -661,7 +670,7 @@ function FAQ() {
     <Section id="faq" className="py-16 lg:py-24">
       <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center">
         <Pill>FAQ</Pill>
-        <h2 className="mt-4 text-2xl sm:text-4xl font-bold">Everything you need to know</h2>
+        <h2 className="mt-4 text-3xl sm:text-5xl font-bold">Everything you need to know</h2>
       </motion.div>
       <div className="mt-8 max-w-3xl mx-auto">
         <Accordion type="single" collapsible>
@@ -797,16 +806,13 @@ function Contact() {
                 <Input id="company" name="company" placeholder="Acme Inc"/>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="interest">Which product(s) interest you?</Label>
+                <Label htmlFor="interest">What are you interested in?</Label>
                 <div className="grid sm:grid-cols-2 gap-2 text-sm">
                   {[
-                    { id: "riley", label: "Riley (Voice Assistant)", emoji: "⭐" },
-                    { id: "orbit", label: "Orbit (Meeting AI)", emoji: "🔶" },
-                    { id: "forge", label: "Forge (Business Dev)", emoji: "🔧" },
-                    { id: "luma", label: "Luma (Support AI)", emoji: "💬" },
-                    { id: "aura", label: "AURA (eCommerce)", emoji: "🔮" },
-                    { id: "airbnb", label: "Airbnb Co-Host", emoji: "🏠" },
-                    { id: "custom", label: "Custom Solution", emoji: "✨" },
+                    { id: "ads", label: "Google & Meta Ads", emoji: "📣" },
+                    { id: "creative", label: "Ad Creative & Landing Pages", emoji: "🎨" },
+                    { id: "automation", label: "Lead Follow-up Automation", emoji: "⚡" },
+                    { id: "audit", label: "Free Ad Audit", emoji: "🔍" },
                   ].map((x) => (
                     <label key={x.id} className="flex items-center gap-2 rounded-lg border p-2 cursor-pointer hover:bg-accent">
                       <input type="checkbox" name="interests" value={x.label} />
@@ -852,7 +858,7 @@ function Footer() {
             <div>
               <div className="font-semibold mb-2">Company</div>
               <ul className="space-y-2">
-                <li><a href="#solutions" className="hover:underline">Products</a></li>
+                <li><a href="#services" className="hover:underline">Services</a></li>
                 <li><a href="#showcase" className="hover:underline">Process</a></li>
                 <li><a href="#pricing" className="hover:underline">Pricing</a></li>
                 <li><a href="#faq" className="hover:underline">FAQ</a></li>
@@ -890,8 +896,8 @@ export default function InferaformWebsite() {
       <Navbar />
       <Hero />
       <SocialProof />
-      <Products />
-      <AirbnbCoHost />
+      <Services />
+      <Pipeline />
       <Showcase />
       <Pricing />
       <Testimonials />

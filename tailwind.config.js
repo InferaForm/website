@@ -14,19 +14,11 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'var(--font-sans)', 'ui-sans-serif', 'sans-serif'],
+      },
       colors: {
-        brand: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
-        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -67,7 +59,7 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        'glow': '0 0 40px rgba(99,102,241,0.35)'
+        'glow': '0 0 60px -12px hsl(var(--primary) / 0.55)'
       },
       animation: {
         'float': 'float 10s ease-in-out infinite',
