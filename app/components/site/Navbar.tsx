@@ -21,7 +21,10 @@ export function Navbar() {
       <Section className="flex items-center justify-between py-3.5">
         <a href="/" className="flex items-center gap-2.5">
           <LogoMark />
-          <span className="font-display text-lg font-semibold tracking-tight">Inferaform</span>
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-lg font-semibold tracking-tight">Inferaform</span>
+            <span className="mt-1 text-[11px] text-muted-foreground">Ads &amp; AI Lead Follow-up</span>
+          </span>
         </a>
         <nav className="hidden lg:flex items-center gap-8 text-sm text-foreground/70">
           {links.map((l) => (

@@ -14,6 +14,10 @@ export function Footer() {
             <p className="mt-4 text-sm text-muted-foreground">
               Google and Meta ads, AI lead follow-up and local SEO for businesses in the US and Canada.
             </p>
+            <p className="mt-4 text-sm">
+              <span className="font-display font-semibold">Infer + form.</span>{" "}
+              <span className="text-muted-foreground">We use AI to turn form fills into booked appointments.</span>
+            </p>
           </div>
           <div className="grid grid-cols-2 gap-10 text-sm sm:grid-cols-3 lg:gap-16">
             <div>
