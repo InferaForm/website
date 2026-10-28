@@ -1,5 +1,5 @@
 import { Section, LogoMark } from "./primitives"
-import { industries } from "@/app/lib/site-data"
+import { industries, CLIENT_LOGIN_URL } from "@/app/lib/site-data"
 
 export function Footer() {
   return (
@@ -43,6 +43,7 @@ export function Footer() {
               <ul className="mt-4 space-y-3 text-muted-foreground">
                 <li><a href="/#contact" className="hover:text-foreground">Free ad audit</a></li>
                 <li><a href="mailto:inferaform@gmail.com" className="hover:text-foreground">inferaform@gmail.com</a></li>
+                <li><a href={CLIENT_LOGIN_URL} className="hover:text-foreground">Client login</a></li>
               </ul>
             </div>
           </div>

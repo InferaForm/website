@@ -20,6 +20,7 @@ import {
 
 // The live site redirects the bare domain to www, so www is the canonical origin
 export const SITE_URL = "https://www.inferaform.com"
+export const CLIENT_LOGIN_URL = "https://pronto.inferaform.com/login"
 
 export type Industry = {
   slug: string

@@ -22,6 +22,10 @@ import {
   Users,
   BarChart3,
   MapPin,
+  PhoneCall,
+  BellRing,
+  RotateCcw,
+  Hand,
 } from "lucide-react"
 
 import { Button } from "@/app/components/ui/button"
@@ -32,7 +36,7 @@ import { Navbar } from "@/app/components/site/Navbar"
 import { Footer } from "@/app/components/site/Footer"
 import { Contact } from "@/app/components/site/Contact"
 import { FaqList } from "@/app/components/site/FaqList"
-import { industries } from "@/app/lib/site-data"
+import { industries, CLIENT_LOGIN_URL } from "@/app/lib/site-data"
 import { AdMakeover, LeadLeak, RampChart } from "@/app/components/site/Visuals"
 import { Testimonials } from "@/app/components/site/Blocks"
 import { JsonLd } from "@/app/components/site/JsonLd"
@@ -330,6 +334,98 @@ function Pipeline() {
   )
 }
 
+// ---------- Pronto (our follow-up system) ----------
+const prontoFeatures = [
+  { icon: MessageSquare, title: "Texts every lead in seconds", desc: "Form, Facebook lead ad, missed call or text: the first reply goes out right away, day or night." },
+  { icon: PhoneCall, title: "Rings you to connect", desc: "Your phone rings with “New lead, press 1 to connect” so you can talk to them while they’re still interested." },
+  { icon: CalendarCheck, title: "Answers and books", desc: "It answers questions about your business, offers real open times and books into your calendar." },
+  { icon: BellRing, title: "Reminders and confirmations", desc: "Booked customers get reminders with a link to confirm or reschedule." },
+  { icon: RotateCcw, title: "No-show and old-lead follow-up", desc: "Missed appointments get a friendly rebook text, and old leads get a check-in." },
+  { icon: Hand, title: "You can take over anytime", desc: "See every conversation, jump in with one tap, and get alerted when a lead asks for a person." },
+]
+
+const prontoThread = [
+  { from: "lead", text: "Hi, how much is a water softener? Could someone come out Thursday afternoon?" },
+  { from: "ai", text: "Hi Priya! Pricing depends on your water test results, so we give an exact price after the free test. We have Thursday at 1:00 PM or 2:00 PM open. Which works better?" },
+  { from: "lead", text: "2pm works" },
+  { from: "ai", text: "Great! Can I get your full name and the service address?" },
+  { from: "lead", text: "Priya Shah, 412 E Palm Ln, Mesa" },
+  { from: "ai", text: "You’re all set, Priya! Your free water test is Thursday at 2:00 PM. You’ll get a reminder before then." },
+]
+
+function Pronto() {
+  return (
+    <Section id="pronto" className="py-16 lg:py-24">
+      <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <Reveal>
+            <Pill>Meet Pronto</Pill>
+            <h2 className="mt-4 text-3xl sm:text-5xl font-bold">The system behind our follow-up</h2>
+            <p className="mt-3 max-w-xl text-muted-foreground">
+              Pronto is the lead follow-up software we built and run for every client. It answers each new lead by text, gets you on the phone with them, and books the appointment, so the leads from your ads don&apos;t sit waiting.
+            </p>
+          </Reveal>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            {prontoFeatures.map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="flex gap-3">
+                <div className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+                  <Icon className="h-4 w-4"/>
+                </div>
+                <div className="min-w-0">
+                  <p className="font-semibold">{title}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm text-muted-foreground">
+            Clients get their own login to see every lead, conversation and booking.{" "}
+            <a href={CLIENT_LOGIN_URL} className="inline-flex items-center gap-1 text-primary hover:underline">
+              Client login <ArrowUpRight className="h-3.5 w-3.5"/>
+            </a>
+          </p>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="relative mx-auto w-full max-w-md"
+        >
+          <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-primary/20 via-transparent to-transparent blur-2xl" />
+          <div className="rounded-3xl border border-foreground/10 bg-card/80 p-5 backdrop-blur sm:p-6">
+            <div className="flex items-center justify-between gap-3 border-b border-foreground/5 pb-4">
+              <div className="flex min-w-0 items-center gap-3">
+                <div className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-full bg-foreground/5 text-sm font-semibold">PS</div>
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-semibold">Priya Shah</p>
+                  <p className="truncate text-xs text-muted-foreground">Facebook lead ad · Water softener</p>
+                </div>
+              </div>
+              <Badge className="flex-shrink-0">Booked</Badge>
+            </div>
+            <ol className="mt-4 space-y-2.5">
+              {prontoThread.map((m, i) => (
+                <li key={i} className={`flex ${m.from === "ai" ? "justify-end" : "justify-start"}`}>
+                  <p className={`max-w-[85%] rounded-2xl px-3.5 py-2 text-sm ${m.from === "ai" ? "rounded-br-md bg-primary text-primary-foreground" : "rounded-bl-md bg-foreground/5"}`}>
+                    {m.text}
+                  </p>
+                </li>
+              ))}
+            </ol>
+            <div className="mt-4 flex items-center gap-2 rounded-2xl border border-primary/25 bg-primary/[0.06] px-3.5 py-2.5 text-xs">
+              <CalendarCheck className="h-4 w-4 flex-shrink-0 text-primary"/>
+              <span><span className="font-semibold">Appointment booked</span> · Free water test, Thu 2:00 PM</span>
+            </div>
+            <p className="mt-3 text-center text-[11px] text-muted-foreground">Example conversation</p>
+          </div>
+        </motion.div>
+      </div>
+    </Section>
+  )
+}
+
 // ---------- Industries teaser ----------
 function IndustriesTeaser() {
   return (
@@ -535,6 +631,7 @@ export default function InferaformWebsite() {
         <Services />
         <AdMakeover example={industries[0].adExample} />
         <Pipeline />
+        <Pronto />
         <RampChart />
         <Testimonials />
         <IndustriesTeaser />

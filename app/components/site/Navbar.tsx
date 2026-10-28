@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import { ArrowRight, Menu, X } from "lucide-react"
 import { Button } from "@/app/components/ui/button"
 import { Section, LogoMark } from "./primitives"
+import { CLIENT_LOGIN_URL } from "@/app/lib/site-data"
 
 const links = [
   { href: "/#services", label: "Services" },
@@ -32,6 +33,7 @@ export function Navbar() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
+          <a href={CLIENT_LOGIN_URL} className="hidden px-3 text-sm text-foreground/70 transition-colors hover:text-foreground lg:block">Client login</a>
           <a href="/#contact" className="hidden sm:block">
             <Button className="gap-2">Free audit <ArrowRight className="h-4 w-4"/></Button>
           </a>
@@ -54,6 +56,7 @@ export function Navbar() {
                 {l.label}
               </a>
             ))}
+            <a href={CLIENT_LOGIN_URL} className="py-3 text-lg text-foreground/80 hover:text-foreground">Client login</a>
             <a href="/#contact" onClick={() => setOpen(false)} className="mt-3">
               <Button size="lg" className="w-full gap-2">Get your free audit <ArrowRight className="h-4 w-4"/></Button>
             </a>
