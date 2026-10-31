@@ -40,6 +40,8 @@ import { industries, CLIENT_LOGIN_URL } from "@/app/lib/site-data"
 import { AdMakeover, LeadLeak, RampChart } from "@/app/components/site/Visuals"
 import { Testimonials } from "@/app/components/site/Blocks"
 import { JsonLd } from "@/app/components/site/JsonLd"
+import { DemoText } from "@/app/components/site/DemoText"
+import { CalculatorTeaser } from "@/app/components/site/Calculator"
 import { organization, faqPage } from "@/app/lib/structured-data"
 
 // ---------- Hero ----------
@@ -631,7 +633,11 @@ export default function InferaformWebsite() {
         <Services />
         <AdMakeover example={industries[0].adExample} />
         <Pipeline />
+        <CalculatorTeaser />
         <Pronto />
+        <div className="border-y border-foreground/5 bg-card/40">
+          <DemoText />
+        </div>
         <RampChart />
         <Testimonials />
         <IndustriesTeaser />

@@ -12,6 +12,7 @@ import { AdFixes, ProcessSteps } from "@/app/components/site/Blocks"
 import { AdMakeover, RampChart } from "@/app/components/site/Visuals"
 import { industries, getIndustry } from "@/app/lib/site-data"
 import { JsonLd } from "@/app/components/site/JsonLd"
+import { DemoText } from "@/app/components/site/DemoText"
 import { industryService, faqPage, breadcrumbs } from "@/app/lib/structured-data"
 import Link from "next/link"
 
@@ -131,6 +132,10 @@ export default async function IndustryPage({ params }: Props) {
         </div>
 
         <ProcessSteps />
+
+        <div className="border-y border-foreground/5 bg-card/40">
+          <DemoText industry={name} />
+        </div>
 
         <Section className="py-16 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">

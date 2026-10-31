@@ -1,5 +1,6 @@
 import { Section, LogoMark } from "./primitives"
 import { industries, CLIENT_LOGIN_URL } from "@/app/lib/site-data"
+import { caseStudies } from "@/app/lib/case-studies"
 import Link from "next/link"
 
 export function Footer() {
@@ -27,6 +28,8 @@ export function Footer() {
                 <li><Link href="/#services" className="hover:text-foreground">Services</Link></li>
                 <li><Link href="/#how-it-works" className="hover:text-foreground">How it works</Link></li>
                 <li><a href="/seo-geo" className="hover:text-foreground">SEO &amp; GEO</a></li>
+                {caseStudies.length > 0 && <li><Link href="/case-studies" className="hover:text-foreground">Case studies</Link></li>}
+                <li><Link href="/calculator" className="hover:text-foreground">Missed-lead calculator</Link></li>
                 <li><Link href="/#pricing" className="hover:text-foreground">Pricing</Link></li>
                 <li><Link href="/#faq" className="hover:text-foreground">FAQ</Link></li>
               </ul>

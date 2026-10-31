@@ -1,4 +1,5 @@
 import { SITE_URL, type Industry } from "@/app/lib/site-data"
+import type { CaseStudy } from "@/app/lib/case-studies"
 
 type Faq = { q: string; a: string }
 
@@ -49,7 +50,19 @@ export const industryService = (industry: Industry) =>
     audience: `${industry.name} businesses`,
   })
 
-export const breadcrumbs = (crumbs: { name: string; path: string }[]) => ({
+export const caseStudyArticle = (c: CaseStudy) => ({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: c.title,
+  description: c.summary,
+  url: `${SITE_URL}/case-studies/${c.slug}`,
+  datePublished: c.published,
+  author: { "@id": `${SITE_URL}/#organization` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  about: { "@type": "Thing", name: c.clientType },
+})
+
+export const breadcrumbs =(crumbs: { name: string; path: string }[]) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: crumbs.map((c, i) => ({

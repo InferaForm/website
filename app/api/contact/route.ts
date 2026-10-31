@@ -1,22 +1,9 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { cleanEnv, escapeHtml, emailRegex } from '@/app/lib/email'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
-
-// Env values pasted from .env files often keep their surrounding quotes or whitespace
-function cleanEnv(value: string | undefined) {
-  return value?.trim().replace(/^(['"])(.*)\1$/, '$2').trim() || undefined
-}
-
-function escapeHtml(value: string) {
-  return value
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;')
-}
 
 export async function POST(request: Request) {
   try {
@@ -27,7 +14,6 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Name and email are required.' }, { status: 400 })
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
       return NextResponse.json({ error: 'Invalid email format.' }, { status: 400 })
     }

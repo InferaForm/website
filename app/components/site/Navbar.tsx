@@ -5,6 +5,7 @@ import { ArrowRight, Menu, X } from "lucide-react"
 import { Button } from "@/app/components/ui/button"
 import { Section, LogoMark } from "./primitives"
 import { CLIENT_LOGIN_URL } from "@/app/lib/site-data"
+import { caseStudies } from "@/app/lib/case-studies"
 import Link from "next/link"
 
 const links = [
@@ -12,6 +13,8 @@ const links = [
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#industries", label: "Industries" },
   { href: "/seo-geo", label: "SEO & GEO" },
+  // Case studies appear only once real ones are published
+  ...(caseStudies.length > 0 ? [{ href: "/case-studies", label: "Case studies" }] : []),
   { href: "/#pricing", label: "Pricing" },
 ]
 
