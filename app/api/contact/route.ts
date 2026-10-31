@@ -170,13 +170,13 @@ Submitted: ${new Date().toISOString()}
       ok: true,
       message: 'Thank you for contacting us! We will get back to you within 24 hours.',
     })
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('Contact form error:', err)
 
     return NextResponse.json(
       {
         error: 'Failed to send message. Please try emailing us directly at inferaform@gmail.com',
-        details: process.env.NODE_ENV === 'development' ? err.message : undefined,
+        details: process.env.NODE_ENV === 'development' && err instanceof Error ? err.message : undefined,
       },
       { status: 500 }
     )

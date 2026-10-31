@@ -1,5 +1,6 @@
 import { Section, LogoMark } from "./primitives"
 import { industries, CLIENT_LOGIN_URL } from "@/app/lib/site-data"
+import Link from "next/link"
 
 export function Footer() {
   return (
@@ -7,10 +8,10 @@ export function Footer() {
       <Section className="py-14">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-sm">
-            <a href="/" className="flex items-center gap-2.5">
+            <Link href="/" className="flex items-center gap-2.5">
               <LogoMark />
               <span className="font-display text-lg font-semibold tracking-tight">Inferaform</span>
-            </a>
+            </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               Google and Meta ads, AI lead follow-up and local SEO for businesses in the US and Canada.
             </p>
@@ -23,11 +24,11 @@ export function Footer() {
             <div>
               <p className="font-medium">Company</p>
               <ul className="mt-4 space-y-3 text-muted-foreground">
-                <li><a href="/#services" className="hover:text-foreground">Services</a></li>
-                <li><a href="/#how-it-works" className="hover:text-foreground">How it works</a></li>
+                <li><Link href="/#services" className="hover:text-foreground">Services</Link></li>
+                <li><Link href="/#how-it-works" className="hover:text-foreground">How it works</Link></li>
                 <li><a href="/seo-geo" className="hover:text-foreground">SEO &amp; GEO</a></li>
-                <li><a href="/#pricing" className="hover:text-foreground">Pricing</a></li>
-                <li><a href="/#faq" className="hover:text-foreground">FAQ</a></li>
+                <li><Link href="/#pricing" className="hover:text-foreground">Pricing</Link></li>
+                <li><Link href="/#faq" className="hover:text-foreground">FAQ</Link></li>
               </ul>
             </div>
             <div>
@@ -41,7 +42,7 @@ export function Footer() {
             <div>
               <p className="font-medium">Get in touch</p>
               <ul className="mt-4 space-y-3 text-muted-foreground">
-                <li><a href="/#contact" className="hover:text-foreground">Free ad audit</a></li>
+                <li><Link href="/#contact" className="hover:text-foreground">Free ad audit</Link></li>
                 <li><a href="mailto:inferaform@gmail.com" className="hover:text-foreground">inferaform@gmail.com</a></li>
                 <li><a href={CLIENT_LOGIN_URL} className="hover:text-foreground">Client login</a></li>
               </ul>

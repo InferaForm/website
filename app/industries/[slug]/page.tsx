@@ -13,15 +13,17 @@ import { AdMakeover, RampChart } from "@/app/components/site/Visuals"
 import { industries, getIndustry } from "@/app/lib/site-data"
 import { JsonLd } from "@/app/components/site/JsonLd"
 import { industryService, faqPage, breadcrumbs } from "@/app/lib/structured-data"
+import Link from "next/link"
 
-type Props = { params: { slug: string } }
+// Next 15+: route params are a Promise.
+type Props = { params: Promise<{ slug: string }> }
 
 export function generateStaticParams() {
   return industries.map((i) => ({ slug: i.slug }))
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const industry = getIndustry(params.slug)
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const industry = getIndustry((await params).slug)
   if (!industry) return {}
   return {
     title: `${industry.name} Marketing: Google & Meta Ads + AI Follow-up | Inferaform`,
@@ -30,8 +32,8 @@ export function generateMetadata({ params }: Props): Metadata {
   }
 }
 
-export default function IndustryPage({ params }: Props) {
-  const industry = getIndustry(params.slug)
+export default async function IndustryPage({ params }: Props) {
+  const industry = getIndustry((await params).slug)
   if (!industry) notFound()
 
   const { name, icon: Icon, headline, intro, pain, approach, offers, channels, faq, adExample } = industry
@@ -56,9 +58,9 @@ export default function IndustryPage({ params }: Props) {
           <div className="grid-bg absolute inset-0 -z-10" />
           <div className="absolute left-1/2 top-[-12rem] -z-10 h-[28rem] w-[48rem] -translate-x-1/2 rounded-full bg-primary/15 blur-[120px]" />
           <Section className="py-14 lg:py-24">
-            <a href="/#industries" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
+            <Link href="/#industries" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
               <ArrowLeft className="h-4 w-4"/> All industries
-            </a>
+            </Link>
             <Reveal className="mt-8 max-w-3xl">
               <div className="flex items-center gap-3">
                 <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary text-primary-foreground"><Icon className="h-5 w-5"/></div>

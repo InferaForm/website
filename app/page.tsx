@@ -355,9 +355,9 @@ const prontoThread = [
 
 function Pronto() {
   return (
-    <Section id="pronto" className="py-16 lg:py-24">
+    <Section id="pronto" className="overflow-x-clip py-16 lg:py-24">
       <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-        <div>
+        <div className="min-w-0">
           <Reveal>
             <Pill>Meet Pronto</Pill>
             <h2 className="mt-4 text-3xl sm:text-5xl font-bold">The system behind our follow-up</h2>
@@ -391,7 +391,7 @@ function Pronto() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="relative mx-auto w-full max-w-md"
+          className="relative mx-auto w-full min-w-0 max-w-md"
         >
           <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-primary/20 via-transparent to-transparent blur-2xl" />
           <div className="rounded-3xl border border-foreground/10 bg-card/80 p-5 backdrop-blur sm:p-6">

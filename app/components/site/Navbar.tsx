@@ -5,6 +5,7 @@ import { ArrowRight, Menu, X } from "lucide-react"
 import { Button } from "@/app/components/ui/button"
 import { Section, LogoMark } from "./primitives"
 import { CLIENT_LOGIN_URL } from "@/app/lib/site-data"
+import Link from "next/link"
 
 const links = [
   { href: "/#services", label: "Services" },
@@ -20,13 +21,13 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-foreground/5 bg-background/70 backdrop-blur-xl">
       <Section className="flex items-center justify-between py-3.5">
-        <a href="/" className="flex items-center gap-2.5">
+        <Link href="/" className="flex items-center gap-2.5">
           <LogoMark />
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg font-semibold tracking-tight">Inferaform</span>
             <span className="mt-1 text-[11px] text-muted-foreground">Ads &amp; AI Lead Follow-up</span>
           </span>
-        </a>
+        </Link>
         <nav className="hidden lg:flex items-center gap-8 text-sm text-foreground/70">
           {links.map((l) => (
             <a key={l.href} href={l.href} className="transition-colors hover:text-foreground">{l.label}</a>
@@ -34,9 +35,9 @@ export function Navbar() {
         </nav>
         <div className="flex items-center gap-2">
           <a href={CLIENT_LOGIN_URL} className="hidden px-3 text-sm text-foreground/70 transition-colors hover:text-foreground lg:block">Client login</a>
-          <a href="/#contact" className="hidden sm:block">
+          <Link href="/#contact" className="hidden sm:block">
             <Button className="gap-2">Free audit <ArrowRight className="h-4 w-4"/></Button>
-          </a>
+          </Link>
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -57,9 +58,9 @@ export function Navbar() {
               </a>
             ))}
             <a href={CLIENT_LOGIN_URL} className="py-3 text-lg text-foreground/80 hover:text-foreground">Client login</a>
-            <a href="/#contact" onClick={() => setOpen(false)} className="mt-3">
+            <Link href="/#contact" onClick={() => setOpen(false)} className="mt-3">
               <Button size="lg" className="w-full gap-2">Get your free audit <ArrowRight className="h-4 w-4"/></Button>
-            </a>
+            </Link>
           </Section>
         </div>
       )}
