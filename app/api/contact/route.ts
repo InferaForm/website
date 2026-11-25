@@ -136,21 +136,15 @@ Submitted: ${new Date().toISOString()}
       : `Inferaform <${fromEmail}>`
 
     const resend = new Resend(apiKey)
-    const { data: sent, error } = await resend.emails.send({
-      from,
-      to: contactRecipients(to),
-      replyTo: email,
-      subject,
-      text,
-      html,
-    })
+    // One email per address, so an address Resend refuses (suppressed, bounced) never stops the others.
+    const results = await Promise.all(
+      contactRecipients(to).map((address) => resend.emails.send({ from, to: [address], replyTo: email, subject, text, html }))
+    )
+    const failed = results.filter((r) => r.error)
+    for (const r of failed) console.error('Resend error:', r.error)
+    if (failed.length === results.length) throw new Error(failed[0]?.error?.message || 'No recipients configured')
 
-    if (error) {
-      console.error('Resend error:', error)
-      throw new Error(error.message)
-    }
-
-    console.log('Email sent via Resend:', sent?.id)
+    console.log('Email sent via Resend:', results.map((r) => r.data?.id).filter(Boolean).join(', '))
 
     return NextResponse.json({
       ok: true,

@@ -109,7 +109,7 @@ Submitted: ${new Date().toISOString()}
     const { error: visitorError } = await mailer.resend.emails.send({
       from: mailer.from,
       to: [email],
-      replyTo: contactRecipients(mailer.to),
+      replyTo: contactRecipients(mailer.to)[0],
       subject: `Your missed-lead estimate: ${formatMoney(result.lostRevenueYearly)}/year`,
       text: visitorText,
       html: visitorHtml,
@@ -121,17 +121,17 @@ Submitted: ${new Date().toISOString()}
     }
 
     // The visitor already has their report, so a failed notification only gets logged
-    const { error: notifyError } = await mailer.resend.emails.send({
-      from: mailer.from,
-      to: contactRecipients(mailer.to),
-      replyTo: email,
-      subject: `Calculator report — Inferaform: ${visitorName || email}`,
-      text: notifyText,
-    })
-
-    if (notifyError) {
-      console.error('Resend notify error:', notifyError)
-    }
+    // One email per address, so an address Resend refuses never stops the others.
+    const notified = await Promise.all(
+      contactRecipients(mailer.to).map((address) => mailer.resend.emails.send({
+        from: mailer.from,
+        to: [address],
+        replyTo: email,
+        subject: `Calculator report — Inferaform: ${visitorName || email}`,
+        text: notifyText,
+      }))
+    )
+    for (const r of notified) if (r.error) console.error('Resend notify error:', r.error)
 
     return NextResponse.json({ ok: true })
   } catch (err: unknown) {
