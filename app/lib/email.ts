@@ -16,6 +16,10 @@ export function escapeHtml(value: string) {
 
 export const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
+// CONTACT_EMAIL_TO may hold several addresses separated by commas; every one gets each enquiry.
+export const contactRecipients = (value: string | null | undefined) =>
+  String(value || "").split(",").map((s) => s.trim()).filter(Boolean)
+
 // Returns null when Resend or the addresses are not configured
 export function getMailer() {
   const apiKey = cleanEnv(process.env.RESEND_API_KEY)

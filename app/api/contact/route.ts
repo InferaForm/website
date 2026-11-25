@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
-import { cleanEnv, escapeHtml, emailRegex } from '@/app/lib/email'
+import { cleanEnv, contactRecipients, escapeHtml, emailRegex } from '@/app/lib/email'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -138,7 +138,7 @@ Submitted: ${new Date().toISOString()}
     const resend = new Resend(apiKey)
     const { data: sent, error } = await resend.emails.send({
       from,
-      to: [to],
+      to: contactRecipients(to),
       replyTo: email,
       subject,
       text,

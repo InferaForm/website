@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { escapeHtml, emailRegex, getMailer } from '@/app/lib/email'
+import { contactRecipients, escapeHtml, emailRegex, getMailer } from '@/app/lib/email'
 import { SITE_URL } from '@/app/lib/site-data'
 import {
   calculate,
@@ -109,7 +109,7 @@ Submitted: ${new Date().toISOString()}
     const { error: visitorError } = await mailer.resend.emails.send({
       from: mailer.from,
       to: [email],
-      replyTo: mailer.to,
+      replyTo: contactRecipients(mailer.to),
       subject: `Your missed-lead estimate: ${formatMoney(result.lostRevenueYearly)}/year`,
       text: visitorText,
       html: visitorHtml,
@@ -123,7 +123,7 @@ Submitted: ${new Date().toISOString()}
     // The visitor already has their report, so a failed notification only gets logged
     const { error: notifyError } = await mailer.resend.emails.send({
       from: mailer.from,
-      to: [mailer.to],
+      to: contactRecipients(mailer.to),
       replyTo: email,
       subject: `Calculator report — Inferaform: ${visitorName || email}`,
       text: notifyText,
