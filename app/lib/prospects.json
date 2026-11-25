@@ -11,7 +11,8 @@
     "reply1": "Hi, this is Cypress Stay Dry Roofing. Sorry about the ceiling stain, we can get someone out to inspect the roof. We have Thursday at 9am or Friday at 1pm. Which works better for you?",
     "customerFollow": "Friday at 1pm works. Do I need to be home for the inspection?",
     "reply2": "Friday at 1pm is booked. Yes, please be home so we can check the ceiling from inside as well as the roof. Placing a bucket under any drip and taking a photo of the stain would help.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://cypressroofingcontractors.com"
   },
   {
     "slug": "green-diamond-landscape-yucaipa-3c31bd",
@@ -25,7 +26,8 @@
     "reply1": "Hi, this is Green Diamond Landscape. Thanks for getting in touch, we'd be glad to give you a free estimate on the turf. We could come Thursday at 10am or Friday at 2pm. Which works better for you?",
     "customerFollow": "Friday at 2 works. Do I need to do anything to the lawn before you come?",
     "reply2": "Friday at 2pm is booked for your free estimate. Nothing to prepare, just make sure we can get to the back yard. We'll measure up and talk through your options on site. See you then. Green Diamond Landscape",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://greendiamondlandscape.net"
   },
   {
     "slug": "blue-peak-water-co-bakersfield-3bccf9",
@@ -39,7 +41,8 @@
     "reply1": "Hi, this is Blue Peak Water Co. Sorry about the spotting and the dishwasher crust. We can look at softener and reverse osmosis options for you. We could visit Thursday at 10am or Friday at 3pm. Which works better?",
     "customerFollow": "Friday at 3pm works. Is there anything I should have ready before you come?",
     "reply2": "Friday at 3pm is booked for you. Just make sure we can get to your main water line and the kitchen sink. We'll go through the options when we see your setup. See you then.",
-    "replyPromise": "We respond within 24 hours."
+    "replyPromise": "We respond within 24 hours.",
+    "website": "https://bluepeakwater.com"
   },
   {
     "slug": "water-heros-ceres-b6d485",
@@ -53,7 +56,8 @@
     "reply1": "Hi, it's Water Heros. Thanks for getting in touch about the spotting and taste in your Ceres home. We can offer an install slot Thursday at 10am or Friday at 2pm. Which works better for you?",
     "customerFollow": "Friday at 2pm works. Is there a deposit to hold the slot, and do I get it back if I change my mind?",
     "reply2": "You're booked for Friday at 2pm. The deposit holds your install slot, it's refundable, and it's applied to your final invoice. Speak soon. Water Heros",
-    "replyPromise": "Drop us a note and we'll reply within one business hour."
+    "replyPromise": "Drop us a note and we'll reply within one business hour.",
+    "website": "https://callwaterheros.com"
   },
   {
     "slug": "water-factory-inc-norco-87cbf2",
@@ -67,7 +71,8 @@
     "reply1": "Hi, thanks for contacting Water Factory. We can help with both a softener and a kitchen reverse osmosis system. We could visit Thursday at 10am or Friday at 2pm. Which suits you better?",
     "customerFollow": "Friday at 2pm works. Do I need to do anything before you come, like have the water tested?",
     "reply2": "Friday at 2pm is booked for you. Nothing to prepare. Just make sure we can reach the kitchen sink and where the water line enters the house. We'll check your water while we're there.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://waterfactoryinc.com"
   },
   {
     "slug": "timeless-remodeling-showroom-laguna-hills-81ba4c",
@@ -81,7 +86,8 @@
     "reply1": "Hi, thanks for contacting Timeless Remodeling Showroom. We'd be glad to do a free in-home design consultation for your kitchen. Would Thursday at 10am or Friday at 3pm suit you? Timeless Remodeling Showroom",
     "customerFollow": "Friday at 3 works. Is there anything I should have ready, like photos or measurements of the kitchen?",
     "reply2": "Friday at 3pm is booked for your free in-home design consultation. Photos of the kitchen and a few styles you like are helpful, but there's nothing else you need to prepare. See you then. Timeless Remodeling Showroom",
-    "replyPromise": "Tell us about your project and we'll reach out within one business day - or stop by the showroom, right off the La Paz exit on the 5 freeway, next to the VOCO hotel."
+    "replyPromise": "Tell us about your project and we'll reach out within one business day - or stop by the showroom, right off the La Paz exit on the 5 freeway, next to the VOCO hotel.",
+    "website": "https://www.timelessshowroom.com"
   },
   {
     "slug": "central-bay-roofing-alameda-56605c",
@@ -95,7 +101,8 @@
     "reply1": "Hi, thanks for contacting Central Bay Roofing. We can send someone to look at the leak near your chimney. Would Thursday at 10am or Friday at 2pm suit you better? Central Bay Roofing",
     "customerFollow": "Friday at 2pm works. Is there anything I should do before then, like clear access to the attic?",
     "reply2": "Friday at 2pm is booked. Clearing access to the attic helps, and it's useful to point out where the stain is. We'll look it over and talk you through the repair options. Central Bay Roofing",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.centralbayroofing.com"
   },
   {
     "slug": "vision-plumbing-lynden-0aa15d",
@@ -109,7 +116,8 @@
     "reply1": "Hi, this is Vision Plumbing. Thanks for getting in touch about your bathroom remodel. We can come take a look Thursday at 10am or Friday at 2pm. Which works better for you?",
     "customerFollow": "Thursday at 10 works. Is there anything I should do to the bathroom before you get here?",
     "reply2": "Thursday at 10am is booked, see you then. Just make sure we can get into the bathroom and see the current layout. We'll talk through next steps on site. Vision Plumbing",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://visionplumbingwa.com"
   },
   {
     "slug": "primed-landscaping-maple-valley-e1e2b3",
@@ -123,7 +131,8 @@
     "reply1": "Hi, thanks for contacting Primed Landscaping. We do commercial maintenance and can walk the six buildings with you. Would Wednesday at 10am or Thursday at 2pm suit you for a site visit?",
     "customerFollow": "Thursday at 2pm works. Should I have anything ready, like a site map or a list of what we currently get done?",
     "reply2": "Thursday at 2pm is booked for the site visit. A site map helps if you have one, and a note of what your current crew covers. If not, we will walk it together. See you then.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.primedlandscaping.com"
   },
   {
     "slug": "phillips-heating-air-rocklin-8206a1",
@@ -137,7 +146,8 @@
     "reply1": "Hi, this is Phillips Heating & Air. Sorry about the heat pump, we can help. We can get a technician out tomorrow at 10:00am or Thursday at 1:30pm. Which works better for you?",
     "customerFollow": "Thursday at 1:30 works. Is there anything I should do to get ready before the technician arrives?",
     "reply2": "You're booked for Thursday at 1:30pm. Please make sure the technician can get to both the indoor and outdoor units, and jot down when the problem started. We'll see you then. Phillips Heating & Air",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.phillipsheatandair.com"
   },
   {
     "slug": "green-valley-landscaping-ukiah-428514",
@@ -151,7 +161,8 @@
     "reply1": "Hi, this is Green Valley Landscaping. Thanks for getting in touch, a drought-tolerant front yard is something we can definitely help with. We can visit Thursday at 10am or Friday at 2pm. Which suits you better?",
     "customerFollow": "Friday at 2 works. Should I have anything ready beforehand, like photos or a rough idea of what I want?",
     "reply2": "Great, you're booked in for Friday at 2pm. Nothing formal needed. A few photos, any plants or styles you like and spots you want to keep will help us. See you then.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.greenvalleylandscaping707.com"
   },
   {
     "slug": "roof-tec-bainbridge-island-3c7256",
@@ -165,7 +176,8 @@
     "reply1": "Hi, this is Roof Tec. Thanks for getting in touch. We can look at the moss and the gutters for you. We have Thursday at 10am or Friday at 2pm open for a visit. Which suits you better?",
     "customerFollow": "Friday at 2pm works. Is there anything I should clear or get ready around the house beforehand?",
     "reply2": "Friday at 2pm is booked, thanks. Just make sure we can get to the sides of the house and the gutters. We'll look over the roof and talk you through the options and costs while we're there. Roof Tec",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://roof-tec.net"
   },
   {
     "slug": "dan-roofing-culver-city-c25f55",
@@ -179,7 +191,8 @@
     "reply1": "Hi, thanks for contacting Dan Roofing. Sorry about the leak, we can help. We can send someone to inspect the roof near the chimney tomorrow at 9am or Thursday at 2pm. Which works better for you?",
     "customerFollow": "Thursday at 2pm works. Should I do anything in the meantime, and will you need access to the attic?",
     "reply2": "Thursday at 2pm is booked. For now, put a bucket under the leak and move anything valuable out of the way. Access to the attic helps if it is easy to reach, but we can start with the roof.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.danroofing.com"
   },
   {
     "slug": "new-cali-construction-culver-city-314039",
@@ -193,7 +206,8 @@
     "reply1": "Hi, this is New Cali Construction. Thanks for reaching out about your kitchen remodel. We can come by for a walkthrough Thursday at 5:30pm or Saturday at 10am. Which suits you better?",
     "customerFollow": "Saturday at 10 works. Is there anything I should have ready beforehand, like photos or a rough budget?",
     "reply2": "Great, you're booked for Saturday at 10am. Have any inspiration photos and a rough budget range handy, and we'll talk through the layout on site. See you then. New Cali Construction",
-    "replyPromise": "We received your message and will get back to you within a few hours - weekdays and weekends."
+    "replyPromise": "We received your message and will get back to you within a few hours - weekdays and weekends.",
+    "website": "https://www.newcaliconstruction.com"
   },
   {
     "slug": "bay-water-softeners-pleasanton-c45962",
@@ -207,7 +221,8 @@
     "reply1": "Hi, this is Bay Water Softeners. Thanks for reaching out. We can come take a look at your setup and go over softener options. Would Thursday at 5pm or Saturday at 10am suit you better?",
     "customerFollow": "Saturday at 10am works. Is there anything I should have ready before you come?",
     "reply2": "Great, you're booked in for Saturday at 10am. It helps if we can easily reach where the main water line enters the house. A photo of any existing equipment is useful too. See you then. Bay Water Softeners",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.baywatersofteners.com"
   },
   {
     "slug": "lakewood-roofing-solutions-lakewood-f8c690",
@@ -221,7 +236,8 @@
     "reply1": "Hi, this is Lakewood Roofing Solutions. Sorry about the ceiling stain, we can help with the roof repair. We could inspect tomorrow at 9am or 1pm. Which suits you better? Reply with a time and we'll book it in.",
     "customerFollow": "1pm works. Is there anything I should clear from the room or the attic before you arrive?",
     "reply2": "Booked for tomorrow at 1pm. Moving furniture away from the stained area and keeping attic access clear will help. We'll inspect the roof and talk you through the next steps. Lakewood Roofing Solutions",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://lakewoodroofing.co"
   },
   {
     "slug": "allure-body-boutique-lakewood-80891f",
@@ -235,7 +251,8 @@
     "reply1": "Hi, thanks for contacting Allure Body Boutique. We'd be happy to see you about Botox. We have Thursday at 5:30pm or Saturday at 10:00am. Which works better for you?",
     "customerFollow": "Saturday at 10 works. Is there anything I should do or avoid before I come in?",
     "reply2": "Perfect, you're booked for Saturday at 10:00am. We'll go over everything you need to know before your treatment when you arrive. Reply here if your plans change. See you then, Allure Body Boutique",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.allurebodyboutique.com"
   },
   {
     "slug": "duality-aesthetics-and-wellness-redwood-city-3b80a0",
@@ -249,7 +266,8 @@
     "reply1": "Hi, thanks for contacting Duality Aesthetics and Wellness. We can see you for a neurotoxin consultation Thursday at 4:30pm or Friday at 11am. Which works better for you? - Duality Aesthetics and Wellness",
     "customerFollow": "Friday at 11am works. Should I come with makeup on or off?",
     "reply2": "You're booked for Friday at 11am. Please come with a clean, makeup-free face if you can, and we'll go through your goals and options at the visit. See you then. - Duality Aesthetics and Wellness",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.dualityaesthetics.com"
   },
   {
     "slug": "hg-home-services-corona-del-mar-1296ca",
@@ -263,7 +281,8 @@
     "reply1": "Hi, this is HG Home Services. Sorry about the AC, a buzzing outdoor unit is worth getting checked. We can send a technician Thursday at 9am or Friday at 1pm. Which works better for you?",
     "customerFollow": "Thursday at 9am works. Is there anything I should do with the unit before then?",
     "reply2": "Thursday at 9am is booked, thank you. Until then, switch the AC off at the thermostat so the unit isn't running while it buzzes. Our technician will talk you through the options on site. HG Home Services",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.hghomeservicesco.com"
   },
   {
     "slug": "pure-air-cooling-heating-kirkland-a5df4c",
@@ -277,7 +296,8 @@
     "reply1": "Hi, this is Pure Air Cooling & Heating. Sorry about the cold house. We can send a technician tomorrow at 8:30am or 11:00am to look at your furnace. Which suits you better?",
     "customerFollow": "8:30 works. Should I do anything before the tech arrives, and how long will the visit take?",
     "reply2": "Booked for 8:30am tomorrow. Please make sure the tech can reach the furnace and check your thermostat is set to heat. The visit length depends on what we find, and the tech will explain next steps on site.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://pureair-coolingheating.com"
   },
   {
     "slug": "nicholas-aire-systems-santa-clarita-ec0945",
@@ -291,7 +311,8 @@
     "reply1": "Hi, this is Nicholas Aire Systems. Sorry about the heat. We can send a technician to Valencia tomorrow at 8:30am or 11:00am. Which suits you better? Reply with a time and your address and we'll lock it in.",
     "customerFollow": "11:00am works. Should I do anything before the tech arrives, like turn the system off?",
     "reply2": "You're booked for 11:00am tomorrow. Yes, please switch the AC off at the thermostat until we arrive, and make sure the indoor unit and outdoor unit are easy to reach. See you then. Nicholas Aire Systems",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.nickaire.com"
   },
   {
     "slug": "dori-s-heating-and-air-conditioning-inc-la-quinta-6ee23f",
@@ -305,7 +326,8 @@
     "reply1": "Hi, thanks for contacting Dori's Heating and Air Conditioning. We can send someone to look at your AC Thursday at 9:00am or Friday at 1:00pm. Which suits you? Happy to explain our service contracts too. Dori's Heating and Air Conditioning",
     "customerFollow": "Thursday at 9 works. If I sign up for a service contract, does it make the repair cheaper?",
     "reply2": "You're booked for Thursday at 9:00am. Contract customers get 15% off all repairs plus priority service, and we can go through the details when we're there. Dori's Heating and Air Conditioning",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://dori-hvac.com"
   },
   {
     "slug": "five-cities-water-systems-grover-beach-81d555",
@@ -319,7 +341,8 @@
     "reply1": "Hi, thanks for contacting Five Cities Water Systems. We can help with spotting and taste, and look at softener and drinking water options. We could visit Thursday at 10am or Friday at 2pm. Which suits you better?",
     "customerFollow": "Friday at 2pm works. Should I do anything before you come, like testing the water or having the old unit looked at?",
     "reply2": "Friday at 2pm is booked for you. No need to test anything beforehand. Just let us know where your water enters the house and where the kitchen tap is, and we'll take it from there. Five Cities Water Systems",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.fivecitieswater.com"
   },
   {
     "slug": "fillmore-plumber-fillmore-67718e",
@@ -333,7 +356,8 @@
     "reply1": "Hi, this is Fillmore Plumber. Sorry about the backed-up sink, we can help with that drain. We have tomorrow at 8:30am or 11:00am open. Which suits you better?",
     "customerFollow": "8:30 works. Should I clear anything out from under the sink before the plumber gets there?",
     "reply2": "You're booked for 8:30am tomorrow. Please clear the space under the sink so the plumber can reach the pipes. They'll look at the drain when they arrive and talk you through the cost. Fillmore Plumber",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.fillmorecaplumber.com"
   },
   {
     "slug": "pimley-heating-air-inc-oakdale-4dea70",
@@ -347,7 +371,8 @@
     "reply1": "Hi, this is Pimley Heating & Air. Sorry to hear that, a 12 year old unit is worth a proper look. We can send someone Thursday at 9am or Friday at 1pm. Which suits you better?",
     "customerFollow": "Friday at 1pm works. Is there anything I should get ready beforehand?",
     "reply2": "You're booked for Friday at 1pm. Please clear access to the indoor and outdoor units, and note when the cooling started to fade. The technician will talk you through your options on the day. Pimley Heating & Air",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.pimleyhvac.com"
   },
   {
     "slug": "green-spaces-landscaping-redmond-6e4d75",
@@ -361,7 +386,8 @@
     "reply1": "Hi, thanks for getting in touch with Green Spaces Landscaping. A patio and fire pit space sounds great. We can come out to walk the yard with you. Would Tuesday at 5:30pm or Thursday at 6pm suit you?",
     "customerFollow": "Thursday at 6pm works. Should I have anything ready, like a rough budget or photos of ideas I like?",
     "reply2": "Thursday at 6pm is booked. Photos of styles you like are very helpful, and it's worth having a rough budget range in mind so we can shape the design around it. See you then. Green Spaces Landscaping",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://greenspacesls.com"
   },
   {
     "slug": "hoffman-quality-water-walla-walla-82248d",
@@ -375,7 +401,8 @@
     "reply1": "Hi, thanks for contacting Hoffman Quality Water. Orange staining is worth testing, and the water test is free. We can come Thursday at 5:30pm or Friday at 5:00pm. Which suits you better?",
     "customerFollow": "Thursday at 5:30 works. Do I need to collect a water sample beforehand or leave anything out for you?",
     "reply2": "Thursday at 5:30pm is booked. No need to collect anything, we'll take the sample when we arrive. Just let us know which tap you use most, and we'll test from there. See you Thursday.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://hoffmanqualitywater.com"
   },
   {
     "slug": "gaia-landscapes-inc-corvallis-8d4c34",
@@ -389,7 +416,8 @@
     "reply1": "Hi, thanks for contacting Gaia Landscapes. We'd be glad to look at your backyard and talk through patio and planting bed design. Could we visit Thursday at 10am or Friday at 3pm? Gaia Landscapes",
     "customerFollow": "Friday at 3pm works. Is there anything I should have ready before you come, like a rough idea of the patio size?",
     "reply2": "Friday at 3pm is booked for you. A rough idea of the patio size and any plants you love or want to avoid is plenty. We'll walk the yard together and go through options. See you then. Gaia Landscapes",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.gaia-landscapes.com"
   },
   {
     "slug": "nurvana-aesthetics-wellness-aptos-0b35b4",
@@ -403,7 +431,8 @@
     "reply1": "Thanks for reaching out to Nurvana Aesthetics & Wellness. We'd be happy to set up a Botox consultation. We have Thursday at 5:30pm or Friday at 4:00pm open. Which works better for you?",
     "customerFollow": "Friday at 4 works. Is there anything I should do to prepare beforehand?",
     "reply2": "You're booked for Friday at 4:00pm. Just come as you are and bring any questions you have. Your provider will talk through options and pricing with you at the visit. See you then. Nurvana Aesthetics & Wellness",
-    "replyPromise": "Our team in Aptos will get back to you within one business day."
+    "replyPromise": "Our team in Aptos will get back to you within one business day.",
+    "website": "https://www.nurvanamd.com"
   },
   {
     "slug": "re-gen-beauty-lab-brentwood-4eba09",
@@ -417,7 +446,8 @@
     "reply1": "Hi, this is RE:GEN Beauty Lab. Yes, we'd be happy to set up a free consultation to talk through Botox and fillers. We have Thursday at 10:30am or Friday at 4:00pm. Which suits you better?",
     "customerFollow": "Friday at 4 works for me. Do I need to bring anything with me?",
     "reply2": "You're booked in for Friday at 4:00pm. Just bring any questions and a rough idea of what you'd like to change, and we'll go through your options together. See you then. RE:GEN Beauty Lab",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.regenbeautylab.com"
   },
   {
     "slug": "4-seasons-kitchen-bath-redondo-beach-c9837d",
@@ -431,7 +461,8 @@
     "reply1": "Hi, thanks for contacting 4 Seasons Kitchen & Bath. We'd be glad to see your kitchen and talk through the cabinets. Could we visit Thursday at 4pm or Friday at 10am? Reply with whichever suits you.",
     "customerFollow": "Friday at 10 works. Is there anything I should have ready, like photos or measurements?",
     "reply2": "Friday at 10am is booked for you. Photos of the kitchen and any cabinet styles you like are plenty. No need to measure, we'll do that during the visit. See you then. 4 Seasons Kitchen & Bath",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.4seasonskitchenbath.com"
   },
   {
     "slug": "redlands-roofing-company-yucaipa-ea1efe",
@@ -445,7 +476,8 @@
     "reply1": "Hi, this is Redlands Roofing Company. Sorry to hear that, we can help. Could we come out tomorrow at 8:30am or 11:00am to inspect the roof and the damp patch? Reply with the time that suits you.",
     "customerFollow": "11:00am works. Should I do anything about the ceiling in the meantime, and will you be able to fix it the same day?",
     "reply2": "You're booked for 11:00am tomorrow. For tonight, put a bucket under the damp patch and move anything valuable out of the way. We'll inspect the roof and talk you through repair options on the spot.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://redlandsroofingcompany.com"
   },
   {
     "slug": "valley-skin-medspa-apple-valley-6520d9",
@@ -459,7 +491,8 @@
     "reply1": "Hi, this is Valley Skin & Medspa. Yes, we offer consultations for CO2 laser and acne scarring. We have Thursday at 2:30pm or Friday at 11am open. Which works better for you?",
     "customerFollow": "Thursday at 2:30 works. Is there anything I should do or bring beforehand?",
     "reply2": "Thursday at 2:30pm is booked for you. Just bring any questions and, if you like, photos of how your skin has looked. We'll go through prep and what to expect in person. See you then, Valley Skin & Medspa.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.valleyskinandmedspa.com"
   },
   {
     "slug": "kitchen-bath-builders-federal-way-8b58f8",
@@ -473,7 +506,8 @@
     "reply1": "Hi, thanks for contacting Kitchen & Bath Builders. Yes, we handle design, permits and construction for bathroom remodels. We can come see the space Thursday at 4:30pm or Saturday at 10am. Which works better for you?",
     "customerFollow": "Saturday at 10 works. Is there anything I should have ready for the visit?",
     "reply2": "Great, you're booked for Saturday at 10am. Just make sure we can get into the bathroom, and have any photos or ideas you like handy. We'll talk through design, permits and next steps on site. Kitchen & Bath Builders",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://kitchenandbath.builders"
   },
   {
     "slug": "inland-bath-kitchen-kennewick-f91905",
@@ -487,7 +521,8 @@
     "reply1": "Hi, this is Inland Bath & Kitchen. Yes, we build tile showers and do full bath remodels in Kennewick. We can stop by to look at the space Thursday at 10am or Friday at 2pm. Which suits you better?",
     "customerFollow": "Friday at 2 works. Roughly how long does a shower conversion like that usually take?",
     "reply2": "You're booked for Friday at 2pm. Timing depends on the layout, so we'll measure up and give you a clear timeline at the visit. Photos of any tile or shower styles you like would help.",
-    "replyPromise": "Fill out the form below and we'll respond within one business day with next steps and pricing information."
+    "replyPromise": "Fill out the form below and we'll respond within one business day with next steps and pricing information.",
+    "website": "https://inlandbath.com"
   },
   {
     "slug": "w-b-starr-inc-lake-forest-bbd26a",
@@ -501,7 +536,8 @@
     "reply1": "Hi, this is W.B. Starr. Thanks for getting in touch about the pepper tree. We can come take a look Thursday at 10am or Friday at 2pm. Which works better for you?",
     "customerFollow": "Friday at 2 works. Do I need to be home for the visit?",
     "reply2": "Friday at 2pm is booked for you. It's best if you can be there to point out the branches and the fence, and we'll go over options and cost on site. See you then.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://wbstarr.com"
   },
   {
     "slug": "the-g-spa-santa-barbara-bc2216",
@@ -515,7 +551,8 @@
     "reply1": "Hi, this is The G Spa. Yes, our microneedling offer (buy 3, get the 4th free) is on. We can fit you in for a consultation Thursday at 10:30am or Friday at 4pm. Which suits you better?",
     "customerFollow": "Friday at 4pm works. Roughly what will the microneedling cost me?",
     "reply2": "You're booked in for Friday at 4pm. We'll go through exact pricing and how the 4th-session offer applies when you arrive, so there are no surprises. See you then. The G Spa",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://gspasb.com"
   },
   {
     "slug": "stay-dry-roofing-mission-viejo-e7d6cd",
@@ -529,7 +566,8 @@
     "reply1": "Hi, this is Stay Dry Roofing. Sorry about the leak, we can help. We can send someone to check the roof near your chimney tomorrow at 9:00 AM or 1:30 PM. Which works better for you?",
     "customerFollow": "1:30 PM works. Should I do anything tonight to limit the damage, like moving things or putting a bucket down?",
     "reply2": "You're booked for 1:30 PM tomorrow. Yes, put a bucket under the drip, move furniture and rugs away from the stain, and take a few photos of the ceiling. We'll look at the roof when we arrive.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://missionviejoroofs.com"
   },
   {
     "slug": "feller-heating-and-air-conditioning-bellingham-ce65ca",
@@ -543,7 +581,8 @@
     "reply1": "Hi, thanks for contacting Feller Heating and Air Conditioning. Sorry about the furnace. We can send a technician tomorrow at 8:30am or 11:00am. Which suits you better? Please send your street address too.",
     "customerFollow": "11:00am works. Is there anything I should do before the technician arrives?",
     "reply2": "You're booked for 11:00am tomorrow. Please make sure someone is home and the technician can get to the furnace, so clear any boxes around it. We'll text you when we're on the way. Feller Heating and Air Conditioning",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.fellerheating.com"
   },
   {
     "slug": "green-landscape-management-bellingham-7ab5ab",
@@ -557,7 +596,8 @@
     "reply1": "Hi, thanks for getting in touch with Green Landscape Management. We can come look at the lawn and talk through sod options. Would Wednesday at 10am or Thursday at 2pm suit you better?",
     "customerFollow": "Thursday at 2pm works. Should I do anything to the lawn before you come, like mowing or pulling out the dead patches?",
     "reply2": "Thursday at 2pm is booked for you. No need to do anything beforehand, so leave the lawn as it is and we'll assess it when we arrive. We'll go over sod options and a quote on site.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://greenlandscapemgmt.com"
   },
   {
     "slug": "omg-landscaping-design-llc-yakima-d4a982",
@@ -571,7 +611,8 @@
     "reply1": "Hi, thanks for contacting OMG Landscaping & Design. We'd love to see your backyard and talk through patio and planting ideas. Could we visit Wednesday at 10am or Thursday at 3pm?",
     "customerFollow": "Thursday at 3pm works. Should I have a rough idea of what I want ready, or do you bring ideas?",
     "reply2": "Thursday at 3pm is booked. A few photos or ideas you like are helpful, but no need to prepare anything. We'll bring design ideas and talk through options and pricing with you on site.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://omglandscapingwa.co"
   },
   {
     "slug": "smooth-med-spa-burbank-263706",
@@ -585,7 +626,8 @@
     "reply1": "Hi, this is Smooth Med Spa in Burbank. Thanks for getting in touch. We'd be glad to help with your first Botox appointment. We have Thursday at 5:30pm or Saturday at 10:00am open. Which suits you better?",
     "customerFollow": "Saturday at 10 works. Is there anything I should avoid or do before I come in?",
     "reply2": "You're booked for Saturday at 10:00am. Your provider will go over exactly what to avoid and how to prepare before your treatment, and you can ask us anything else here by text. See you then. Smooth Med Spa",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.smoothmedspa.com"
   },
   {
     "slug": "donnie-s-plumbing-murrieta-d5562e",
@@ -599,7 +641,8 @@
     "reply1": "Hi, this is Donnie's Plumbing. Sorry about the leak. We can be there tomorrow at 8:30am or 10:30am. Which works better? If it's getting worse, turn off the water supply to the heater in the meantime.",
     "customerFollow": "10:30 works. Do I need to clear anything around the heater beforehand?",
     "reply2": "You're booked for 10:30 tomorrow. Please clear a path to the heater and have someone home to let us in. We'll text when we're on the way. As a new customer, you also get 15% off your first service.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://donnietheplumber.com"
   },
   {
     "slug": "brambila-heating-air-fairfield-2ca679",
@@ -613,7 +656,8 @@
     "reply1": "Hi, this is Brambila Heating & Air. Sorry about the heat. We can send a technician tomorrow at 9:00am or 1:00pm. Which suits you better? Reply with your choice and your street address and we'll lock it in.",
     "customerFollow": "1:00pm works. Is there anything I should do before the technician arrives?",
     "reply2": "You're booked for 1:00pm tomorrow. Please switch the system off at the thermostat until we arrive, and make sure we can get to both the indoor and outdoor units. See you then. Brambila Heating & Air",
-    "replyPromise": "We'll respond within one business day."
+    "replyPromise": "We'll respond within one business day.",
+    "website": "https://brambilahvac.com"
   },
   {
     "slug": "beautification-med-spa-concord-a1947c",
@@ -627,7 +671,8 @@
     "reply1": "Hi, thanks for contacting Beautification Med Spa. We can see you for a Botox consultation Thursday at 5:30pm or Saturday at 10:00am. Which suits you better? Beautification Med Spa",
     "customerFollow": "Saturday at 10 works. Roughly what will it cost?",
     "reply2": "You're booked for Saturday at 10:00am. Cost depends on the areas treated, so we'll go through your options and pricing together at the consultation. See you then. Beautification Med Spa",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://beautificationmed.com"
   },
   {
     "slug": "infinity-aesthetics-vallejo-032b17",
@@ -641,7 +686,8 @@
     "reply1": "Hi, thanks for contacting Infinity Aesthetics. Yes, we can set up a Botox consultation for your forehead lines before the wedding. We have Thursday at 5:30pm or Saturday at 10:00am. Which suits you better? Infinity Aesthetics",
     "customerFollow": "Saturday at 10 works. Is there anything I should do or avoid before I come in?",
     "reply2": "You're booked for Saturday at 10:00am. Your provider will go through how to prepare and what to avoid at the consultation, so just bring any questions. See you then. Infinity Aesthetics",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.infinityaesthetics.live"
   },
   {
     "slug": "graise-aesthetics-thousand-oaks-876666",
@@ -655,7 +701,8 @@
     "reply1": "Hi, this is Graise Aesthetics. Thanks for reaching out. We'd be happy to talk through subtle lip filler at a complimentary consultation. We have Thursday at 5:30pm or Friday at 5:00pm open. Which suits you better?",
     "customerFollow": "Thursday at 5:30 works. Is there anything I should bring or prepare beforehand?",
     "reply2": "You're booked for Thursday at 5:30pm. Just bring any questions and a few photos of the look you like. We'll go through your options together at the consultation. See you then. Graise Aesthetics",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://graise.co"
   },
   {
     "slug": "noel-s-plumbing-company-fresno-e02176",
@@ -669,7 +716,8 @@
     "reply1": "Hi, this is Noel's Plumbing Company. Sorry about the backed-up drains, we can help with that. We could be there tomorrow at 8:00am or 10:30am. Which works better for you?",
     "customerFollow": "10:30 works. Should I clear anything around the floor drain beforehand?",
     "reply2": "You're booked for 10:30 tomorrow. Please clear a path to the floor drain and under the kitchen sink. Our plumber will talk you through what's needed once they've seen it. Noel's Plumbing Company",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://noelsplumbingcompany.com"
   },
   {
     "slug": "slynn-wellness-pasadena-f84c23",
@@ -683,7 +731,8 @@
     "reply1": "Hi, this is Slynn Wellness. Thanks for reaching out. We can book your filler consultation this week: Thursday at 5:30pm or Friday at 6:00pm. Which works better for you?",
     "customerFollow": "Thursday at 5:30 works. Is there anything I should bring or prepare beforehand?",
     "reply2": "You're booked for Thursday at 5:30pm. Just bring any photos of the look you like, and your provider will talk you through everything at the consultation. See you then. Slynn Wellness",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.slynnwellness.com"
   },
   {
     "slug": "crystal-clear-water-systems-garden-grove-7912d6",
@@ -697,7 +746,8 @@
     "reply1": "Hi, this is Crystal Clear Water Systems. Thanks for getting in touch. We can come do your free water test Thursday at 5:00pm or Friday at 10:00am. Which works better for you?",
     "customerFollow": "Thursday at 5 works. Is there anything I should have ready before you come?",
     "reply2": "Thursday at 5:00pm is booked for you. Just make sure we can get to your kitchen tap and the spot where the water line enters your home. We'll go through your free estimate once the test is done.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.crystalclearwater.com"
   },
   {
     "slug": "derma-aesthetica-med-spa-corona-4f59b1",
@@ -711,7 +761,8 @@
     "reply1": "Hi, thanks for contacting Derma Aesthetica Med Spa. We'd be happy to see you for an Endolift consultation for your jawline and neck. We have Thursday at 4:30pm or Friday at 5:00pm open. Which suits you better?",
     "customerFollow": "Thursday at 4:30 works. How long should I plan for the consultation?",
     "reply2": "You're booked for Thursday at 4:30pm. Plan on enough time to talk through your goals and which options suit you, with no rush. Just bring any questions you have. See you then. Derma Aesthetica Med Spa",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.dermaaestheticamedspa.com"
   },
   {
     "slug": "aspire-medical-aesthetics-corona-ce886b",
@@ -725,7 +776,8 @@
     "reply1": "Hi, thanks for reaching out to Aspire Medical Aesthetics. Happy to help with Botox for forehead lines. We can see you Tuesday at 5:30pm or Thursday at 6:00pm for a consultation. Would either of those work for you?",
     "customerFollow": "Thursday at 6:00pm works. Is there anything I should do or avoid before I come in?",
     "reply2": "You're booked for Thursday at 6:00pm at Aspire Medical Aesthetics. Please come with a clean face and let us know about any medications or supplements you take. Your provider will go over everything at the consultation. See you then.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://aspiremedicalaesthetics.com"
   },
   {
     "slug": "new-image-med-spa-rancho-cucamonga-f2421e",
@@ -739,7 +791,8 @@
     "reply1": "Hi, this is New Image Med Spa. We'd be glad to help with Botox. We can fit in a consultation Thursday at 10:30am or Friday at 5:30pm. Which suits you better?",
     "customerFollow": "Friday at 5:30 works. Is there anything I should bring with me?",
     "reply2": "You're booked for Friday at 5:30pm. Just bring any questions and a list of medications you take, and we'll go through your goals together. See you then. New Image Med Spa",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.newimagemedspa.com"
   },
   {
     "slug": "water-air-works-vancouver-e2f41f",
@@ -753,7 +806,8 @@
     "reply1": "Hi, thanks for getting in touch with Water & Air Works. Hard water spotting is something we help with often. We can come out to look at your water and talk softener or reverse osmosis options. Would Thursday at 5:30pm or Friday at 6pm suit you?",
     "customerFollow": "Thursday at 5:30 works. Roughly how long does the visit take, and is there anything I should have ready?",
     "reply2": "Thursday at 5:30pm is booked for you. Expect the visit to run a short while. It helps if we can reach the water meter and the area where the main water line enters the house. See you then. Water & Air Works",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://waterandairworks.com"
   },
   {
     "slug": "first-ave-medical-spa-vancouver-a07ba2",
@@ -767,7 +821,8 @@
     "reply1": "Hi, this is First Ave Medical Spa. Thanks for getting in touch. The 15% off applies to all treatments except Botox and dermal fillers. We have Saturday at 10:00 or 11:30. Which suits you?",
     "customerFollow": "10:00 works. Is there anything I should do to prepare, since it's my first visit?",
     "reply2": "You're booked for Saturday at 10:00. Nothing special to prepare for the visit itself. Our team will go through your skin goals and the options with you when you arrive. See you then.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://firstavemedicalspa.com"
   },
   {
     "slug": "nagel-landscaping-inc-modesto-c4f361",
@@ -781,7 +836,8 @@
     "reply1": "Thanks for getting in touch. We'd be glad to look at your backyard and talk through a patio and drought-tolerant planting. We could visit Thursday at 10am or Friday at 2pm. Which suits you? Nagel Landscaping",
     "customerFollow": "Friday at 2pm works. Is there anything I should have ready, like photos of styles I like or a rough budget?",
     "reply2": "Friday at 2pm is booked. Photos of styles you like and a rough budget range are both helpful to have on hand. We'll walk the space together and talk through options. See you then. Nagel Landscaping",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.nagellandscape.com"
   },
   {
     "slug": "sunset-skin-med-spa-tacoma-b0ecca",
@@ -795,7 +851,8 @@
     "reply1": "Hi, thanks for reaching out to Sunset Skin Med Spa. We'd be happy to see you for a first Botox consultation. We have Thursday at 5:30pm or Saturday at 10:00am open. Would either of those suit you?",
     "customerFollow": "Saturday at 10 works. Is there anything I should avoid before I come in?",
     "reply2": "Saturday at 10:00am is booked for you at Sunset Skin Med Spa. Your provider will go over everything at the consultation, but it's best to arrive with a clean face and a list of your questions. See you then.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://sunsetskinmedspa.com"
   },
   {
     "slug": "water-guys-spokane-valley-302fdc",
@@ -809,7 +866,8 @@
     "reply1": "Hi, this is Water Guys. Thanks for getting in touch. We can do your free in-home water test this week. Would Thursday at 10am or Friday at 2pm suit you better?",
     "customerFollow": "Thursday at 10 works. Is there anything I should do before you come, like running the water?",
     "reply2": "You're booked in for Thursday at 10am. Nothing special to prepare, just make sure we can reach your kitchen sink. We'll go through the results with you at the house. Water Guys",
-    "replyPromise": "Fill out the form below and we'll get back to you within 24 hours."
+    "replyPromise": "Fill out the form below and we'll get back to you within 24 hours.",
+    "website": "https://www.waterguyspnw.com"
   },
   {
     "slug": "waterrific-llc-corona-7b81e3",
@@ -823,7 +881,8 @@
     "reply1": "Hi, this is Waterrific. Thanks for getting in touch. We can help with whole house filtration and a reverse osmosis drinking system. We could visit Thursday at 10am or Friday at 2pm. Which works better for you?",
     "customerFollow": "Friday at 2pm works. Is there anything I should have ready, like access to the main water line?",
     "reply2": "Friday at 2pm is booked, see you then. Please make sure we can reach where the main water line enters the house and the sink where you want the drinking water system. We'll go through your options on site. - Waterrific",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.waterrific.com"
   },
   {
     "slug": "towne-country-design-inc-anaheim-22e7bd",
@@ -837,7 +896,8 @@
     "reply1": "Hi, this is Towne & Country Design. Yes, we design bathrooms and manage the full installation. We could meet to talk it through Thursday at 10am or Friday at 4pm. Which works better for you?",
     "customerFollow": "Friday at 4 works. Is there anything I should have ready before we meet?",
     "reply2": "Friday at 4pm is booked. Bring photos of the bathroom, any measurements you have, and a few ideas you like. We'll go through the design and how we manage the installation from start to finish. Towne & Country Design",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://towneandcountrydesign.com"
   },
   {
     "slug": "em-heating-and-air-conditioning-llc-long-beach-03ca3b",
@@ -851,7 +911,8 @@
     "reply1": "Hi, this is EM Heating and Air Conditioning. Sorry to hear about the warm air. We can send a technician tomorrow at 9:30am or 1:00pm. Which works better for you? Please also send your address.",
     "customerFollow": "1:00pm works. Is there anything I should do before the technician arrives?",
     "reply2": "Booked for 1:00pm tomorrow. Please clear a path to the outdoor unit and the thermostat so the technician can get started right away. Thanks, EM Heating and Air Conditioning.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.emheatingandair.com"
   },
   {
     "slug": "skin-medical-spa-san-francisco-4a2a49",
@@ -865,7 +926,8 @@
     "reply1": "Hi, thanks for contacting SKIN Medical Spa. We can see you for a Botox consultation Thursday at 11:30am or Friday at 4:00pm. Which works better? Happy to answer any questions before then.",
     "customerFollow": "Friday at 4 works. Roughly what does Botox cost?",
     "reply2": "You're booked in for Friday at 4:00pm. Cost depends on the areas treated, so your provider will go through the options and give you a clear quote at the consultation. See you then, SKIN Medical Spa.",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.skinmedicalspa.com"
   },
   {
     "slug": "pore-decisions-med-spa-san-jose-30dc84",
@@ -879,6 +941,7 @@
     "reply1": "Hi, thanks for contacting PORE Decisions Med Spa! We can help with both Botox and a HydraFacial. We have openings Tuesday at 5:30pm or Thursday at 6:00pm next week. Would either work for you?",
     "customerFollow": "Thursday at 6 works. Can I get the HydraFacial done the same visit as the Botox, or should I book them separately?",
     "reply2": "You're booked for Thursday at 6:00pm at PORE Decisions Med Spa. Many clients combine treatments in one visit, and we'll confirm the best order and timing with you when you arrive. See you then!",
-    "replyPromise": null
+    "replyPromise": null,
+    "website": "https://www.poremedspa.com"
   }
 ]

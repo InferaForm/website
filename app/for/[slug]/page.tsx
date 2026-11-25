@@ -8,6 +8,7 @@ import { Navbar } from "@/app/components/site/Navbar"
 import { Footer } from "@/app/components/site/Footer"
 import { DemoText } from "@/app/components/site/DemoText"
 import { prospects, getProspect, BOOKING_URL } from "@/app/lib/prospects"
+import { OpenBeacon } from "./OpenBeacon"
 
 // Next 15+: route params are a Promise.
 type Props = { params: Promise<{ slug: string }> }
@@ -46,6 +47,7 @@ export default async function ProspectPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <OpenBeacon slug={p.slug} />
       <Navbar />
       <main>
         <div className="relative overflow-hidden">

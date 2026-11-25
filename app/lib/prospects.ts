@@ -19,6 +19,8 @@ export type Prospect = {
   customerFollow: string
   reply2: string
   replyPromise: string | null
+  // Their own website, shown in the "opened their page" alert. Never shown on the page.
+  website?: string
 }
 
 export const prospects = data as Prospect[]
