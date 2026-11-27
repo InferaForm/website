@@ -15,6 +15,8 @@ import {
   Wrench,
   Rocket,
   TrendingUp,
+  ShowerHead,
+  Trees,
   type LucideIcon,
 } from "lucide-react"
 
@@ -140,6 +142,38 @@ export const industries: Industry[] = [
     ],
   },
   {
+    slug: "plumbing",
+    name: "Plumbing",
+    icon: ShowerHead,
+    tagline: "Answer the burst pipe before the next plumber does",
+    headline: "More plumbing service calls and water heater jobs",
+    intro:
+      "Someone with water on the floor calls the first plumber who picks up. We get you to the top of the search, and answer every call and form in seconds, day or night.",
+    pain: "Emergency calls go to whoever answers first, and after-hours leads go to voicemail while the customer keeps dialing.",
+    approach: "Local Services Ads and Google Search for urgent jobs, Meta ads for water heaters and repiping, and instant follow-up on every lead.",
+    offers: [
+      "Same-day drain or leak repair",
+      "Free water heater replacement estimate",
+      "Camera inspection for slow or backed-up drains",
+      "Whole-home plumbing check for older houses",
+    ],
+    channels: [
+      { name: "Local Services Ads", why: "Puts you at the top of Google for searches like emergency plumber near me, and you pay per lead instead of per click." },
+      { name: "Google Search", why: "Catches planned jobs like water heater replacement, repiping and sewer line repair." },
+      { name: "AI follow-up", why: "Texts back every missed call and form in seconds, asks what's wrong and books the visit or alerts your on-call plumber." },
+    ],
+    adExample: {
+      business: "FlowRight Plumbing",
+      before: { text: "Full-service plumbing. Residential and commercial. Licensed and insured. Call today!", image: "Photo of a plumbing van", cta: "Learn more" },
+      after: { text: "Running out of hot water halfway through a shower? Most tank heaters last 8 to 12 years. We'll check yours and give you a replacement price the same day.", headline: "Free water heater estimate", overlay: "Cold showers? It might be time.", cta: "Get estimate" },
+    },
+    faq: [
+      { q: "Can you separate emergency calls from bigger jobs?", a: "Yes. We'd run emergency campaigns and planned-job campaigns like water heaters and repiping separately, with their own budgets, so one doesn't eat the other." },
+      { q: "What happens when a lead comes in at 2am?", a: "They get a text back in seconds. The AI asks what's happening and either books the first slot in the morning or alerts your on-call plumber if it's an emergency." },
+      { q: "Do you work with plumbers who also do drain or sewer work?", a: "Yes. Drain cleaning, sewer line and camera inspection campaigns are a good fit, since people search for them by name." },
+    ],
+  },
+  {
     slug: "remodeling",
     name: "Remodeling",
     icon: Hammer,
@@ -230,6 +264,38 @@ export const industries: Industry[] = [
     faq: [
       { q: "Can you run ads that follow Meta's health policies?", a: "Yes. We'd write creative and landing pages that follow Meta's rules on health claims and before-and-after imagery." },
       { q: "Do you work with medical practices too?", a: "We focus on med spas and aesthetic clinics. We can discuss other practices on a call." },
+    ],
+  },
+  {
+    slug: "landscaping",
+    name: "Landscaping",
+    icon: Trees,
+    tagline: "Book the spring rush before it starts",
+    headline: "More landscape design projects and maintenance contracts",
+    intro:
+      "Landscaping demand comes in seasonal waves, and homeowners ask three companies for a quote. We fill your schedule ahead of the season and answer every enquiry first.",
+    pain: "Demand comes in a rush every spring, quotes go out slowly, and a lot of enquiries are for jobs too small to be worth the drive.",
+    approach: "Before-and-after creative on Meta for design projects, Google Search for maintenance and lawn care, and follow-up that asks about scope and budget first.",
+    offers: [
+      "Free landscape design consultation",
+      "Spring clean-up booked before the season starts",
+      "Weekly or bi-weekly maintenance plans",
+      "Patio, hardscape and outdoor lighting estimates",
+    ],
+    channels: [
+      { name: "Meta ads", why: "Before-and-after photos of your own yards reach homeowners in the neighborhoods you want to work in." },
+      { name: "Google Search", why: "Captures searches like landscaper near me, lawn care service and patio installation." },
+      { name: "AI follow-up", why: "Asks about yard size, project type and budget, then books the site visit so you only drive out for real jobs." },
+    ],
+    adExample: {
+      business: "Greenline Landscapes",
+      before: { text: "Professional landscaping and lawn care. Quality work at fair prices. Call for a free quote!", image: "Photo of a lawn mower", cta: "Learn more" },
+      after: { text: "We turned this bare backyard into a patio the whole family uses all summer. Spring spots are filling up. Book a free design visit for yours.", headline: "Free backyard design visit", overlay: "From bare yard to backyard in 3 weeks.", cta: "Book visit" },
+    },
+    faq: [
+      { q: "Can you help us sell maintenance contracts, not just one-off jobs?", a: "Yes. We'd run a separate campaign for recurring maintenance and have the follow-up offer a plan to everyone who books a one-off job." },
+      { q: "How do you filter out jobs that are too small?", a: "The form and AI follow-up ask about yard size, project type and budget up front, so small jobs can be priced or declined before anyone drives out." },
+      { q: "What do we do in the off-season?", a: "We'd lower the budget and switch to booking spring work early, plus snow removal or holiday lighting if you offer them." },
     ],
   },
 ]
