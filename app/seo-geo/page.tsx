@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMeta } from "@/app/lib/seo"
 import { ArrowRight, Bot, Check, FileText, MapPin, Search, Star } from "lucide-react"
 
 import { Button } from "@/app/components/ui/button"
@@ -10,12 +11,12 @@ import { FaqList } from "@/app/components/site/FaqList"
 import { JsonLd } from "@/app/components/site/JsonLd"
 import { service, faqPage, breadcrumbs } from "@/app/lib/structured-data"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Local SEO & GEO for Local Businesses | Inferaform",
   description:
     "Rank on Google Maps and show up in ChatGPT, Gemini and Google AI Overviews. Local SEO and Generative Engine Optimization for businesses in the US and Canada.",
-  alternates: { canonical: "/seo-geo" },
-}
+  path: "/seo-geo",
+})
 
 const pillars = [
   {

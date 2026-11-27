@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMeta } from "@/app/lib/seo"
 import { notFound } from "next/navigation"
 import { ArrowUpRight } from "lucide-react"
 
@@ -10,11 +11,11 @@ import { JsonLd } from "@/app/components/site/JsonLd"
 import { caseStudies } from "@/app/lib/case-studies"
 import { breadcrumbs } from "@/app/lib/structured-data"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Case Studies: Real Client Results | Inferaform",
   description: "How local businesses booked more appointments with Google and Meta ads and instant AI follow-up.",
-  alternates: { canonical: "/case-studies" },
-}
+  path: "/case-studies",
+})
 
 export default function CaseStudiesPage() {
   // No page until there are real results to show

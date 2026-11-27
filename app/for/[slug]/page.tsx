@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
+import { pageMeta } from "@/app/lib/seo"
 import { ArrowRight, Clock, Moon, Star } from "lucide-react"
 
 import { Button } from "@/app/components/ui/button"
@@ -22,10 +23,17 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const p = getProspect((await params).slug)
   if (!p) return {}
+  const title = `For ${p.business}: every new enquiry answered in under a minute | Inferaform`
+  const description = `What a new ${p.trade.toLowerCase()} customer in ${p.city} would get from ${p.business}, a minute after they ask.`
+  // Same share card as the rest of the site, but this page's own title in link previews.
+  const og = pageMeta({ title, description, path: `/for/${p.slug}` })
   return {
-    title: `For ${p.business}: every new enquiry answered in under a minute | Inferaform`,
-    description: `What a new ${p.trade.toLowerCase()} customer in ${p.city} would get from ${p.business}, a minute after they ask.`,
+    title,
+    description,
     robots: { index: false, follow: false },
+    alternates: { canonical: null },
+    openGraph: og.openGraph,
+    twitter: og.twitter,
   }
 }
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMeta } from "@/app/lib/seo"
 import { ArrowRight } from "lucide-react"
 
 import { Button } from "@/app/components/ui/button"
@@ -15,11 +16,11 @@ import { SITE_URL } from "@/app/lib/site-data"
 const description =
   "Estimate how many jobs and how much revenue slow lead follow-up costs your business each month and year. Free, conservative, and emailed to you if you like."
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Missed-Lead Calculator: What Slow Follow-up Costs You | Inferaform",
   description,
-  alternates: { canonical: "/calculator" },
-}
+  path: "/calculator",
+})
 
 const calculatorApp = {
   "@context": "https://schema.org",

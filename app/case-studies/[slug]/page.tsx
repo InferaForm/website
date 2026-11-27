@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMeta } from "@/app/lib/seo"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft, ArrowRight, Check, MapPin, Calendar } from "lucide-react"
@@ -21,11 +22,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const study = getCaseStudy((await params).slug)
   if (!study) return {}
-  return {
+  return pageMeta({
     title: `${study.title} | Inferaform case study`,
     description: study.summary,
-    alternates: { canonical: `/case-studies/${study.slug}` },
-  }
+    path: `/case-studies/${study.slug}`,
+  })
 }
 
 export default async function CaseStudyPage({ params }: Props) {

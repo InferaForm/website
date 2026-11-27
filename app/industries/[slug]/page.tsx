@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { pageMeta } from "@/app/lib/seo"
 import { notFound } from "next/navigation"
 import { ArrowLeft, ArrowRight, Check } from "lucide-react"
 
@@ -26,11 +27,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const industry = getIndustry((await params).slug)
   if (!industry) return {}
-  return {
+  return pageMeta({
     title: `${industry.name} Marketing: Google & Meta Ads + AI Follow-up | Inferaform`,
     description: industry.intro,
-    alternates: { canonical: `/industries/${industry.slug}` },
-  }
+    path: `/industries/${industry.slug}`,
+  })
 }
 
 export default async function IndustryPage({ params }: Props) {
@@ -38,6 +39,8 @@ export default async function IndustryPage({ params }: Props) {
   if (!industry) notFound()
 
   const { name, icon: Icon, headline, intro, pain, approach, offers, channels, faq, adExample } = industry
+  // "HVAC" stays "HVAC"; "Med spas" becomes "med spas"
+  const lowerName = name === name.toUpperCase() ? name : name.toLowerCase()
   const others = industries.filter((i) => i.slug !== industry.slug)
 
   return (
@@ -92,7 +95,7 @@ export default async function IndustryPage({ params }: Props) {
 
           <div className="mt-16 grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
             <Reveal>
-              <h2 className="text-3xl sm:text-4xl font-bold">Offers that get {name.toLowerCase()} customers to raise their hand</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold">Offers that get {lowerName} customers to raise their hand</h2>
               <p className="mt-3 text-muted-foreground">
                 The offer matters more than the ad. We test a few of these to find what works best in your market.
               </p>
@@ -122,7 +125,7 @@ export default async function IndustryPage({ params }: Props) {
         </Section>
 
         <div className="border-y border-foreground/5 bg-card/40">
-          <AdMakeover example={adExample} title={`A better ad for ${name.toLowerCase()}`} />
+          <AdMakeover example={adExample} title={`A better ad for ${lowerName}`} />
         </div>
 
         <AdFixes />
