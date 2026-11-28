@@ -3598,5 +3598,20 @@
     "reply2": "You're booked for 8:00am tomorrow. Turn it off at the thermostat until we arrive, and please clear a path to the indoor unit. We'll text you when the technician is on the way.",
     "replyPromise": null,
     "website": "http://www.billygo.com"
+  },
+  {
+    "slug": "kleenwater-west-springfield-c0f216",
+    "business": "KleenWater",
+    "trade": "Water treatment",
+    "city": "West Springfield",
+    "state": "MA",
+    "rating": null,
+    "reviews": 0,
+    "customerAsk": "Hi, we're in West Springfield and our faucets keep getting white scale and the dishwasher leaves glasses cloudy. Could someone come look at our water and tell us if a softener makes sense? We're home after 5 most evenings.",
+    "reply1": "Hi, this is KleenWater. Thanks for getting in touch about the scale and cloudy glasses. We can come take a look at your water. Would Thursday at 5:30pm or Friday at 4:00pm suit you better?",
+    "customerFollow": "Thursday at 5:30 works. Is there anything I should have ready, like access to where the water line comes into the house?",
+    "reply2": "Thursday at 5:30pm is booked for you. Yes, please make sure we can get to where the water line enters the house. That's all we need. See you then. KleenWater",
+    "replyPromise": null,
+    "website": "http://www.kleenwater.com"
   }
 ]
