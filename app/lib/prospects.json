@@ -3613,5 +3613,50 @@
     "reply2": "Thursday at 5:30pm is booked for you. Yes, please make sure we can get to where the water line enters the house. That's all we need. See you then. KleenWater",
     "replyPromise": null,
     "website": "http://www.kleenwater.com"
+  },
+  {
+    "slug": "featured-kitchen-and-bath-mill-creek-fbf362",
+    "business": "Featured Kitchen and Bath",
+    "trade": "Remodeling",
+    "city": "Mill Creek",
+    "state": "WA",
+    "rating": null,
+    "reviews": 0,
+    "customerAsk": "Hi, we're looking at redoing our hall bathroom in Mill Creek, mainly a new walk-in shower in place of the tub. Could someone come out to take a look and talk through options?",
+    "reply1": "Hi, thanks for contacting Featured Kitchen and Bath. A walk-in shower in place of the tub is something we can look at with you. We could visit Thursday at 4:30pm or Saturday at 10am. Which suits you better?",
+    "customerFollow": "Saturday at 10am works. Should I have a budget figure ready, or is it fine to just talk through ideas first?",
+    "reply2": "Saturday at 10am is booked for you. No need to bring a firm budget. Any rough range helps, plus photos or ideas you like. We'll walk through the options together and go from there. See you then.",
+    "replyPromise": null,
+    "website": "http://www.featuredkitchenandbath.com"
+  },
+  {
+    "slug": "hammons-roofing-and-contracting-warrensburg-6dd941",
+    "business": "Hammons Roofing and Contracting",
+    "trade": "Roofing",
+    "city": "Warrensburg",
+    "state": "MO",
+    "rating": null,
+    "reviews": 0,
+    "customerAsk": "Hi, we had some hail come through last week and I think a few shingles are damaged on the back of our house in Warrensburg. Could someone come look at the roof and tell me if it needs repair?",
+    "reply1": "Hi, thanks for contacting Hammons Roofing and Contracting. We can take a look at the hail damage for you. Could we come out tomorrow at 10am or Thursday at 2pm? Let us know which suits you.",
+    "customerFollow": "Thursday at 2pm works. Do I need to be home, and should I do anything before you come?",
+    "reply2": "Thursday at 2pm is booked with Hammons Roofing and Contracting. It helps if someone is home so we can talk through what we find, but you don't need to prepare anything. We'll check the roof from outside and go over the next steps with you.",
+    "replyPromise": null,
+    "website": "http://www.hammonsroofing.com"
+  },
+  {
+    "slug": "alan-jerkins-plumbing-stanley-b68238",
+    "business": "Alan Jerkins Plumbing",
+    "trade": "Plumbing",
+    "city": "Stanley",
+    "state": "NC",
+    "rating": null,
+    "reviews": 0,
+    "customerAsk": "Hi, water is dripping from under our kitchen sink in Stanley and the cabinet floor is getting soaked. Can someone come out tomorrow morning?",
+    "reply1": "Hi, this is Alan Jerkins Plumbing. Sorry to hear about the leak. We can be there tomorrow at 8:00am or 10:30am. Which works better for you?",
+    "customerFollow": "10:30 works. Should I empty the cabinet before you get here?",
+    "reply2": "Done, you're booked for 10:30am tomorrow with Alan Jerkins Plumbing. Yes, please clear out the cabinet so we can reach the pipes. We'll find the source of the leak and go through the options with you on site.",
+    "replyPromise": null,
+    "website": "http://www.alanjerkinsplumbing.net"
   }
 ]
